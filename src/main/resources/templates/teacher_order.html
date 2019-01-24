@@ -1,0 +1,574 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>XX教育网</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="bookmark" href="favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="css/lrtk1.css"/>
+    <script type="text/javascript" src="js/pptBox.js"></script>
+
+
+    <script type="text/javascript" src="js/Dialog.js"></script>
+
+
+    <LINK href="css/index.css" rel="stylesheet" type="text/css">
+    <SCRIPT src="js/jquery-1.7.2.min.js" type="text/javascript"></SCRIPT>
+    <LINK href="css/newHeader.css" rel="stylesheet" type="text/css">
+    <SCRIPT src="js/xl.js" type="text/javascript"></SCRIPT>
+    <link rel="stylesheet" type="text/css" href="css/newjiedai.css">
+    <script type="text/javascript" src="js/newjiedai.js"></script>
+    <script type="text/javascript" src="js/xyck.js"></script>
+    <link href="css/lrtk.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="css/drop-down.css"/>
+    <script src="js/select-widget-min.js"></script>
+    <script src="js/layer.js"></script>
+    <script language="JavaScript" src="js/ajax.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/star.js"></script>
+    <script type="text/javascript" src="js/dg.js"></script>
+    <script type="text/javascript">
+        function ly(index)
+        {
+            switch(index){
+                case 1:
+                {
+                    document.getElementById('l1').style.display = "";
+                    document.getElementById('l2').style.display = "none";
+                    document.getElementById('l3').style.display = "none";
+                    document.getElementById('l4').style.display = "none";
+                    document.getElementById('l5').style.display = "none";
+
+                    break;
+                }
+                case 2:
+                {
+                    document.getElementById('l1').style.display = "none";
+                    document.getElementById('l2').style.display = "";
+                    document.getElementById('l3').style.display = "none";
+                    document.getElementById('l4').style.display = "none";
+                    document.getElementById('l5').style.display = "none";
+
+
+                    break;
+                }
+                case 3:
+                {
+                    document.getElementById('l1').style.display = "none";
+                    document.getElementById('l2').style.display = "none";
+                    document.getElementById('l3').style.display = "";
+                    document.getElementById('l4').style.display = "none";
+                    document.getElementById('l5').style.display = "none";
+
+
+                    break;
+                }
+                case 4:
+                {
+                    document.getElementById('l1').style.display = "none";
+                    document.getElementById('l2').style.display = "none";
+                    document.getElementById('l3').style.display = "none";
+                    document.getElementById('l4').style.display = "";
+                    document.getElementById('l5').style.display = "none";
+
+                    break;
+                }
+                case 5:
+                {
+                    document.getElementById('l1').style.display = "none";
+                    document.getElementById('l2').style.display = "none";
+                    document.getElementById('l3').style.display = "none";
+                    document.getElementById('l4').style.display = "none";
+                    document.getElementById('l5').style.display = "";
+
+                    break;
+                }
+            }
+        }
+
+        function lyd(index)
+        {
+            switch(index){
+                case 1:
+                {
+                    document.getElementById('div1').style.display = "";
+                    document.getElementById('div2').style.display = "none";
+                    document.getElementById('div3').style.display = "none";
+                    document.getElementById('div4').style.display = "none";
+                    document.getElementById('div5').style.display = "none";
+
+                    break;
+                }
+                case 2:
+                {
+                    document.getElementById('div1').style.display = "none";
+                    document.getElementById('div2').style.display = "";
+                    document.getElementById('div3').style.display = "none";
+                    document.getElementById('div4').style.display = "none";
+                    document.getElementById('div5').style.display = "none";
+
+
+                    break;
+                }
+                case 3:
+                {
+                    document.getElementById('div1').style.display = "none";
+                    document.getElementById('div2').style.display = "none";
+                    document.getElementById('div3').style.display = "";
+                    document.getElementById('div4').style.display = "none";
+                    document.getElementById('div5').style.display = "none";
+
+
+                    break;
+                }
+                case 4:
+                {
+                    document.getElementById('div1').style.display = "none";
+                    document.getElementById('div2').style.display = "none";
+                    document.getElementById('div3').style.display = "none";
+                    document.getElementById('div4').style.display = "";
+                    document.getElementById('div5').style.display = "none";
+
+                    break;
+                }
+                case 5:
+                {
+                    document.getElementById('div1').style.display = "none";
+                    document.getElementById('div2').style.display = "none";
+                    document.getElementById('div3').style.display = "none";
+                    document.getElementById('div4').style.display = "none";
+                    document.getElementById('div5').style.display = "";
+
+                    break;
+                }
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+<form name="cc" action="?" method="post">
+    <input type="hidden" name="aa">
+    <input type="hidden" name="bb">
+</form>
+<!-- 头部黑条 -->
+<DIV id="newheader">
+    <DIV class="header-container">
+        <dl class="header-block header-left   header-lineheight">
+            <dt style="font-size:13px"> 您好！<span th:text="${session.user}"></span>
+                <a th:href="@{logoutuser}" onclick="tankuang1('#','baidu')"> 注销</a> <span
+                        style="letter-spacing:0.5em">|</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a th:href="@{order_list}" onclick="tankuang1('#','baidu')"> 我的订单</a>
+            </dt>
+        </dl>
+        <ol class="header-block header-menu posright">
+        </ol>
+    </DIV>
+</DIV>
+<!-- 结束头部黑条 -->
+<!-- 头部 -->
+<DIV id="page_header2">
+    <DIV id="page_header_cont"><A id="logo_link" href="#/index.php"><IMG id="logo_img" style="width: 170px; height: 60px;" src="images/logoN.png"> </A>
+        <DIV id="city">
+        </DIV>
+        <DIV id="favorites">
+        </DIV>
+    </DIV>
+    <DIV id="page_nav">
+        <DIV class="nav_cont">
+            <!--<DIV class="nav_item" id="category"><A class="main_link" id="btn_category" style="cursor: pointer;font-size:14px" href="#/teacher/101.html">所有教员分类</A>-->
+            <!--</DIV>-->
+            <DIV class="nav_item"><A class="main_link " style="font-size:14px" th:href="@{index}">首页</A></DIV>
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{student_list}">学员列表</A></DIV>
+            <DIV class="nav_item"><A class="main_link " style="font-size:14px" th:href="@{teacher_list}">教员列表</A></DIV>
+            <DIV class="nav_item"><A class="main_link " style="font-size:14px" th:href="@{problem}">常见问题</A></DIV>
+        </DIV>
+    </DIV>
+</DIV>
+<!-- 结束头部 -->
+
+
+<table width="1004" border="0" align="center" style="margin-top:8px;" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+    <tr>
+        <td>
+            <table width="940" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:12px">
+                <tr>
+                    <td width="184" rowspan="2" align="left" valign="top">
+                        <HTML>
+                        <HEAD>
+
+                        </HEAD>
+                        <BODY ONLOAD="init();">
+                        <span style="position:relative;">
+<table width="179" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="179" height="4" align="center" valign="top"><img src="images/hy04.gif" width="179" height="4"/></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" background="images/hy02.gif"><table width="179" border="0" cellpadding="0"
+                                                                        cellspacing="0"
+                                                                        style=" margin:5px 0 5px 0; font-size:12px">
+      <tr>
+        <td height="88" colspan="3" align="center" valign="top"><table width="95%" border="0" cellspacing="0"
+                                                                       cellpadding="0">
+          <tr>
+            <td width="42%" align="center" >
+                <img th:src="@{'/show?fileName='+${session.teacher.picture}}" width="57" height="64"/>
+
+              </td>
+            <td width="58%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="38%" height="22" style="font-size:12px">会员：</td>
+                <td width="62%" align="left" style="font-size:12px"><span th:text="${session.teacher.trueName}"></span></td>
+              </tr>
+            </table>
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="38%" height="22" style="font-size:12px">状态：</td>
+                  <td width="62%" align="left" style="font-size:12px">
+                 <a href="#" style="color:#929090"><span style=color:#929090>可预约</span>                  </a></td>
+                </tr>
+              </table></td>
+          </tr>
+          
+        </table></td>
+      </tr>
+       <tr valign="bottom">
+        <td height="7"> </td>
+        <td width="66" height="7"></td>
+      </tr>
+       <tr valign="bottom">
+         <td height="21" valign="bottom">&nbsp;</td>
+         <td width="99" height="21" colspan="2" align="left" ><table width="165" border="0" cellspacing="0"
+                                                                            cellpadding="0">
+           <tr>
+             <td width="81">编号：<span th:text="${session.teacher.userId}"></span></td>
+             <td width="84" align="left"></td>
+           </tr>
+         </table></td>
+        </tr>
+       
+      <tr valign="bottom">
+        <td height="21">&nbsp;</td>
+        <td height="21" colspan="2" align="left" valign="middle" id="dh">电话：<span th:text="${session.teacher.phone}"></span> &nbsp;</td>
+        </tr>
+      <tr valign="bottom">
+        <td height="21">&nbsp;</td>
+        <td height="21" colspan="2" align="left" valign="middle">地区：<span th:text="${session.teacher.address}"></span></td>
+      </tr>
+      <tr valign="bottom">
+        <td height="21">&nbsp;</td>
+        <td height="21" colspan="2" align="left" valign="middle">学校：<span th:text="${session.teacher.school}"></span></td>
+      </tr>
+      <tr valign="bottom">
+        <td height="21">&nbsp;</td>
+        <td height="21" colspan="2" align="left" valign="middle">专业：<span th:text="${session.teacher.major}"></span></td>
+      </tr>
+      <tr valign="bottom">
+        <td width="22" height="21">&nbsp;</td>
+        <td height="21" colspan="2" align="left" valign="middle"><table width="165" border="0" cellspacing="0"
+                                                                        cellpadding="0">
+
+        </table></td>
+      </tr>
+
+      <tr valign="bottom">
+        <td height="24" colspan="3" align="center" valign="top"><table width="111" height="7" border="0" cellpadding="0"
+                                                                       cellspacing="0">
+            <tr>
+              <td></td>
+            </tr>
+          </table>
+            <table width="167" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="83" align="right" valign="top">                    <a href="#/teacher/101/219633.html"
+                                                                                 target="_blank"><img
+                        src="images/zy.gif" width="69" height="21" border="0"/></a>
+                                    </td>
+                <td width="12" align="center" valign="top"></td>
+                <td width="72" align="left" valign="top"><a href="1t1loginout.php?dqid=101"><img src="images/zx.gif" width="69" height="21" border="0"/></a></td>
+              </tr>
+            </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="10" align="left" valign="top"><img src="images/hy03.gif" width="179" height="7"/></td>
+  </tr>
+</table></span>
+                    <td width="2" rowspan="2" align="right"></td>
+                    <td width="556" align="center" valign="top">
+                        <table width="99%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+
+                                </td>
+                            </tr>
+                        </table>
+                        <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td height="6"></td>
+                            </tr>
+                        </table>
+                        <table width="69%" border="0" align="center" style="margin-top:6px" cellpadding="0"
+                               cellspacing="0">
+                            <tr>
+                                <td width="100%"><img src="images/jshysy3.jpg" width="548" height="38"/></td>
+                            </tr>
+                            <tr>
+                                <td height="138" align="center" valign="top" background="images/tt7.jpg">
+                                    <div id="l1" style="display:none">
+                                        <table width="538" style="margin-top:9px" border="0" cellspacing="0"
+                                               cellpadding="0">
+                                            <tr>
+                                                <td width="99" align="left"><img src="images/jyfksj2.jpg"
+                                                                                 style="cursor:pointer"
+                                                                                 onClick="javascript:ly(2)" width="99"
+                                                                                 height="30"/></td>
+                                                <td width="99" align="left"><img src="images/njyfksj2.jpg"
+                                                                                 style="cursor:pointer"
+                                                                                 onClick="javascript:ly(3)" width="99"
+                                                                                 height="30"/></td>
+                                                <td width="99" align="left">&nbsp;</td>
+                                                <td width="142" align="left">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="5"><img src="images/rzbz6.jpg" width="539" height="2"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="l2" >
+                                        <table width="538" style="margin-top:9px" border="0" cellspacing="0"
+                                               cellpadding="0">
+                                            <tr>
+                                                <td width="99" align="left"><img src="images/jyfksj1.jpg" name="rzbz2"
+                                                                                 width="99" height="30"
+                                                                                 style="cursor:pointer"
+                                                                                 onClick="javascript:ly(2)"/></td>
+                                                <td width="99" align="left"><img src="images/njyfksj2.jpg"
+                                                                                 style="cursor:pointer"
+                                                                                 onClick="javascript:ly(3)" width="99"
+                                                                                 height="30"/></td>
+                                                <td width="99" align="left">&nbsp;</td>
+                                                <td width="142" align="left">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="5"><img src="images/rzbz6.jpg" width="539" height="2"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table width="538" border="0" cellpadding="0" cellspacing="1" bgcolor="#c0e5ff">
+                                            <tr>
+                                                <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                    <span style="font-size:12px">&nbsp;科目</span></td>
+                                                <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                    <span style="font-size:12px">&nbsp;地址</span></td>
+                                                <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                    <span style="font-size:12px">&nbsp;价格</span></td>
+                                                <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                    <span style="font-size:12px">&nbsp;年级</span></td>
+                                                <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                    <span style="font-size:12px">&nbsp;学生电话</span></td>
+                                                <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                    <span style="font-size:12px">&nbsp;操作</span></td>
+                                            </tr>
+                                            <div th:each="ord:${teaOrders}">
+                                                <tr>
+                                                    <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                        <span style="font-size:12px">&nbsp;<span th:text="${ord.course}"></span></span></td>
+                                                    <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                        <span style="font-size:12px">&nbsp;<span th:text="${ord.address}"></span></span></td>
+                                                    <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                        <span style="font-size:12px">&nbsp;<span th:text="${ord.money}"></span></span></td>
+                                                    <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                        <span style="font-size:12px">&nbsp;<span th:text="${ord.grade}"></span></span></td>
+                                                    <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                        <span style="font-size:12px">&nbsp;<span th:text="${ord.stuPhone}"></span></span></td>
+                                                    <td height="25" align="center" bgcolor="#FFFFFF">
+                                                        <a th:href="'cancelorder?orderId='+${ord.orderId}">取消</a>
+                                                    </td>
+                                                </tr>
+                                            </div>
+                                        </table>
+
+                                    </div>
+                                    <div id="l3" style="display:none">
+                                        <table width="538" style="margin-top:9px" border="0" cellspacing="0"
+                                               cellpadding="0">
+                                            <tr>
+                                                <td width="99" align="left"><img src="images/jyfksj2.jpg" name="rzbz2"
+                                                                                 width="99" height="30" id="rzbz2"
+                                                                                 style="cursor:pointer"
+                                                                                 onClick="javascript:ly(2)"/></td>
+                                                <td width="99" align="left"><img src="images/njyfksj1.jpg" name="rzbz3"
+                                                                                 width="99" height="30" id="rzbz3"
+                                                                                 style="cursor:pointer"
+                                                                                 onClick="javascript:ly(3)"/></td>
+                                                <td width="99" align="left">&nbsp;</td>
+                                                <td width="142" align="left">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="5"><img src="images/rzbz6.jpg" width="539" height="2"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table width="538" border="0" cellpadding="0" cellspacing="1" bgcolor="#c0e5ff">
+                                            <tr>
+                                                <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                    <span style="font-size:12px">&nbsp;科目</span></td>
+                                                <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                    <span style="font-size:12px">&nbsp;地址</span></td>
+                                                <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                    <span style="font-size:12px">&nbsp;价格</span></td>
+                                                <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                    <span style="font-size:12px">&nbsp;年级</span></td>
+                                                <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                    <span style="font-size:12px">&nbsp;学生电话</span></td>
+                                                <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                    <span style="font-size:12px">&nbsp;操作</span></td>
+                                            </tr>
+                                            <div th:each="ord:${teaOrders}">
+                                                <tr>
+                                                    <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                        <span style="font-size:12px">&nbsp;<span th:text="${ord.course}"></span></span></td>
+                                                    <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                        <span style="font-size:12px">&nbsp;<span th:text="${ord.address}"></span></span></td>
+                                                    <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                        <span style="font-size:12px">&nbsp;<span th:text="${ord.money}"></span></span></td>
+                                                    <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                        <span style="font-size:12px">&nbsp;<span th:text="${ord.grade}"></span></span></td>
+                                                    <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                        <span style="font-size:12px">&nbsp;<span th:text="${ord.stuPhone}"></span></span></td>
+                                                    <td height="25" align="left" bgcolor="#FFFFFF" style="font-size:12px; ">
+                                                        <!--<a th:href="'tea_accessorder?order_id='+${ord.order_id}">接受</a>-->
+                                                        <!--<a th:href="'tea_refuseorder?order_id='+${ord.order_id}">拒绝</a>-->
+                                                    </td>
+                                                </tr>
+                                            </div>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/tt8.jpg" width="548" height="4"/></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td width="195" align="right" valign="top">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td height="39" colspan="3" align="right" valign="bottom">&nbsp;</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+<div id="popqd" style="width:455px;  overflow:hidden; display:none;">
+</div>
+
+</body>
+</html>
+<!--  footer -->
+<div style="clear:both"></div>
+<div class="footerd">
+    <div style="height:18px"></div>
+    <div class="content">
+
+        <div class="contentleft">
+            <div class="wxt"></div>
+            <div class="gzwxt">关注微信</div>
+        </div>
+        <div class="line"></div>
+        <div class="contentleft1">
+            <div class="contentleft1_f">
+                <div class="dh">
+                    <div class="dhleft"></div>
+                    <div class="dhright">
+                        <div class="dhrx">本地客服热线</div>
+                        <div class="dhmf"></div>
+                    </div>
+                </div>
+                <div class="dh400">xxx-xxx-xxxx</div>
+                <div class="dhsj">工作时间每日xx:xx-xx:xx</div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="contentleft2">
+            <div class="tj">
+                <div class="yx">
+                    <div class="yxleft"></div>
+                    <div class="yxright">邮箱：xxxxxxx@xxxx.xxx</div>
+                </div>
+
+                <div class="kfry">
+                    <div class="kfryleft"></div>
+                    <div class="kfryright">教员交流群：xxxxxxxxx</div>
+                </div>
+
+                <div class="kfxl">
+                    <div class="kfxlleft"></div>
+                    <div class="kfxlright">新浪微博：XX教育</div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="line"></div>
+        <div class="contentright">
+            <div class="cjwt">
+                <div class="cjwttitle">常见问题</div>
+                <div class="cjwtbody"><a href="##########################################/cjwt-30071.html"
+                                         target="_blank" style="color:#CFCECE">家长找家教流程</a></div>
+                <div class="cjwtbody"><a href="##########################################/cjwt-30070.html"
+                                         target="_blank" style="color:#CFCECE">教员最新使用流程</a></div>
+                <div class="cjwtbody"><a href="##########################################/cjwt-30083.html"
+                                         target="_blank" style="color:#CFCECE">信誉值说明</a></div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div style="width:887px; margin:0px auto;  margin-top:8px"><img src="images/line5.jpg"></div>
+    <div class="link" style="width:1006px; margin:0 auto; text-align:left">友情链接：
+        <a target="_blank" style="color:#FFFFFF" href="http://baiping.tantuw.com">广州佰平会计培训</a> | <a target="_blank"
+                                                                                                    style="color:#FFFFFF"
+                                                                                                    href="http://gs.yixue99.com/">中公甘肃卫生人才网</a>
+        | <a target="_blank" style="color:#FFFFFF" href="http://fz.jiaoyubao.cn/">福州培训</a> | <a target="_blank"
+                                                                                                style="color:#FFFFFF"
+                                                                                                href="http://fuzhou.kuyiso.com/jiaoyu/">福州教育网</a>
+        | <a target="_blank" style="color:#FFFFFF" href="http://jinsejiayuanwanke.fang.com/">万科金色家园</a> | <a
+                target="_blank" style="color:#FFFFFF" href="http://www.rzjjzx.com">日照家教中心网</a> | <a target="_blank"
+                                                                                                    style="color:#FFFFFF"
+                                                                                                    href="http://nyxy.ohqly.com">新野吧</a>
+        | <a target="_blank" style="color:#FFFFFF" href="http://www.ooobz.com">四川博钊教育</a> | <a target="_blank"
+                                                                                               style="color:#FFFFFF"
+                                                                                               href="http://china.findlaw.cn/guilin">桂林律师</a>
+        |
+    </div>
+
+</div>
+
+
+<div class="footerd1">
+    <a href="##########################################/about-5.html" style="color:#FFFFFF">关于我们</a>&nbsp;|&nbsp;
+    <a href="##########################################/about-7.html" style="color:#FFFFFF">网站地图</a>&nbsp; |&nbsp;
+    <a href="##########################################/about-6.html" style="color:#FFFFFF">联系我们</a>&nbsp;| &nbsp;
+    <a href="##########################################/yqlj.html" style="color:#FFFFFF">友情链接</a>&nbsp;| &nbsp;
+    <a href="##########################################/yjjy.html" style="color:#FFFFFF">意见建议</a>&nbsp; | &nbsp;
+    <a href="##########################################/cjwt.html" style="color:#FFFFFF">帮助中心</a>&nbsp; |&nbsp;
+    <a href="##########################################/about-8.html" style="color:#FFFFFF">版权声明</a> &nbsp;|&nbsp;
+    <a href="##########################################/about-5.html" style="color:#FFFFFF">免责声明</a> &nbsp;|&nbsp;
+    <a href="##########################################/about-9.html" style="color:#FFFFFF">收藏本站</a> &nbsp;| &nbsp;
+    XICP备XXXXXXXX号
+</div>

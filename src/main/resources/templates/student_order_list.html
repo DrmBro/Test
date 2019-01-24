@@ -1,0 +1,793 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="bookmark" href="favicon.ico">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>阳光教育网</title>
+<!-- <link href="#m/1t1.css" rel="stylesheet" type="text/css" /> -->
+<!-- <link href="#m/jyw.css" rel="stylesheet" type="text/css" /> -->
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+
+<style>
+a img{border:0px;}
+
+.link01:link {
+  color: #147CF1;
+  text-decoration: none;
+}
+.link01:visited {
+  color: #147CF1;
+  text-decoration: none;
+}
+.link01:hover {
+  color: #FF0000;
+  text-decoration: underline;
+}
+.link01:active {
+  color: #FF0000;
+  text-decoration: none;
+}
+.STYLE382 {color: #ff0000}
+
+ .div1 {
+  width:683px;
+  height:53px;
+  border:1px solid #c0e5ff;
+  margin:0 auto 10px;
+  }
+  .div2 {
+  width:683px;
+  height:25px;
+  border-bottom:1px solid #c0e5ff;
+  background-color:#f5f5f5;
+  }
+  .div2in1 {
+  width:181px;
+  float:left;
+  height:25px;
+  line-height:25px;
+  color:#999999;
+  font-size:12px;
+  margin-left:5px;
+  }
+  .div2in2 {
+  width:140px;
+  float:left;
+  height:25px;
+  line-height:25px;
+  color:#999999;
+  font-size:12px;
+  }
+  .div2in3 {
+  width:100px;
+  float:right;
+  height:25px;
+  line-height:25px;
+  color:#6788cc;
+  font-size:12px;
+  text-align:center;
+  }
+  .div3 {
+  width:683px;
+  height:27px;
+  }
+  .div3in1 {
+  width:83px;
+  float:left;
+  height:27px;
+  line-height:27px;
+  color:#6788cc;
+  font-size:14px;
+  text-align:center;
+  border-right:1px solid #ededed;
+  }
+  .div3in1 img{
+  margin-top:6px;
+  }
+  .div3in2 {
+  width:246px;
+  float:left;
+  height:27px;
+  line-height:27px;
+  color:#6788cc;
+  font-size:14px;
+  border-right:1px solid #ededed;
+  }
+  .div3in3 {
+  width:270px;
+  float:left;
+  height:27px;
+  line-height:27px;
+  color:#6788cc;
+  font-size:14px;
+  border-right:1px solid #ededed;
+  }
+  .div3in4 {
+  width:19px;
+  float:left;
+  height:27px;
+  line-height:27px;
+  color:#6788cc;
+  font-size:14px;
+  text-align:center;
+  }
+  .div3in4 img{
+  margin-top:6px;
+  }
+  .div3in5 {
+  width:60px;
+  float:left;
+  height:27px;
+  line-height:27px;
+  color:#6788cc;
+  font-size:14px;
+  }
+
+#layer {
+    display: none;
+    position: absolute;
+}
+
+
+
+</style>
+    <script type="text/javascript">
+        function zOpenInner(v, s) {
+            var diag = new Dialog("Diag3");
+            diag.Width = 400;
+            diag.Height = 150;
+            diag.Title = s;
+            diag.innerHTML = v
+            diag.show();
+        }
+
+        function changeBody(index) {
+            switch (index) {
+                case 1: {
+                    document.getElementById('iDBody1').style.display = "";
+                    document.getElementById('iDBody2').style.display = "none";
+                    document.getElementById('iDBody3').style.display = "none";
+                    document.getElementById('iDBody4').style.display = "none";
+                    document.getElementById('iDBody5').style.display = "none";
+                    break;
+                }
+                case 2: {
+                    document.getElementById('iDBody1').style.display = "none";
+                    document.getElementById('iDBody2').style.display = "";
+                    document.getElementById('iDBody3').style.display = "none";
+                    document.getElementById('iDBody4').style.display = "none";
+                    document.getElementById('iDBody5').style.display = "none";
+
+                    break;
+                }
+                case 3: {
+                    document.getElementById('iDBody1').style.display = "none";
+                    document.getElementById('iDBody2').style.display = "none";
+                    document.getElementById('iDBody3').style.display = "";
+                    document.getElementById('iDBody4').style.display = "none";
+                    document.getElementById('iDBody5').style.display = "none";
+                    break;
+                }
+                case 4: {
+
+                    document.getElementById('iDBody1').style.display = "none";
+                    document.getElementById('iDBody2').style.display = "none";
+                    document.getElementById('iDBody3').style.display = "none";
+                    document.getElementById('iDBody4').style.display = "";
+                    document.getElementById('iDBody5').style.display = "none";
+                    break;
+                }
+                case 5: {
+
+                    document.getElementById('iDBody1').style.display = "none";
+                    document.getElementById('iDBody2').style.display = "none";
+                    document.getElementById('iDBody3').style.display = "none";
+                    document.getElementById('iDBody4').style.display = "none";
+                    document.getElementById('iDBody5').style.display = "";
+                    break;
+                }
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+
+        function showLayer(id) {
+            var left = ($(window).width() - $(id).width())/2;
+            var top  = ($(window).height() - $(id).height())/2;
+
+            $(id).css({"top": top, "left": left, "display": "block"});
+        }
+
+        function hideLayer(id) {
+            $(id).css({"display": "none"});
+        }
+
+        function showLayer(id, width, height) {
+            var obj  = document.getElementById(id);
+            var winWidth = document.documentElement.clientWidth;
+            var winHeight = document.documentElement.clientHeight;
+            var offsetTop = document.documentElement.offsetTop;
+            var left = (winWidth - 800)/2;
+            var top  = (winHeight - 600)/2 + offsetTop;
+            obj.style.top = top + "px";
+            obj.style.left = left + "px";
+            obj.style.display = "block";
+        }
+
+
+    </script>
+
+
+    <LINK href="css/index.css" rel="stylesheet" type="text/css">
+<SCRIPT src="js/jquery-1.7.2.min.js" type="text/javascript"></SCRIPT>
+<LINK href="css/newHeader.css" rel="stylesheet" type="text/css">
+<SCRIPT src="js/xl.js" type="text/javascript"></SCRIPT>
+<link rel="stylesheet" type="text/css" href="css/newjiedai.css">
+<script type="text/javascript" src="js/newjiedai.js"></script>
+
+<script type="text/javascript" src="js/xyck.js"></script>
+<link href="css/lrtk.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="css/drop-down.css" />
+<script src="js/select-widget-min.js"></script>
+<script src="js/layer.js"></script>
+<style type="text/css">
+<!--
+body,td,th {
+  font-size: 12px;
+}
+-->
+</style>
+<script type="text/javascript" src="inc1/star.js"> </script>
+</head>
+<body>
+
+
+<!-- 头部黑条 -->
+<DIV id="newheader">
+  <DIV class="header-container">
+      <dl class="header-block header-left   header-lineheight">
+          <dt style="font-size:13px" > 您好！<span th:text="${username}"></span>
+              <a th:href="@{logoutuser}"   onclick="tankuang1('#','baidu')" >  注销</a> <span style="letter-spacing:0.5em">|</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a th:href="@{order_list}"   onclick="tankuang1('#','baidu')" >  我的订单</a>
+          </dt>
+      </dl>
+  <div class="hidediv"   style=" display:none;  position:relative;left:35px;  "  id="hidev" >
+      </div>
+         <ol class="header-block header-menu posright"  >
+                   <li class="header-d header-left" style=" margin-right:20px">
+
+                <ol class="header-block header-left header-d-list">
+                    <li>
+                        <a href="#m/1t1xyhy08.php?dqid=101" target="_blank" class="header-d-english " alt="发布订单">发布订单</a>
+                    </li>
+                    <li>
+                        <a href="#m/1t1xyhy05.php?dqid=101" target="_blank" class="header-d-japanese " alt="订单管理">订单管理</a>
+                    </li>
+                    <li>
+                        <a href="#m/1t1loginout.php?dqid=101" target="_blank" class="header-d-french " alt="退出">退出</a>
+                    </li>
+                    <li><span class="top-line"></span></li>
+                </ol>
+            </li>
+        </ol>
+  </DIV>
+</DIV>
+<!-- 结束头部黑条 -->
+<!-- 头部 -->
+<DIV id="page_header">
+  <DIV id="page_header_cont"><A id="logo_link" href="#m/index.php"><IMG id="logo_img" style="width: 170px; height: 60px;" src="images/logoN.png"> </A>
+    <DIV id="favorites">
+        <div style="float:left; width:19px; margin-top:1px"><img src="images/kfdh.jpg"></div>
+    <div style="float:left; margin-left:6px; font-size:14px"><strong>XXX-XXX-XXXX</strong></div>
+    <div style="clear:both"></div>
+    <div style=" font-size:14px; margin-top:6px"><strong>(接听电话9:00-18:00)</strong></div>
+  </DIV>
+  </DIV>
+  <DIV id="page_nav">
+    <DIV class="nav_cont">
+      <!--<DIV class="nav_item" id="category"><A class="main_link" id="btn_category"-->
+<!--style="cursor: pointer;font-size:14px" href="#m/teacher/101.html"  >所有教员分类</A>-->
+              <!--</DIV>-->
+      <DIV class="nav_item"><A class="main_link " style="font-size:14px"  th:href="@{index}">首页</A></DIV>
+      <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{student_list}">学员列表</A> </DIV>
+      <DIV class="nav_item"><A class="main_link " style="font-size:14px" th:href="@{teacher_list}">教员列表</A> </DIV>
+       <DIV class="nav_item"><A class="main_link  " style="font-size:14px" href="#m/cjwt.html">常见问题</A> </DIV>
+    </DIV>
+  </DIV>
+</DIV>
+<!-- 结束头部 -->
+
+
+
+<table width="1004" border="0" align="center" cellpadding="0" style="margin-top:8px;" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td><table width="941" border="0" align="center" cellpadding="0" style="margin-top:5px" cellspacing="0">
+        <tr>
+          <td width="183" align="left" valign="top"><table width="183" border="0" align="left" cellpadding="0" cellspacing="0">
+            <tr>
+              <td><table width="179" border="0" cellspacing="0" cellpadding="0" style="margin-top:0px">
+                  <tr>
+                    <td width="179" height="36" align="center" valign="middle" background="images/hy01.gif"><table width="179" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="17" height="21" align="center" class="px15ffffff">&nbsp;</td>
+                          <td width="166" align="left" valign="bottom" class="px15ffffff" style="color:#0081CC"><strong>我的基本信息</strong></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td height="7" valign="top" background="images/hy02.gif"><table width="179" height="154" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td>&nbsp;</td>
+            <td width="136" style="font-size:13px">欢迎您：<span th:text="${student.username}"></span>
+              </td>
+            <td width="12"></td>
+          </tr>
+          <tr>
+            <td width="35">&nbsp;</td>
+            <td colspan="2" style="font-size:13px">ID：<span th:text="${student.userId}"></span></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td colspan="2" style="font-size:13px">身份：
+                普通会员</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td colspan="2" style="font-size:13px">              区域：<span th:text="${student.address}"></span></td>
+          </tr>
+          <tr>
+            <td colspan="3" align="center"><a th:href="@{/logoutuser}"><img src="images/tuichu.gif" width="96" height="21" border="0" /></a></td>
+            </tr>
+
+        </table></td>
+                  </tr>
+                  <tr>
+                    <td height="10" align="center" valign="top"><img src="images/hy03.gif" width="179" height="10" /></td>
+                  </tr>
+                </table>
+
+                  <table width="179" border="0" cellspacing="0" cellpadding="0" style="margin-top:6px">
+         <tr>
+                      <td width="179" height="36" align="left" valign="middle"  style="padding-left:19px; letter-spacing:4px" background="images/indexanniu2.gif"><strong>
+                          <a style="color:#1A81B9; font-size:15px"  title="我的订单" onclick="showLayer('layer', 300, 400)">发布订单</a>
+                      </strong></td></tr>
+            <tr>
+                      <td width="179" height="36" align="left" valign="middle"  style="padding-left:19px; letter-spacing:4px" background="images/indexanniu2.gif"><strong><a href="#"  style="color:#1A81B9; font-size:15px"  title="我的订单"><span style="color:#0081cc">我的订单</span><span style="color:#fe0000"></span></a></strong></span></td></tr>
+
+
+                    <tr>
+                      <td width="179" height="36" align="left" valign="middle"  style="padding-left:19px; letter-spacing:4px" background="images/indexanniu2.gif"><strong><a href="#"   style="color:#1A81B9; font-size:15px"  title="我的接洽"><span style="color:#0081cc">我的接洽</span><span style="color:#fe0000"></span></a></strong></span></td>
+                    </tr>
+        <tr>
+          <td valign="top" background="images/hy02.gif">
+
+          </td>
+        </tr>
+      </table>
+              <table width="179" border="0" cellspacing="0" cellpadding="0" style="margin-top:6px">
+        <tr>
+          <td width="179" height="36" align="center" valign="middle" background="images/hy01.gif">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="17" height="21" align="center" class="px15ffffff">&nbsp;</td>
+                <td align="left" valign="bottom" style="color:#0081CC; font-size:15px"   ><strong>个人设置</strong></td>
+              </tr>
+          </table>
+          </td>
+        </tr>
+        <tr>
+
+        </tr>
+        <tr>
+          <td height="10" align="center" valign="top"><img src="images/hy03.gif" width="179" height="10" /></td>
+        </tr>
+      </table>
+                <table width="179" border="0" cellpadding="0" cellspacing="0" style="margin-top:6px">
+                    <tr>
+                      <td width="183" height="36" align="center" valign="middle" background="images/hy01.gif">
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td valign="top" background="images/hy02.gif">
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
+              </td>
+            </tr>
+          </table></td>
+          <td width="10">&nbsp;</td>
+          <td width="751" align="left" valign="top"><a name="a1" id="a1"></a>
+            <table width="100" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td><img src="images/xy141016.gif" width="760" height="270" border="0"/></td>
+              </tr>
+            </table>
+              <table width="111" height="5" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td></td>
+                </tr>
+            </table>
+               <table width="750" cellpadding="0" style="margin-top:6px" cellspacing="0">
+                <tr>
+                  <td width="756"><img src="images/xy2.jpg" width="750" height="9" /></td>
+                </tr>
+                <tr>
+                  <td height="74" valign="top" background="images/xy14.jpg"><table width="164" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td><img src="images/xy12.jpg" width="141" height="32" /></td>
+                      </tr>
+                    </table>
+                    <div   id="iDBody1">
+                        <table width="727" height="21" border="0" align="center"
+                               style="margin-top:8px;margin-bottom:8px" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="114" style="font-size:14px"><a href="#"><img
+                                        src="images/fbdd.jpg" width="99" height="26" border="0"/></a>
+                                </td>
+                                <td width="613" style="font-size:14px"><span class="STYLE382">正在进行</span>&nbsp; | &nbsp;<a href="#a1" style="color:#147CF1" onClick="javascript:changeBody(2)">待处理</a>
+                                </td>
+                            </tr>
+                        </table>
+                              <table width="97%" height="29" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#99CCFF" style="margin-top:8px; margin-bottom:12px">
+                          <tr>
+                            <td width="14%" height="25" align="center" bgcolor="#FFFFFF"><strong>订单编号</strong></td>
+                            <td width="14%" height="25" align="center" bgcolor="#FFFFFF">教师电话</td>
+                            <td width="14%" height="25" align="center" bgcolor="#FFFFFF">价格</td>
+                            <td width="14%" height="25" align="center" bgcolor="#FFFFFF">地点</td>
+                            <td width="14%" height="25" align="center" bgcolor="#FFFFFF">科目</td>
+                            <td width="14%" height="25" align="center" bgcolor="#FFFFFF">年级</td>
+                            <td width="14%" height="25" align="center" bgcolor="#FFFFFF">操作</td>
+                          </tr>
+                          <div th:each="ord:${success_teaOrders}">
+                              <tr>
+                                  <td height="25" align="center" bgcolor="#FFFFFF"><span th:text="${ord.orderId}"></span></td>
+                                  <td height="25" align="center" bgcolor="#FFFFFF"><span th:text="${ord.teaPhone}"></span></td>
+                                  <td height="25" align="center" bgcolor="#FFFFFF"><span th:text="${ord.money}"></span>元/小时</td>
+                                  <td height="25" align="center" bgcolor="#FFFFFF"><span th:text="${ord.address}"></span></td>
+                                  <td height="25" align="center" bgcolor="#FFFFFF"><span th:text="${ord.course}"></span></td>
+                                  <td height="25" align="center" bgcolor="#FFFFFF"><span th:text="${ord.grade}"></span></td>
+                                  <td height="25" align="center" bgcolor="#FFFFFF"><a th:href="'cancelorder?order_id='+${ord.orderId}">取消</a></span></td>
+                              </tr>
+                      </div>
+                    </table>
+                    </div>
+                      <div id="iDBody2" style="display:none">
+                          <table width="727" height="32" border="0" align="center"
+                                 style="margin-top:4px;margin-bottom:8px" cellpadding="0" cellspacing="0">
+                              <tr>
+                                  <td width="116" align="left" style="font-size:14px"><a
+                                          href="#"><img src="images/fbdd.jpg"
+                                                                             width="99" height="26"
+                                                                             border="0" /></a></td>
+                                  <td width="611" align="left" style="font-size:14px"><a href="#a1" style="color:#147CF1" onClick="javascript:changeBody(1)">正在进行</a>&nbsp; | &nbsp;
+                                      <span class="STYLE382">待处理</span></td>
+                              </tr>
+                          </table>
+
+                          <table width="97%" height="29" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#99CCFF" style="margin-top:8px; margin-bottom:12px">
+                              <tr>
+                                  <td width="14%" height="25" align="center" bgcolor="#FFFFFF"><strong>订单编号</strong></td>
+                                  <td width="14%" height="25" align="center" bgcolor="#FFFFFF">教师电话</td>
+                                  <td width="14%" height="25" align="center" bgcolor="#FFFFFF">价格</td>
+                                  <td width="14%" height="25" align="center" bgcolor="#FFFFFF">地点</td>
+                                  <td width="14%" height="25" align="center" bgcolor="#FFFFFF">科目</td>
+                                  <td width="14%" height="25" align="center" bgcolor="#FFFFFF">年级</td>
+                                  <td width="14%" height="25" align="center" bgcolor="#FFFFFF">操作</td>
+                              </tr>
+                              <div th:each="tea:${teachers}">
+                                  <tr>
+                                      <td height="25" align="center" bgcolor="#FFFFFF">111</span></td>
+                                      <td height="25" align="center" bgcolor="#FFFFFF"><span th:text="${tea.phone}"></span></td>
+                                      <td height="25" align="center" bgcolor="#FFFFFF"><span th:text="${tea.money}"></span>元/小时</td>
+                                      <td height="25" align="center" bgcolor="#FFFFFF"><span th:text="${tea.address}"></span></td>
+                                      <td height="25" align="center" bgcolor="#FFFFFF"><span th:text="${tea.course}"></span></td>
+                                      <td height="25" align="center" bgcolor="#FFFFFF"><span th:text="${tea.grade}"></span></td>
+                                      <td height="25" align="center" bgcolor="#FFFFFF">
+                                          <a th:href="'accessorder?order_id='+${tea.userId}">接受</a>
+                                          <a th:href="'refuseorder?order_id='+${tea.userId}">拒绝</a>
+                                      </td>
+                                  </tr>
+                              </div>
+                          </table>
+                      </div>
+          </td>
+                </tr>
+                <tr>
+                  <td align="center"><img src="images/xy4.jpg" width="750" height="4" /></td>
+                </tr>
+            </table>
+              <table width="750" cellpadding="0" style="margin-top:6px" cellspacing="0">
+                <tr>
+                  <td height="74" valign="top"><table width="386" border="0" cellspacing="0" cellpadding="0">
+                    </table>
+
+            <div   id="l2"     style="display:none"      >
+          <a name="b"></a>
+                       <table width="721" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="65" height="29" background="images/indexanniu5.gif">&nbsp;</td>
+      <td width="106" align="left" background="images/indexanniu5.gif"  ><img src="images/xyfkd6.jpg" onClick="javascript:ly(1)"  onmouseover="this.src='images/xyfkd5.jpg'" onMouseOut="this.src='images/xyfkd6.jpg'" width="100" height="30" border="0" /></td>
+      <td width="106" align="left" background="images/indexanniu5.gif" ><img src="images/xyfkd3.jpg"  width="100" height="30" border="0" /></td>
+      <td width="107" align="left" background="images/indexanniu5.gif"  ><img src="images/xyfkd2.jpg" onClick="javascript:ly(3)" onMouseOver="this.src='images/xyfkd1.jpg'" onMouseOut="this.src='images/xyfkd2.jpg'" width="100" height="30" border="0" /></td>
+      <td width="337" align="left" background="images/indexanniu5.gif"  ><img src="images/xyfkd8.jpg" onClick="javascript:ly(4)" onMouseOver="this.src='images/xyfkd7.jpg'" onMouseOut="this.src='images/xyfkd8.jpg'" width="100" height="30" border="0" /></td>
+    </tr>
+  </table>
+
+          </div>
+            <div   id="l3"    style="display:none"     >
+          <a name="c"></a>
+                   <table width="721" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="65" height="29" background="images/indexanniu5.gif">&nbsp;</td>
+                        <td width="105" align="left" background="images/indexanniu5.gif"  ><img src="images/xyfkd6.jpg" onClick="javascript:ly(1)" onMouseOver="this.src='images/xyfkd5.jpg'" onMouseOut="this.src='images/xyfkd6.jpg'"  width="100" height="30" border="0" /></td>
+                        <td width="106" align="left" background="images/indexanniu5.gif" ><img src="images/xyfkd4.jpg" onClick="javascript:ly(2)"  onmouseover="this.src='images/xyfkd3.jpg'" onMouseOut="this.src='images/xyfkd4.jpg'" width="100" height="30" border="0" /></td>
+                        <td width="107" align="left" background="images/indexanniu5.gif"  ><img src="images/xyfkd1.jpg" width="101" height="29" border="0" /></td>
+                        <td width="338" align="left" background="images/indexanniu5.gif"  ><img src="images/xyfkd8.jpg" onClick="javascript:ly(4)"  onmouseover="this.src='images/xyfkd7.jpg'" onMouseOut="this.src='images/xyfkd8.jpg'"   width="100" height="30" border="0" /></td>
+                      </tr>
+  </table>
+                              </div>
+            <div   id="l4"   style="display:none"      >
+          <a name="f"></a>
+                      <table width="731" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="66" height="29" background="images/indexanniu5.gif">&nbsp;</td>
+                        <td width="106" align="left" background="images/indexanniu5.gif" ><img src="images/xyfkd6.jpg" onClick="javascript:ly(1)" onMouseOver="this.src='images/xyfkd5.jpg'" onMouseOut="this.src='images/xyfkd6.jpg'"  width="100" height="30" border="0" /></td>
+                        <td width="106" align="left" background="images/indexanniu5.gif"  ><img src="images/xyfkd4.jpg" onClick="javascript:ly(2)" onMouseOver="this.src='images/xyfkd3.jpg'" onMouseOut="this.src='images/xyfkd4.jpg'" width="100" height="30" border="0" /></td>
+                        <td width="107" align="left" background="images/indexanniu5.gif" ><img src="images/xyfkd2.jpg" onClick="javascript:ly(3)" onMouseOver="this.src='images/xyfkd1.jpg'" onMouseOut="this.src='images/xyfkd2.jpg'" width="100" height="30" border="0" /></td>
+                        <td width="346" align="left" background="images/indexanniu5.gif" ><img src="images/xyfkd7.jpg" width="100" height="30" border="0" /></td>
+                      </tr>
+                    </table>
+    </div>
+ </td>
+                </tr>
+                <tr>
+                  <td align="center"><img src="images/xy4.jpg" width="750" height="4" /></td>
+                </tr>
+            </table>
+
+        </td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+ <table width="100%" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+     <td>&nbsp;</td>
+   </tr>
+ </table>
+ <div id="popqd"  style="width:455px;  overflow:hidden; display:none;" >
+ </div>
+ <map name="Map1" id="Map1">
+   <area shape="rect" coords="478,123,707,149" href="#" />
+</map>
+<!--  footer -->
+<div style="clear:both"></div>
+<div class="footerd">
+  <div style="height:18px"></div>
+  <div  class="content" >
+
+    <div class="contentleft">
+      <div class="wxt"></div>
+      <div class="gzwxt">关注微信</div>
+     </div>
+    <div class="line"> </div>
+    <div class="contentleft1">
+      <div class="contentleft1_f">
+        <div class="dh">
+          <div class="dhleft"></div>
+          <div class="dhright">
+            <div class="dhrx">本地客服热线</div>
+            <div class="dhmf"> </div>
+          </div>
+        </div>
+        <div class="dh400">XXX-XXX-XXXX</div>
+        <div class="dhsj">工作时间每日9:00-18:00</div>
+      </div>
+     </div>
+    <div class="line"> </div>
+    <div class="contentleft2">
+      <div class="tj">
+        <div class="yx">
+          <div class="yxleft"></div>
+          <div class="yxright">邮箱：xxxxxxx@xxxx.xxx</div>
+        </div>
+         <div class="kfry">
+          <div class="kfryleft"></div>
+          <div class="kfryright">教员交流群：xxxxxxxxx</div>
+        </div>
+        <div class="kfxl">
+          <div class="kfxlleft"></div>
+          <div class="kfxlright">新浪微博：阳光教育</div>
+        </div>
+       </div>
+     </div>
+      <div class="line"> </div>
+    <div class="contentright">
+      <div class="cjwt">
+        <div class="cjwttitle">常见问题</div>
+        <div class="cjwtbody"><a href="#m/cjwt-30071.html" target="_blank"  style="color:#CFCECE" >家长找家教流程</a></div>
+        <div class="cjwtbody"><a href="#m/cjwt-30070.html" target="_blank"  style="color:#CFCECE"  >教员最新使用流程</a></div>
+        <div class="cjwtbody"><a href="#m/cjwt-30083.html" target="_blank"  style="color:#CFCECE" >信誉值说明</a></div>
+      </div>
+    </div>
+  </div>
+  <div style="width:887px; margin:0px auto;  margin-top:8px"><img src="images/line5.jpg"></div>
+
+</div>
+<div class="footerd1">
+    <a href="#m/about-5.html" style="color:#FFFFFF">关于我们</a> &nbsp;|&nbsp;
+    <a href="#m/about-7.html"  style="color:#FFFFFF">网站地图</a>&nbsp; |&nbsp;
+    <a href="#m/about-6.html"  style="color:#FFFFFF">联系我们</a> &nbsp;| &nbsp;
+    <a href="#m/yqlj.html"  style="color:#FFFFFF">友情链接</a> &nbsp;| &nbsp;
+    <a href="#m/yjjy.html"  style="color:#FFFFFF">意见建议</a>&nbsp; | &nbsp;
+    <a href="#m/cjwt.html"  style="color:#FFFFFF">帮助中心</a>&nbsp; |&nbsp;
+    <a href="#m/about-8.html"  style="color:#FFFFFF">版权声明</a> &nbsp;|&nbsp;
+    <a href="#m/about-5.html"  style="color:#FFFFFF">免责声明</a> &nbsp;|&nbsp;
+    <a href="#m/about-9.html"  style="color:#FFFFFF">收藏本站</a> &nbsp;| &nbsp; XXXXX备XXXXXXXX号
+    <script type="text/javascript" src="//s.union.360.cn/110420.js"></script>
+</div>
+<!--  end footer -->
+<!-- 左侧漂浮代码 开始 -->
+<ul id="side-bar" class="side-pannel side-bar">
+  <a href="javascript:;" class="gotop" style="display:none;"><s class="g-icon-top"></s></a>
+  <a href="#m/cjwt.html" target="_blank" class="text bkuang "  style="height:39px; font-size:12px"> <div>常见问题</div></a>
+  <a href="#" target="_blank" class="text bkuang1 qr" style="margin-top:5px; height:36px; font-size:12px"> <div >微信关注</div><s></s><i></i></a>
+  <a href="#m/yjjy.html" target="_blank" class="text bkuang2 " style="margin-top:5px; height:36px; font-size:12px"><div>用户反馈</div></a>
+ </ul>
+<!-- 代码 结束 -->
+
+<div id="layer" title="名称" align="center" style="background-color: #F8F8F8">
+    <table class="table" align="center"  border="0"  bordercolor="#00000"  cellpadding="0"  cellspacing="0"
+           width="800"
+           height="500"  id="tz">
+        <tr valign="top">
+            <td>  <!-- 表格中的表格置;顶 -->
+                <table class="" align="center" border="0" cellpadding="0" cellspacing="0" width="750" height="70">
+                    <tr height="50" valign="bottom">
+                        <td width="120" align="center"><font size="2"><strong>订单资料:</strong></font></td>
+                        <td><font size="2"><a style="color: #F33636">*</a> 为必填项</font></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr/>
+                        </td>
+                    </tr>
+                </table>
+
+                <form action="add_stu_order" method="post" onsubmit="return checkInfo();">
+                    <input type="hidden" name="user_id" th:value="${student.userId}"/>
+                    <table class="table" align="center" border="0" cellspacing="0" cellpadding="0" width="650" height="80">
+
+
+                        <tr>
+                            <td width="120" align="right" height="30">
+                                <a style="color:#F33636">*</a> <span id="phone">家长手机号</span>：
+                            </td>
+                            <td width="160">
+                                <input type="text" name="stu_phone" id="stu_phone">
+                            </td>
+                            <td width="115" colspan="2">
+                                <font size="1" color="#958888">最多11个字符，例如：13809570656</font>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td width="120" align="right" height="30">
+                                <a style="color:#F33636">*</a> 要求教师性别：
+                            </td>
+                            <td colspan="3" style="font-size:12px ">
+                                <input type="radio" name="tea_sex" checked="checked" value="男">男
+                                <input type="radio" name="tea_sex" value="女">女
+                            </td>
+                        <tr>
+                            <td width="120" align="right" height="30">
+                                <a style="color:#F33636">*</a> 价格：
+                            </td>
+                            <td colspan="3" style="font-size:12px" width="60%">
+                                <input type="text" name="money" checked="checked">元/小时
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="120" align="right" height="30">
+                                <a style="color:#F33636">*</a>补习区域：
+                            </td>
+                            <td colspan="3">
+                                <select style="width: 150px" name="address">
+                                    <option>鼓楼区</option>
+                                    <option>仓山区</option>
+                                    <option>台江区</option>
+                                    <option>马尾区</option>
+                                    <option>闽侯区</option>
+                                </select>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="120" align="right" height="30">
+                                <a style="color:#F33636">*</a>学生年级：
+                            </td>
+                            <td colspan="3">
+                                <select style="width: 150px" name="grade">
+                                    <option>小学</option>
+                                    <option>初中</option>
+                                    <option>高中</option>
+                                </select>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="120" align="right" height="30">
+                                <a style="color:#F33636">*</a>补习科目：
+                            </td>
+                            <td colspan="3">
+                                <select style="width: 150px" name="course">
+                                    <option>语文</option>
+                                    <option>数学</option>
+                                    <option>英语</option>
+                                    <option>物理</option>
+                                    <option>化学</option>
+                                    <option>政治</option>
+                                    <option>历史</option>
+                                    <option>生物</option>
+                                    <option>地理</option>
+                                    <option>全科</option>
+                                </select>
+
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td width="120" align="right" height="30">
+                                <a style="color:#F33636"></a> 学生状况：
+                            </td>
+                            <td colspan="3" style="font-size:12px ">
+                                <textarea name="details" cols="60" rows="8"></textarea>
+
+
+                        </tr>
+
+
+                        <tr>
+                            <td width="120" align="right" height="30">
+
+                            </td>
+                            <td colspan="3" style="font-size:12px ">
+                                <font size="1" color="#F30909">提醒：你是否确定以上信息？是.请点击下面</font>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="120" align="center" height="30" colspan="4">
+                                <input class="button" type="submit" value="发布我的订单">
+                                <input class="button" type="button" onclick="fun('layer')" value="取消">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+        </tr>
+
+    </table>
+</div>
+<script type="text/javascript">
+    function fun(obj){
+        var div = document.getElementById(obj);
+        div.style.display = "none";
+    }
+</script>
+</body>
+</html>

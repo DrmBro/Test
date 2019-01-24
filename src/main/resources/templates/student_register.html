@@ -1,0 +1,1107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="bookmark" href="favicon.ico">
+    <title>XX教育网</title>
+    <LINK href="css/index.css" rel="stylesheet" type="text/css">
+    <SCRIPT src="js/jquery-1.7.2.min.js" type="text/javascript"></SCRIPT>
+    <LINK href="css/newHeader.css" rel="stylesheet" type="text/css">
+    <SCRIPT src="js/xl.js" type="text/javascript"></SCRIPT>
+    <link rel="stylesheet" type="text/css" href="css/newjiedai.css">
+    <script type="text/javascript" src="js/newjiedai.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript" src="js/xyck.js"></script>
+    <link href="css/lrtk.css" rel="stylesheet" type="text/css" />
+    <script>
+
+
+        $(function(){
+            $(window).scroll(function(){
+                if($(window).scrollTop()>100){  //距顶部多少像素时，出现返回顶部按钮
+                    $("#side-bar .gotop").fadeIn();
+                }
+                else{
+                    $("#side-bar .gotop").hide();
+                }
+            });
+            $("#side-bar .gotop").click(function(){
+                $('html,body').animate({'scrollTop':0},500); //返回顶部动画 数值越小时间越短
+            });
+        });
+    </script>
+
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="css/drop-down.css" />
+    <script src="js/select-widget-min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            $(".ui-select").selectWidget({
+                change       : function (changes) {
+                    return changes;
+                },
+                effect       : "slide",
+                keyControl   : true,
+                speed        : 200,
+                scrollHeight : 250
+            });
+
+
+
+        });
+
+    </script>
+    <script src="js/layer.js"></script>
+
+</head>
+<body>
+<!-- 头部黑条 -->
+<DIV id="newheader">
+    <DIV class="header-container">
+        <dl class="header-block header-left   header-lineheight">
+            <dt style="font-size:13px" > 您好！欢迎来到阳光家教网！  <a th:href="@{login}"   onclick="tankuang1('###.com/','')"   >请登录</a> <span style="letter-spacing:0.5em">|</span>		 <a th:href="@{teacher_register}" title="教员注册" >教员注册</a> <span style="letter-spacing:0.5em">|</span> <a href="###.com/xyreg.php?dqid=101" title="家长注册" >家长注册</a>
+            </dt>
+        </dl>
+        <div class="hidediv"   style=" display:none;  position:relative;left:35px;  "  id="hidev" >
+            <form name=form  method=post action=###.com/xbjss.php>
+                <input type="hidden"  name="dqid" value="101">
+                <div class=kmm style="margin-top:8px">
+			<span   style="display:block; width:78px; overflow:hidden;">
+<span   style="width:78px;height:23px; border:#fff 1px solid; border-right:none;display:block;  line-height:23px; background-color:#FFFFFF   ">
+	<select class=ui-select  style="background:none; border:none;width:96px;  "   name=sid>
+			 <option  selected=selected value="0"  >选择科目 </option>
+			           <option value="4">小学家教        </option>
+            <option value="174">--小学全科        </option>
+            <option value="173">--小学英文版教材        </option>
+            <option value="172">--小学接送        </option>
+            <option value="171">--小学托管        </option>
+            <option value="170">--小学陪读        </option>
+            <option value="169">--小学奥数        </option>
+            <option value="168">--小学英语        </option>
+            <option value="167">--小学数学        </option>
+            <option value="166">--小学语文        </option>
+            <option value="5">初中家教        </option>
+            <option value="195">--中考陪读        </option>
+            <option value="194">--初中陪读        </option>
+            <option value="193">--中考化学        </option>
+            <option value="192">--中考物理        </option>
+            <option value="191">--中考英语        </option>
+            <option value="190">--中考数学        </option>
+            <option value="189">--中考语文        </option>
+            <option value="188">--初中理科英文版        </option>
+            <option value="187">--初中文科英文版        </option>
+            <option value="186">--初中奥数        </option>
+            <option value="185">--初中地理        </option>
+            <option value="184">--初中政治        </option>
+            <option value="183">--初中历史        </option>
+            <option value="182">--初中生物        </option>
+            <option value="181">--初中物理        </option>
+            <option value="180">--初中化学        </option>
+            <option value="179">--初中数学        </option>
+            <option value="178">--初中英语        </option>
+            <option value="177">--初中语文        </option>
+            <option value="176">--初中理综        </option>
+            <option value="175">--初中文综        </option>
+            <option value="6">高中家教        </option>
+            <option value="219">--高中陪读        </option>
+            <option value="218">--高中理科英文版        </option>
+            <option value="217">--高中文科英文版        </option>
+            <option value="216">--高中奥数        </option>
+            <option value="215">--高考地理        </option>
+            <option value="214">--高考政治        </option>
+            <option value="213">--高考历史        </option>
+            <option value="212">--高考生物        </option>
+            <option value="211">--高考化学        </option>
+            <option value="210">--高考物理        </option>
+            <option value="209">--高考数学        </option>
+            <option value="208">--高考英语        </option>
+            <option value="207">--高考语文        </option>
+            <option value="206">--高中历史        </option>
+            <option value="205">--高中地理        </option>
+            <option value="204">--高中政治        </option>
+            <option value="203">--高中生物        </option>
+            <option value="202">--高中化学        </option>
+            <option value="201">--高中物理        </option>
+            <option value="200">--高中数学        </option>
+            <option value="199">--高中英语        </option>
+            <option value="198">--高中语文        </option>
+            <option value="197">--高中理综        </option>
+            <option value="196">--高中文综        </option>
+            <option value="303">--高考陪读        </option>
+            <option value="7">外语家教        </option>
+            <option value="244">--俄语        </option>
+            <option value="243">--韩语        </option>
+            <option value="242">--德语        </option>
+            <option value="241">--法语        </option>
+            <option value="240">--日语        </option>
+            <option value="229">--雅思        </option>
+            <option value="228">--托福        </option>
+            <option value="225">--剑桥英语        </option>
+            <option value="224">--牛津英语        </option>
+            <option value="223">--新概念英语        </option>
+            <option value="222">--商务英语        </option>
+            <option value="221">--英语口语        </option>
+            <option value="220">--外国人中文        </option>
+            <option value="8">特长家教        </option>
+            <option value="254">--钢琴        </option>
+            <option value="274">--书法        </option>
+            <option value="275">--美术        </option>
+            <option value="287">--声乐        </option>
+            <option value="9">计算机家教        </option>
+            <option value="153">大学辅导        </option>
+		  </select>
+			</span>
+</span>
+
+
+
+
+                </div>
+                <div class=xbb style="margin-top:8px; width:78px">
+		<span id="sleBG" style="display:block; width:78px; overflow:hidden;">
+<span id="sleHid"  style="width:78px;height:23px; border:#fff 1px solid; border-right:none;display:block; background:url(images/jt.jpg)  no-repeat 53px 4px ; line-height:23px; background-color:#FFFFFF   ">
+		<select class=ui-select  style="background:none; border:none;width:96px;  "   name=sex>
+			  <option  selected=selected  >教员性别 </option>
+			    <option value="0">不限</option>
+
+      <option value="1">男</option>
+      <option value="2">女</option>
+		  </select>
+		  </span>
+</span>
+                </div>
+
+                <div class=xbb style="margin-top:8px">
+
+		<span style="display:block; width:78px; overflow:hidden;">
+<span  style="width:78px;height:23px; border:#fff 1px solid; border-right:none;display:block;    line-height:23px; background-color:#FFFFFF   ">
+	<select class=ui-select  style="background:none; border:none;width:96px;  "   name=sf>
+			  <option  selected=selected  >教员身份 </option>
+			  <option  value="0">不限</option>
+        <option  value="1">大学生教员</option>
+        <option  value="3">专职家教</option>
+        <option  value="2">在职教师</option>
+		  </select>
+		  </span>
+</span>
+                </div>
+
+                <div class=xbb  ><input name="ccc" type="submit" style="width:80px; height:30px" value="查询" /></div>
+
+
+            </form>
+
+        </div>
+        <OL class="header-block header-menu posright"  >
+            <LI></LI>
+        </OL>
+
+    </DIV>
+</DIV>
+<!-- 结束头部黑条 -->
+<!-- 头部 -->
+<DIV id="page_header">
+    <DIV id="page_header_cont"><A id="logo_link" href="###.com/index.php"><IMG id="logo_img" style="width: 170px; height: 60px;" src="images/logoN.png"> </A>
+        <DIV id="city">
+            <h1>福州</h1>
+            <h2>[<a href="###.com/1t1.php">切换城市</a>]</h2>
+        </DIV>
+        <DIV id="search"  >
+            <form name="form1"  method="post" action="###.com/xbjss.php">
+                <input type="hidden" name="dqid" value="101">
+                <div class="km">
+                    <select class=ui-select  style="background-color: #FFFFFF;border: 1px solid #2DB2FF;box-shadow: 0 0 2px #2DB2FF;border-radius: 5px;font-size: 14px;height: 28px;position: relative;width: 120px;-webkit-user-select: none;"  name=sid>
+                        <option  selected=selected value="0"  >选择科目 </option>
+                        <option value="4">小学家教        </option>
+                        <option value="174">--小学全科        </option>
+                        <option value="173">--小学英文版教材        </option>
+                        <option value="172">--小学接送        </option>
+                        <option value="171">--小学托管        </option>
+                        <option value="170">--小学陪读        </option>
+                        <option value="169">--小学奥数        </option>
+                        <option value="168">--小学英语        </option>
+                        <option value="167">--小学数学        </option>
+                        <option value="166">--小学语文        </option>
+                        <option value="5">初中家教        </option>
+                        <option value="195">--中考陪读        </option>
+                        <option value="194">--初中陪读        </option>
+                        <option value="193">--中考化学        </option>
+                        <option value="192">--中考物理        </option>
+                        <option value="191">--中考英语        </option>
+                        <option value="190">--中考数学        </option>
+                        <option value="189">--中考语文        </option>
+                        <option value="188">--初中理科英文版        </option>
+                        <option value="187">--初中文科英文版        </option>
+                        <option value="186">--初中奥数        </option>
+                        <option value="185">--初中地理        </option>
+                        <option value="184">--初中政治        </option>
+                        <option value="183">--初中历史        </option>
+                        <option value="182">--初中生物        </option>
+                        <option value="181">--初中物理        </option>
+                        <option value="180">--初中化学        </option>
+                        <option value="179">--初中数学        </option>
+                        <option value="178">--初中英语        </option>
+                        <option value="177">--初中语文        </option>
+                        <option value="176">--初中理综        </option>
+                        <option value="175">--初中文综        </option>
+                        <option value="6">高中家教        </option>
+                        <option value="219">--高中陪读        </option>
+                        <option value="218">--高中理科英文版        </option>
+                        <option value="217">--高中文科英文版        </option>
+                        <option value="216">--高中奥数        </option>
+                        <option value="215">--高考地理        </option>
+                        <option value="214">--高考政治        </option>
+                        <option value="213">--高考历史        </option>
+                        <option value="212">--高考生物        </option>
+                        <option value="211">--高考化学        </option>
+                        <option value="210">--高考物理        </option>
+                        <option value="209">--高考数学        </option>
+                        <option value="208">--高考英语        </option>
+                        <option value="207">--高考语文        </option>
+                        <option value="206">--高中历史        </option>
+                        <option value="205">--高中地理        </option>
+                        <option value="204">--高中政治        </option>
+                        <option value="203">--高中生物        </option>
+                        <option value="202">--高中化学        </option>
+                        <option value="201">--高中物理        </option>
+                        <option value="200">--高中数学        </option>
+                        <option value="199">--高中英语        </option>
+                        <option value="198">--高中语文        </option>
+                        <option value="197">--高中理综        </option>
+                        <option value="196">--高中文综        </option>
+                        <option value="303">--高考陪读        </option>
+                        <option value="7">外语家教        </option>
+                        <option value="244">--俄语        </option>
+                        <option value="243">--韩语        </option>
+                        <option value="242">--德语        </option>
+                        <option value="241">--法语        </option>
+                        <option value="240">--日语        </option>
+                        <option value="229">--雅思        </option>
+                        <option value="228">--托福        </option>
+                        <option value="225">--剑桥英语        </option>
+                        <option value="224">--牛津英语        </option>
+                        <option value="223">--新概念英语        </option>
+                        <option value="222">--商务英语        </option>
+                        <option value="221">--英语口语        </option>
+                        <option value="220">--外国人中文        </option>
+                        <option value="8">特长家教        </option>
+                        <option value="254">--钢琴        </option>
+                        <option value="274">--书法        </option>
+                        <option value="275">--美术        </option>
+                        <option value="287">--声乐        </option>
+                        <option value="9">计算机家教        </option>
+                        <option value="153">大学辅导        </option>
+                    </select>
+
+                </div>
+                <div class="xb">
+                    <select class="ui-select" name="sex">
+                        <option  selected="selected"  value="0">教员性别 </option>
+                        <option value="0">不限</option>
+
+                        <option value="1">男</option>
+                        <option value="2">女</option>
+                    </select>
+                </div>
+
+                <div class="xb">
+                    <select  class="ui-select" name="sf">
+                        <option  selected="selected"  value="0">教员身份 </option>
+                        <option  value="0">不限</option>
+                        <option  value="1">大学生教员</option>
+                        <option  value="3">专职家教</option>
+                        <option  value="2">在职教师</option>
+                    </select>
+                </div>
+                <div class="searchbunn"> <input name="eeeew" type="image" src="images/search.gif"></div>
+            </form>
+        </DIV>
+        <DIV id="favorites">
+            <div style="float:left; width:19px; margin-top:1px"><img src="images/kfdh.jpg"></div>
+            <div style="float:left; margin-left:6px; font-size:14px"><strong>XXX-XXX-XXXX</strong></div>
+            <div style="clear:both"></div>
+            <div style=" font-size:14px; margin-top:6px"><strong>(接听电话9:00-18:00)</strong></div>
+        </DIV>
+    </DIV>
+    <DIV id="page_nav">
+        <DIV class="nav_cont">
+            <!--<DIV class="nav_item" id="category"><A class="main_link" id="btn_category"-->
+                                                   <!--style="cursor: pointer;font-size:14px" href="#"  >所有教员分类</A>-->
+                <!--<UL class="first_ul"  >-->
+                    <!--&lt;!&ndash;全部课程&ndash;&gt;-->
+                    <!--<LI class="first_li nav_btn1 all_title_link" style="display: none;">-->
+                        <!--<DIV class="first_title"></DIV>-->
+                    <!--</LI>-->
+                    <!--&lt;!&ndash;循环&ndash;&gt;-->
+                    <!--<LI class="first_li nav_btn3">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"   href="###.com/teacher/4-0-0-101-0-0-0-0.html">小学家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul">-->
+                            <!--<LI class="second_li">-->
+                            <!--<LI class="second_li"><A title="小学数学" class="second_title_link" onClick="ga_track_event('course_cate_menu', '小学家教', '小学数学')"  href="###.com/teacher/4-0-167-101-0-0-0-0.html">小学数学</A></LI>-->
+                            <!--<LI class="second_li"><A title="小学语文" class="second_title_link" onClick="ga_track_event('course_cate_menu', '小学家教', '小学语文')"  href="###.com/teacher/4-0-166-101-0-0-0-0.html">小学语文</A></LI>-->
+                            <!--<LI class="second_li"><A title="小学英语" class="second_title_link" onClick="ga_track_event('course_cate_menu', '小学家教', '小学英语')"  href="###.com/teacher/4-0-168-101-0-0-0-0.html">小学英语</A></LI>-->
+                            <!--<LI class="second_li"><A title="小学奥数" class="second_title_link" onClick="ga_track_event('course_cate_menu', '小学家教', '小学奥数')"  href="###.com/teacher/4-0-169-101-0-0-0-0.html">小学奥数</A></LI>-->
+                            <!--<LI class="second_li"><A title="小学陪读" class="second_title_link" onClick="ga_track_event('course_cate_menu', '小学家教', '小学陪读')"  href="###.com/teacher/4-0-170-101-0-0-0-0.html">小学陪读</A></LI>-->
+                            <!--<LI class="second_li"><A title="小学英文版教材" class="second_title_link" onClick="ga_track_event('course_cate_menu', '小学家教', '小学英文版教材')"  href="###.com/teacher/4-0-173-101-0-0-0-0.html">小学英文版教材</A></LI>-->
+                            <!--<LI class="second_li"><A title="小学全科" class="second_title_link" onClick="ga_track_event('course_cate_menu', '小学家教', '小学全科')"  href="###.com/teacher/4-0-174-101-0-0-0-0.html">小学全科</A></LI>-->
+                            <!--<LI class="second_li"><A title="小学托管" class="second_title_link" onClick="ga_track_event('course_cate_menu', '小学家教', '小学托管')"  href="###.com/teacher/4-0-171-101-0-0-0-0.html">小学托管</A></LI>-->
+                            <!--<LI class="second_li"><A title="小学接送" class="second_title_link" onClick="ga_track_event('course_cate_menu', '小学家教', '小学接送')"  href="###.com/teacher/4-0-172-101-0-0-0-0.html">小学接送</A></LI>-->
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<li class="first_li nav_btn2 even">-->
+                        <!--<DIV class="first_title"><A class="first_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '(none)')"  href="###.com/teacher/5-0-0-181-0-0-0-0.html">初中家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul" style=" width:310px">-->
+                            <!--<LI class="second_li"><A title="初中数学" class="second_title_link"   onclick="ga_track_event('course_cate_menu', '初中家教', '初中数学')" href="###.com/teacher/5-0-179-101-0-0-0-0.html">初中数学</A></LI>-->
+                            <!--<LI class="second_li"><A title="初中语文" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '初中语文')"   href="###.com/teacher/5-0-177-101-0-0-0-0.html">初中语文</A></LI>-->
+                            <!--<LI class="second_li"><A title="初中英语" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '初中英语')"   href="###.com/teacher/5-0-178-101-0-0-0-0.html">初中英语</A></LI>-->
+                            <!--<LI class="second_li"><A title="初中物理" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '初中物理')"  href="###.com/teacher/5-0-181-101-0-0-0-0.html">初中物理</A></LI>-->
+                            <!--<LI class="second_li"><A title="初中化学" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '初中化学')"  href="###.com/teacher/5-0-180-101-0-0-0-0.html">初中化学</A></LI>-->
+                            <!--<LI class="second_li"><A title="初中政治" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '初中政治')"  href="###.com/teacher/5-0-184-101-0-0-0-0.html">初中政治</A></LI>-->
+                            <!--<LI class="second_li"><A title="初中地理" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '初中地理')"  href="###.com/teacher/5-0-185-101-0-0-0-0.html">初中地理</A></LI>-->
+                            <!--<LI class="second_li"><A title="初中生物" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '初中生物')"   href="###.com/teacher/5-0-182-101-0-0-0-0.html">初中生物</A></LI>-->
+                            <!--<LI class="second_li"><A title="初中历史" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '初中历史')"   href="###.com/teacher/5-0-183-101-0-0-0-0.html">初中历史</A></LI>-->
+                            <!--<LI class="second_li"><A title="初中奥数" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '初中奥数')"    href="###.com/teacher/5-0-186-101-0-0-0-0.html">初中奥数</A></LI>-->
+                            <!--<LI class="second_li"><A title="初中理综" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '初中理综')"   href="###.com/teacher/5-0-176-101-0-0-0-0.html">初中理综</A></LI>-->
+                            <!--<LI class="second_li"><A title="中考数学" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '中考数学')"   href="###.com/teacher/5-0-190-101-0-0-0-0.html">中考数学</A></LI>-->
+                            <!--<LI class="second_li"><A title="中考语文" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '中考语文')"   href="###.com/teacher/5-0-189-101-0-0-0-0.html">中考语文</A></LI>-->
+                            <!--<LI class="second_li"><A title="中考英语" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '中考英语')"   href="###.com/teacher/5-0-191-101-0-0-0-0.html">中考英语</A></LI>-->
+                            <!--<LI class="second_li"><A title="中考物理" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '中考物理')"   href="###.com/teacher/5-0-192-101-0-0-0-0.html">中考物理</A></LI>-->
+                            <!--<LI class="second_li"><A title="中考化学" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '中考化学')"   href="###.com/teacher/5-0-193-101-0-0-0-0.html">中考化学</A></LI>-->
+                            <!--<LI class="second_li"><A title="初中陪读" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '初中陪读')"   href="###.com/teacher/5-0-194-101-0-0-0-0.html">初中陪读</A></LI>-->
+                            <!--<LI class="second_li"><A title="中考陪读" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', '中考陪读')"   href="###.com/teacher/5-0-195-101-0-0-0-0.html">中考陪读</A></LI>-->
+                            <!--<LI class="second_li"><A title="初中文科英文版" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', 初中文科英文版')"   href="###.com/teacher/5-0-187-101-0-0-0-0.html">初中文科英文版</A></LI>-->
+                            <!--<LI class="second_li"><A title="初中理科英文版" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', 初中理科英文版')"   href="###.com/teacher/5-0-188-101-0-0-0-0.html">初中理科英文版</A></LI>-->
+                            <!--<LI class="second_li"><A title="初中文综" class="second_title_link" onClick="ga_track_event('course_cate_menu', '初中家教', 初中文综')"   href="###.com/teacher/5-0-175-101-0-0-0-0.html">初中文综</A></LI>-->
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn4">-->
+                        <!--<DIV class="first_title"><A class="first_title_link" onClick="ga_track_event('course_cate_menu', '高中家教', '(none)')"  href="###.com/teacher/6-0-0-101-0-0-0-0.html">高中家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul  multi" >-->
+                            <!--<LI class="second_li"><div><A title="高考语文" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高考语文')"  href="###.com/teacher/6-0-207-101-0-0-0-0.html">高考语文</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高中数学" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高中数学')"  href="###.com/teacher/6-0-200-101-0-0-0-0.html">高中数学</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高中语文" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高中语文')"  href="###.com/teacher/6-0-198-101-0-0-0-0.html">高中语文</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高中英语" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高中英语')"  href="###.com/teacher/6-0-199-101-0-0-0-0.html">高中英语</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高中物理" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高中物理')"   href="###.com/teacher/6-0-201-101-0-0-0-0.html">高中物理</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高中化学" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高中化学')"   href="###.com/teacher/6-0-202-101-0-0-0-0.html">高中化学</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高中生物" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高中生物')"   href="###.com/teacher/6-0-203-101-0-0-0-0.html">高中生物</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高中政治" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高中政治')"   href="###.com/teacher/6-0-204-101-0-0-0-0.html">高中政治</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高中地理" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高中地理')"   href="###.com/teacher/6-0-205-101-0-0-0-0.html">高中地理</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高中历史" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高中历史')"   href="###.com/teacher/6-0-206-101-0-0-0-0.html">高中历史</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高中奥数" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高中奥数')"   href="###.com/teacher/6-0-216-101-0-0-0-0.html">高中奥数</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高中理综" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高中理综')"   href="###.com/teacher/6-0-197-101-0-0-0-0.html">高中理综</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高中文综" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高中文综')"   href="###.com/teacher/6-0-196-101-0-0-0-0.html">高中文综</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高考地理" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高考地理')"   href="###.com/teacher/6-0-215-101-0-0-0-0.html">高考地理</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高考历史" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高考历史')"   href="###.com/teacher/6-0-213-101-0-0-0-0.html">高考历史</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高考政治" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高考政治')"   href="###.com/teacher/6-0-214-101-0-0-0-0.html">高考政治</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高考英语" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高考英语')"   href="###.com/teacher/6-0-208-101-0-0-0-0.html">高考英语</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高中陪读" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高中陪读')"   href="###.com/teacher/6-0-219-101-0-0-0-0.html">高中陪读</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高考数学" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高考数学')"   href="###.com/teacher/6-0-209-101-0-0-0-0.html">高考数学</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高考物理" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高考物理')"   href="###.com/teacher/6-0-210-101-0-0-0-0.html">高考物理</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高考化学" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高考化学')"   href="###.com/teacher/6-0-211-101-0-0-0-0.html">高考化学</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高考生物" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高考生物')"   href="###.com/teacher/6-0-212-101-0-0-0-0.html">高考生物</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高中文科英文版" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高中文科英文版')"   href="###.com/teacher/6-0-217-101-0-0-0-0.html">高中文科英文版</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高中理科英文版" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高中理科英文版')"   href="###.com/teacher/6-0-218-101-0-0-0-0.html">高中理科英文版</A></div></LI>-->
+                            <!--<LI class="second_li"><div><A title="高考陪读" class="second_title_link" onClick="ga_track_event('course_cate_menu', '高中', '高考陪读')"   href="###.com/teacher/6-0-303-101-0-0-0-0.html">高考陪读</A></div></LI>-->
+
+
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn5 even ">-->
+                        <!--<DIV class="first_title"><A class="first_title_link" onClick="ga_track_event('course_cate_menu', '外语家教', '(none)')"   href="###.com/teacher/7-0-0-101-0-0-0-0.html">外语家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul">-->
+                            <!--<LI class="second_li"><A title="外国人中文" class="second_title_link" onClick="ga_track_event('course_cate_menu', '外语', '外国人中文')"  href="###.com/teacher/7-0-220-101-0-0-0-0.html">外国人中文</A></LI>-->
+                            <!--<LI class="second_li"><A title="英语口语" class="second_title_link" onClick="ga_track_event('course_cate_menu', '外语', '英语口语')"  href="###.com/teacher/7-0-221-101-0-0-0-0.html">英语口语</A></LI>-->
+                            <!--<LI class="second_li"><A title="法语考试" class="second_title_link" onClick="ga_track_event('course_cate_menu', '外语', '商务英语')"  href="###.com/teacher/7-0-222-101-0-0-0-0.html">商务英语</A></LI>-->
+                            <!--<LI class="second_li"><A title="新概念英语" class="second_title_link" onClick="ga_track_event('course_cate_menu', '外语', '新概念英语')"  href="###.com/teacher/7-0-223-101-0-0-0-0.html">新概念英语</A></LI>-->
+                            <!--<LI class="second_li"><A title="牛津英语" class="second_title_link" onClick="ga_track_event('course_cate_menu', '外语', 牛津英语')"  href="###.com/teacher/7-0-224-101-0-0-0-0.html">牛津英语</A></LI>-->
+                            <!--<LI class="second_li"><A title="剑桥英语" class="second_title_link" onClick="ga_track_event('course_cate_menu', '外语', 剑桥英语')"  href="###.com/teacher/7-0-225-101-0-0-0-0.html">剑桥英语</A></LI>-->
+                            <!--<LI class="second_li"><A title="托福" class="second_title_link" onClick="ga_track_event('course_cate_menu', '外语', 托福')"  href="###.com/teacher/7-0-228-101-0-0-0-0.html">托福</A></LI>-->
+                            <!--<LI class="second_li"><A title="雅思" class="second_title_link" onClick="ga_track_event('course_cate_menu', '外语', 雅思')"  href="###.com/teacher/7-0-229-101-0-0-0-0.html">雅思</A></LI>-->
+                            <!--<LI class="second_li"><A title="日语" class="second_title_link" onClick="ga_track_event('course_cate_menu', '外语', 日语')"  href="###.com/teacher/7-0-240-101-0-0-0-0.html">日语</A></LI>-->
+                            <!--<LI class="second_li"><A title="法语" class="second_title_link" onClick="ga_track_event('course_cate_menu', '外语', 法语')"  href="###.com/teacher/7-0-241-101-0-0-0-0.html">法语</A></LI>-->
+                            <!--<LI class="second_li"><A title="德语" class="second_title_link" onClick="ga_track_event('course_cate_menu', '外语', 德语')"  href="###.com/teacher/7-0-242-101-0-0-0-0.html">德语</A></LI>-->
+                            <!--<LI class="second_li"><A title="韩语" class="second_title_link" onClick="ga_track_event('course_cate_menu', '外语', 韩语')"  href="###.com/teacher/7-0-243-101-0-0-0-0.html">韩语</A></LI>-->
+                            <!--<LI class="second_li"><A title="俄语" class="second_title_link" onClick="ga_track_event('course_cate_menu', '外语', 俄语')"  href="###.com/teacher/7-0-244-101-0-0-0-0.html">俄语</A></LI>-->
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn6  ">-->
+                        <!--<DIV class="first_title"><A class="first_title_link" onClick="ga_track_event('course_cate_menu', '特长家教', '(none)')"   href="###.com/teacher/8-0-0-101-0-0-0-0.html">特长家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul">-->
+                            <!--<LI class="second_li"><A title="钢琴" class="second_title_link" onClick="ga_track_event('course_cate_menu', '特长', '钢琴')"    href="###.com/teacher/8-0-254-101-0-0-0-0.html">钢琴</A></LI>-->
+                            <!--<LI class="second_li"><A title="书法" class="second_title_link" onClick="ga_track_event('course_cate_menu', '特长', '书法')"   href="###.com/teacher/8-0-274-101-0-0-0-0.html">书法</A></LI>-->
+                            <!--<LI class="second_li"><A title="美术" class="second_title_link" onClick="ga_track_event('course_cate_menu', '特长', '美术')"    href="###.com/teacher/8-0-275-101-0-0-0-0.html">美术</A></LI>-->
+                            <!--<LI class="second_li"><A title="声乐" class="second_title_link" onClick="ga_track_event('course_cate_menu', '特长', '声乐')"    href="###.com/teacher/8-0-287-101-0-0-0-0.html">声乐</A></LI>-->
+
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn7 even ">-->
+                        <!--<DIV class="first_title"><A class="first_title_link" onClick="ga_track_event('course_cate_menu', '学前家教', '(none)')"  href="###.com/teacher/3-0-0-101-0-0-0-0.html">学前家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul">-->
+                            <!--<LI class="second_li"><A title="幼儿陪玩" class="second_title_link" href="###.com/teacher/3-0-161-101-0-0-0-0.html">幼儿陪玩</A></LI>-->
+                            <!--<LI class="second_li"><A title="幼儿托管" class="second_title_link" href="###.com/teacher/3-0-162-101-0-0-0-0.html">幼儿托管</A></LI>-->
+                            <!--<LI class="second_li"><A title="幼儿园" class="second_title_link" href="###.com/teacher/3-0-164-101-0-0-0-0.html">幼儿园</A></LI>-->
+                            <!--<LI class="second_li"><A title="少儿(学前)英语 " class="second_title_link" href="###.com/teacher/3-0-165-101-0-0-0-0.html">少儿(学前)英语 </A></LI>-->
+                            <!--<LI class="second_li"><A title="智力开发" class="second_title_link" href="###.com/teacher/3-0-163-101-0-0-0-0.html">智力开发</A></LI>-->
+                            <!--<LI class="second_li"><A title="学前教育 " class="second_title_link" href="###.com/teacher/3-0-160-101-0-0-0-0.html">学前教育 </A></LI>-->
+
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn8  ">-->
+                        <!--<DIV class="first_title"><A class="first_title_link" onClick="ga_track_event('course_cate_menu', '计算机家教', '(none)')"   href="###.com/teacher/9-0-0-101-0-0-0-0.html">计算机家教</A>-->
+                        <!--</DIV>-->
+
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn9  even">-->
+                        <!--<DIV class="first_title"><A class="first_title_link" onClick="ga_track_event('course_cate_menu', '大学辅导', '(none)')"  href="###.com/teacher/153-0-0-101-0-0-0-0.html">大学辅导</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn10  "  >-->
+                        <!--<DIV class="first_title"><A class="first_title_link" onClick="ga_track_event('course_cate_menu', '家教身份', '(none)')"  href="#">家教身份</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul ">-->
+                            <!--<LI class="second_li"><A title="大学生家教" class="second_title_link" onClick="ga_track_event('course_cate_menu', '家教身份', '大学生家教')"   href="###.com/teacher/0-0-0-101-0-0-0-1.html">大学生家教</A></LI>-->
+                            <!--<LI class="second_li"><A title="专职家教" class="second_title_link" onClick="ga_track_event('course_cate_menu', '家教身份', '专职家教')"   href="###.com/teacher/0-0-0-101-0-0-0-3.html">专职家教</A></LI>-->
+                            <!--<LI class="second_li"><A title="在职老师" class="second_title_link" onClick="ga_track_event('course_cate_menu', '家教身份', '在职老师')"    href="###.com/teacher/0-0-0-101-0-0-0-2.html">在职老师</A></LI>-->
+
+                        <!--</UL>-->
+
+
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn11 even">-->
+                        <!--<DIV class="first_title" style="border-bottom:1px solid #DDDDDD"><A class="first_title_link" onClick="SendEvent(27,390)" href="#" target="_blank">家教性别</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<DIV class="second_ul">-->
+                            <!--<DIV><SPAN class="second_li"><A title="男" class="second_title_link" onClick="SendEvent(27,390)"   href="###.com/teacher/0-0-0-101-0-1-0-0.html">男</A></SPAN>-->
+                                <!--<SPAN class="second_li"><A title="女" class="second_title_link" onClick="SendEvent(27,390)"  href="###.com/teacher/0-0-0-101-0-2-0-0.html">女</A></SPAN> </DIV>-->
+                        <!--</DIV>-->
+                    <!--</LI>-->
+                <!--</UL>      </DIV>-->
+            <DIV class="nav_item"><A class="main_link " style="font-size:14px"  th:href="@{/index}">首页</A></DIV>
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" href="###.com/student/101.html">学员列表</A> </DIV>
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{/teacher_list}">教员列表</A> </DIV>
+            <DIV class="nav_item"><A class="main_link " style="font-size:14px" href="cjwt.html">常见问题</A> </DIV>
+
+        </DIV>
+    </DIV>
+</DIV>
+<!-- 结束头部 -->
+<div class="index_wrap">
+    <div class="content">
+
+        <div class="regbody">
+            <div class="regleft">
+                <table width="227" border="0" style="margin-top:15px" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td><img src="###.com/imgs/xyzcy.jpg" width="229" height="3" /></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/xyzcy1.jpg" width="229" height="41" /></td>
+                    </tr>
+                    <tr>
+                        <td valign="top" background="###.com/imgs/xyzcy2.jpg">
+                            <table width="195" border="0" align="center" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="204" style="font-size:16px; color:#666666; line-height:35px; padding-top:8px; padding-bottom:8px">注册优秀教员<span style="color:#FF3C00">112496</span>名<br />
+                                        帮助<span style="color:#FF3C00">49015</span>名家长找到家教</td>
+                                </tr>
+                            </table></td>
+                    </tr>
+                    <tr>
+                        <td  ><img src="###.com/imgs/xyzcy3.jpg" width="229" height="8" /></td>
+                    </tr>
+                </table>
+
+                <table width="227" border="0"  style="margin-top:17px" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td><img src="###.com/imgs/xyzcy.jpg" width="229" height="3" /></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/xyzcy4.jpg" width="229" height="41" /></td>
+                    </tr>
+                    <tr>
+                        <td height="229" align="center" valign="top" background="###.com/imgs/xyzcy2.jpg"><table width="204" height="222" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="204" align="center" valign="top"><div id="demo" style="overflow:hidden;height:229px;width:204px; font-size:12px">
+                                    <div id="demo1" >
+                                        <table width="195" border="0" align="center" cellpadding="0" style="margin-top:10px" cellspacing="0">
+                                            <tr>
+                                                <td width="195" height="25" align="left" valign="top" style="line-height:22px">					<span  style="color:#333333">梁学员反馈与宋教员成功授课：</span><br>
+                                                    <span style="color:#0070B2">老师讲的挺好的不错的老师上课满意的						</span>
+
+
+                                                    <span  style="color:#333333"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table width="195" border="0" align="center" cellpadding="0" style="margin-top:10px" cellspacing="0">
+                                            <tr>
+                                                <td width="195" height="25" align="left" valign="top" style="line-height:22px">					<span  style="color:#333333">李学员反馈与马教员成功授课：</span><br>
+                                                    <span style="color:#0070B2">老师很不错 有耐心						</span>
+
+
+                                                    <span  style="color:#333333"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table width="195" border="0" align="center" cellpadding="0" style="margin-top:10px" cellspacing="0">
+                                            <tr>
+                                                <td width="195" height="25" align="left" valign="top" style="line-height:22px">					<span  style="color:#333333">家学员反馈与卜教员成功授课：</span><br>
+                                                    <span style="color:#0070B2">老师讲的挺好的不错的老师上课认真满意的						</span>
+
+
+                                                    <span  style="color:#333333"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table width="195" border="0" align="center" cellpadding="0" style="margin-top:10px" cellspacing="0">
+                                            <tr>
+                                                <td width="195" height="25" align="left" valign="top" style="line-height:22px">					<span  style="color:#333333">田学员反馈与郑教员成功授课：</span><br>
+                                                    <span style="color:#0070B2">短期的课程						</span>
+
+
+                                                    <span  style="color:#333333"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table width="195" border="0" align="center" cellpadding="0" style="margin-top:10px" cellspacing="0">
+                                            <tr>
+                                                <td width="195" height="25" align="left" valign="top" style="line-height:22px">					<span  style="color:#333333">蒋学员反馈与穆教员成功授课：</span><br>
+                                                    <span style="color:#0070B2">老师讲的挺好的						</span>
+
+
+                                                    <span  style="color:#333333"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table width="195" border="0" align="center" cellpadding="0" style="margin-top:10px" cellspacing="0">
+                                            <tr>
+                                                <td width="195" height="25" align="left" valign="top" style="line-height:22px">					<span  style="color:#333333">徐学员反馈与宁教员成功授课：</span><br>
+                                                    <span style="color:#0070B2">老师带的挺好的 有经验 孩子听的明白						</span>
+
+
+                                                    <span  style="color:#333333"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table width="195" border="0" align="center" cellpadding="0" style="margin-top:10px" cellspacing="0">
+                                            <tr>
+                                                <td width="195" height="25" align="left" valign="top" style="line-height:22px">					<span  style="color:#333333">沈学员反馈与陆教员成功授课：</span><br>
+                                                    <span style="color:#0070B2">老师不错，就是孩子不太配合，也在沟通，老师还是很满意，沟通也很好						</span>
+
+
+                                                    <span  style="color:#333333"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table width="195" border="0" align="center" cellpadding="0" style="margin-top:10px" cellspacing="0">
+                                            <tr>
+                                                <td width="195" height="25" align="left" valign="top" style="line-height:22px">					<span  style="color:#333333">俞学员反馈与陈教员成功授课：</span><br>
+                                                    <span style="color:#0070B2">老师试讲上课，有经验，孩子听得懂老师讲课，定了继续上课。						</span>
+
+
+                                                    <span  style="color:#333333"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table width="195" border="0" align="center" cellpadding="0" style="margin-top:10px" cellspacing="0">
+                                            <tr>
+                                                <td width="195" height="25" align="left" valign="top" style="line-height:22px">					<span  style="color:#333333">孙学员反馈与胡教员成功授课：</span><br>
+                                                    <span style="color:#0070B2">已经试讲了老师不错，上课比较有耐心						</span>
+
+
+                                                    <span  style="color:#333333"></span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="demo2"></div>
+                                </div>
+                                    <script language="javascript">
+                                        var speed=60;
+                                        var demo2=document.getElementById("demo2");
+                                        var demo1=document.getElementById("demo1");
+                                        var demo=document.getElementById("demo");
+                                        demo2.innerHTML=demo1.innerHTML;
+
+                                        function Marquee(){
+                                            if(demo2.offsetTop-demo.scrollTop<=0){
+                                                demo.scrollTop-=demo1.offsetHeight;
+                                            }
+                                            else{
+                                                demo.scrollTop++;
+                                            }
+                                        }
+
+                                        var MyMar=setInterval(Marquee,speed);
+                                        demo.onmouseover=function() {clearInterval(MyMar)};
+                                        demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
+                                    </script></td>
+                            </tr>
+                        </table></td>
+                    </tr>
+                    <tr>
+                        <td  ><img src="###.com/imgs/xyzcy3.jpg" width="229" height="8" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="regright">
+                <table width="699" border="0" align="center" cellpadding="0" cellspacing="0" style="border-left:1px solid #E6E7E8; border-right:1px solid #E6E7E8; border-top:1px solid #E6E7E8; margin-top:15px; margin-left:6px">
+                    <tr>
+                        <td align="center" valign="top" ><table width="90%" style="margin-top:12px" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td align="left" style="font-size:16px; color:#4F5050;  ">欢迎注册网站会员，如已有帐号，请点此 <a th:href="@{/index}"  onclick="tankuang('###.com/')"  style="color:#0084FF; cursor:pointer;padding-left:6px;  "  >登录</a></td>
+                            </tr>
+                        </table>
+                            <table width="670" border="0" cellspacing="0" style="margin-top:6px; margin-bottom:6px" cellpadding="0">
+                                <tr>
+                                    <td width="670"><img src="images/xyzcy5.jpg" /></td>
+                                </tr>
+                            </table>
+                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td align="left" style="font-size:16px; color:#4F5050; line-height:35px">
+
+                                        网站对请家教的用户<span style="color:#0f8dda">不收取任何中介费用</span>，直接拨打客服电话：<span style="color:#e51010; font-size:18px"><strong>XXX-XXX-XXXX</strong></span><span style="color:#e51010">（接听时间9:00-18:00)</span>我们会为您推荐最适合的家教老师。您也可以填写以下信息完成注册，注册后可以在线预约适合的老师。
+
+                                    </td>
+                                </tr>
+                            </table>
+                            <table width="100%" height="306" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="65%" align="center" valign="top">
+                                        <form action="/student_register" method="post" name="reg_form" id="reg_form">
+                                            <input type="hidden" name="action" value="zt">
+                                            <input type="hidden" name="yy2" value="" />
+                                            <input type="hidden" name="dqid"  value="101">
+                                            <table width="94%" height="35" style="margin-bottom:10px" border="0" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td width="3%">&nbsp;</td>
+                                                    <td width="97%" align="center"  style="color:#e51010; font-size:14px"><strong>排课人员会在24小时之内联系您请预留真实有效的手机号码</strong></td>
+                                                </tr>
+                                            </table>
+                                            <table width="91%"   border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="4%" height="27" align="center" style=" font-size:16px; color:#FF0000; padding-top:5px">&nbsp;</td>
+                                                    <td width="4%" align="left" style=" font-size:16px; color:#FF0000; padding-top:5px">*</td>
+                                                    <td width="18%" style="font-size:14px; color:#757575">手机号码：</td>
+                                                    <td width="44%"><input type="text" onblur="checksj()" name="phone" id="sj"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" style="border:1px solid #D2D2D2;-moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius: 6px; background-color:#F2F3F4; font-size:16px; color:#A7A6A6; height:28px; line-height:28px;   " /></td>
+                                                    <td width="30%" align="left" style="font-size:14px; color:#A7A6A6"><span id="tip_sj">手机号即为用户名</span></td>
+                                                </tr>
+                                            </table>
+
+
+                                            <table width="91%"  style="margin-top:15px"  border="0" cellspacing="0" cellpadding="0">
+
+                                                <tr>
+                                                    <td width="4%" height="27" align="center" style=" font-size:16px; color:#FF0000; padding-top:5px">&nbsp;</td>
+                                                    <td width="4%" align="left" style=" font-size:16px; color:#FF0000; padding-top:5px">*</td>
+                                                    <td width="18%" style="font-size:14px; color:#757575">用户名：</td>
+                                                    <td width="44%"><input type="text" name="username" id="username"  style="border:1px solid #D2D2D2;-moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius: 6px; background-color:#F2F3F4; font-size:16px; color:#A7A6A6; height:28px; line-height:28px;   " /></td>
+                                                    <td width="30%" align="left" style="font-size:14px; color:#A7A6A6"></td>
+                                                </tr>
+                                            </table>
+
+                                            <table width="91%" style="margin-top:15px" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="4%" height="27" align="center" style=" font-size:16px; color:#FF0000; padding-top:5px">&nbsp;</td>
+                                                    <td width="4%" align="left" style=" font-size:16px; color:#FF0000; padding-top:5px">*</td>
+                                                    <td width="18%" style="font-size:14px; color:#757575">设置密码：</td>
+                                                    <td width="44%"><input type="password" onblur="checkpws();" name="password" id="password"  style="border:1px solid #D2D2D2;-moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius: 6px; background-color:#F2F3F4; font-size:16px; color:#A7A6A6; height:28px; line-height:28px;   " /></td>
+                                                    <td width="30%" align="left" style="font-size:14px; color:#A7A6A6"><span id="tip_password">6-16个数字或字母</span></td>
+                                                </tr>
+                                            </table>
+                                            <table width="91%" style="margin-top:15px" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="4%" height="27" align="center" style=" font-size:16px; color:#FF0000; padding-top:5px">&nbsp;</td>
+                                                    <td width="4%" align="left" style=" font-size:16px; color:#FF0000; padding-top:5px">*</td>
+                                                    <td width="18%" style="font-size:14px; color:#757575">确认密码：</td>
+                                                    <td width="44%"><input type="password" onblur="checkpws();" name="password1" id="password1"  style="border:1px solid #D2D2D2;-moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius: 6px; background-color:#F2F3F4; font-size:16px; color:#A7A6A6; height:28px; line-height:28px;   " /></td>
+                                                    <td width="30%" align="left" style="font-size:14px; color:#A7A6A6"><span id="tip_password1"></span></td>
+                                                </tr>
+                                            </table>
+                                            <table width="91%" style="margin-top:15px" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="4%" height="27" align="center" style=" font-size:16px; color:#FF0000; padding-top:5px">&nbsp;</td>
+                                                    <td width="4%" align="left" style=" font-size:16px; color:#FF0000; padding-top:5px">*</td>
+                                                    <td width="18%" style="font-size:14px; color:#757575">地址：</td>
+                                                    <td width="44%"><input type="text" onblur="checkpws();" name="address" style="border:1px solid #D2D2D2;-moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius: 6px; background-color:#F2F3F4; font-size:16px; color:#A7A6A6; height:28px; line-height:28px;   " /></td>
+                                                    <td width="30%" align="left" style="font-size:14px; color:#A7A6A6"></td>
+                                                </tr>
+                                            </table>
+                                            <table width="91%" style="margin-top:15px" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="4%" height="27" align="center" style=" font-size:16px; color:#FF0000; padding-top:5px">&nbsp;</td>
+                                                    <td width="4%" align="left" style=" font-size:16px; color:#FF0000; padding-top:5px">*</td>
+                                                    <td width="18%" style="font-size:14px; color:#757575">性别：</td>
+                                                    <td width="44%"><input type="text" onblur="checkpws();" name="set" style="border:1px solid #D2D2D2;-moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius: 6px; background-color:#F2F3F4; font-size:16px; color:#A7A6A6; height:28px; line-height:28px;   " /></td>
+                                                    <td width="30%" align="left" style="font-size:14px; color:#A7A6A6"></td>
+                                                </tr>
+                                            </table>
+                                            <table width="91%" style="margin-top:15px" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="4%" height="27" align="center" style=" font-size:16px; color:#FF0000; padding-top:5px">&nbsp;</td>
+                                                    <td width="4%" align="left" style=" font-size:16px; color:#FF0000; padding-top:5px">*</td>
+                                                    <td width="18%" style="font-size:14px; color:#757575">年级：</td>
+                                                    <td width="44%"><input type="text" onblur="checkpws();" name="grade" style="border:1px solid #D2D2D2;-moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius: 6px; background-color:#F2F3F4; font-size:16px; color:#A7A6A6; height:28px; line-height:28px;   " /></td>
+                                                    <td width="30%" align="left" style="font-size:14px; color:#A7A6A6"></span></td>
+                                                </tr>
+                                            </table>
+                                            <table width="90%" height="53" border="0" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td width="70%">&nbsp;</td>
+                                                    <td width="30%" align="left"><span id="dddwd" ><input  style="background:url(/images/xyzcy8.jpg);height:27px; width:72px; border:0px;cursor: pointer; "  type="submit"  name="imageField" value=""  /></span></td>
+                                                </tr>
+                                            </table>
+                                        </form>
+                                    </td>
+                                    <td width="35%" align="right" valign="bottom"><img src="images/xyzcy6.jpg" width="245" height="224" /></td>
+                                </tr>
+                            </table></td>
+                    </tr>
+                </table>
+
+                <table width="699" border="0" style="margin-left:6px" align="center" cellpadding="0" cellspacing="0">
+
+                    <tr>
+                        <td ><img src="imgs/xyzcy7.jpg" width="699" height="7" /></td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script type="text/javascript">
+
+
+
+        function trim(str){ //删除左右两端的空格
+            return str.replace(/(^\s*)|(\s*$)/g, "");
+        }
+
+        function checkFormd() {
+            $("#dddwd").html("<img src=###.com/imgs/xyzcy8tjz.jpg />");
+            // 检测手机
+            var user_sj = document.getElementsByName('sj')[0];
+            if(user_sj.value=='') {
+                alert("请填写联系电话");
+                document.reg_form.sj.focus();
+                $("#dddwd").html("<input style='background:url(imgs/xyzcy8.jpg);height:27px; width:72px; border:0px'  onclick='checkFormd();'   type='button'  name='imageField'  />");
+
+                return false;
+            } else if(user_sj.value.length < 11) {
+                alert("联系电话格式错误");
+                $("#dddwd").html("<input style='background:url(imgs/xyzcy8.jpg);height:27px; width:72px; border:0px'  onclick='checkFormd();'   type='button'  name='imageField'  />");
+                document.reg_form.sj.focus();
+                return false;
+            } else if(user_sj.value.length > 11) {
+                alert("联系电话格式错误");
+                $("#dddwd").html("<input style='background:url(imgs/xyzcy8.jpg);height:27px; width:72px; border:0px'  onclick='checkFormd();'   type='button'  name='imageField'  />");
+                document.reg_form.sj.focus();
+                return false;
+            }else {
+                ajax("check_rtemp611.action.php","POST","v="+user_sj.value,function(data){
+                    if(data==2) {
+                        alert("手机号已存在");
+                        $("#dddwd").html("<input style='background:url(imgs/xyzcy8.jpg);height:27px; width:72px; border:0px'  onclick='checkFormd();'   type='button'  name='imageField'  />");
+                        document.reg_form.sj.focus();
+                        return false;
+                    }else{
+                        var code = document.getElementsByName('code')[0];
+                        if(code.value=='') {
+                            alert("请填写验证码");
+                            document.reg_form.code.focus();
+                            $("#dddwd").html("<input style='background:url(imgs/xyzcy8.jpg);height:27px; width:72px; border:0px'  onclick='checkFormd();'   type='button'  name='imageField'  />");
+                            return false;
+                        }
+
+                        // 称呼
+                        var user_name = document.getElementsByName('user_name')[0];
+                        var user_name_reg = /^[0-9a-z_]{4,16}$/i
+                        var user_name123value=user_name.value;
+                        var dd=user_name123value.replace(/[ ]/g,"");
+                        if(dd=='如：李女士') {
+                            document.reg_form.user_name.focus();
+                            $("#dddwd").html("<input style='background:url(imgs/xyzcy8.jpg);height:27px; width:72px; border:0px'  onclick='checkFormd();'   type='button'  name='imageField'  />");
+                            alert("您的称呼不能为空，不能少于 2 个字或不能大于 4 个字");
+                            return false;
+                        } else if(user_name.value.length < 2 || user_name.value.length > 4) {
+                            document.reg_form.user_name.focus();
+                            $("#dddwd").html("<input style='background:url(imgs/xyzcy8.jpg);height:27px; width:72px; border:0px'  onclick='checkFormd();'   type='button'  name='imageField'  />");
+                            alert("您的称呼不能为空，不能少于 2 个字或不能大于 4 个字");
+                            return false;
+                        }
+                        var reg = /^[\u4e00-\u9fa5]+$/;
+                        if(!reg.test(user_name123value)){
+                            alert("您的称呼必须中文");
+                            $("#dddwd").html("<input style='background:url(imgs/xyzcy8.jpg);height:27px; width:72px; border:0px'  onclick='checkFormd();'   type='button'  name='imageField'  />");
+                            document.reg_form.user_name.focus();
+                            return 	false;
+                        }
+
+
+
+                        var user_password = document.getElementsByName('user_password')[0];
+                        if(user_password.value=='6-16个数字或字母') {
+                            alert("密码设置不能为空");
+                            $("#dddwd").html("<input style='background:url(imgs/xyzcy8.jpg);height:27px; width:72px; border:0px'  onclick='checkFormd();'   type='button'  name='imageField'  />");
+                            document.reg_form.user_password.focus();
+                            return false;
+                        } else if(user_password.value.length<6 ) {
+                            alert("密码设置不能为空，密码设置不能少于 6位");
+                            $("#dddwd").html("<input style='background:url(imgs/xyzcy8.jpg);height:27px; width:72px; border:0px'  onclick='checkFormd();'   type='button'  name='imageField'  />");
+                            document.reg_form.user_password.focus();
+                            return false;
+                        } else if(user_password.value.length>16 ) {
+                            alert("密码设置不能为空，密码设置不能少于 6位");
+                            $("#dddwd").html("<input style='background:url(imgs/xyzcy8.jpg);height:27px; width:72px; border:0px'  onclick='checkFormd();'   type='button'  name='imageField'  />");
+                            document.reg_form.user_password.focus();
+                            return false;
+                        }
+                        var user_password1 = document.getElementsByName('user_password1')[0];
+                        if(user_password1.value=='') {
+                            alert("确认密码不能为空");
+                            $("#dddwd").html("<input style='background:url(imgs/xyzcy8.jpg);height:27px; width:72px; border:0px'  onclick='checkFormd();'   type='button'  name='imageField'  />");
+                            document.reg_form.user_password1.focus();
+                            return false;
+                        } else if(user_password1.value.length<6 ) {
+                            alert("确认密码不能为空，确认密码不能少于 6位");
+                            $("#dddwd").html("<input style='background:url(imgs/xyzcy8.jpg);height:27px; width:72px; border:0px'  onclick='checkFormd();'   type='button'  name='imageField'  />");
+                            document.reg_form.user_password1.focus();
+                            return false;
+                        }else if(user_password1.value.length>16 ) {
+                            alert("确认密码不能为空，确认密码不能少于 6位");
+                            $("#dddwd").html("<input style='background:url(imgs/xyzcy8.jpg);height:27px; width:72px; border:0px'  onclick='checkFormd();'   type='button'  name='imageField'  />");
+                            document.reg_form.user_password1.focus();
+                            return false;
+                        }
+                        if(user_password1.value!=user_password.value) {
+                            alert("确认密码不正确");
+                            $("#dddwd").html("<input style='background:url(imgs/xyzcy8.jpg);height:27px; width:72px; border:0px'  onclick='checkFormd();'   type='button'  name='imageField'  />");
+                            document.reg_form.user_password1.focus();
+                            return false;
+                        }
+
+
+
+                        var codevalue=code.value;
+                        $.ajax({
+                            type:'POST',
+                            data: {code:codevalue},
+                            url: "zcode.php",
+                            success:function(json){
+                                //alert(json);
+                                if (json==1) {
+                                    alert("验证码不正确");
+                                    $("#dddwd").html("<input style='background:url(imgs/xyzcy8.jpg);height:27px; width:72px; border:0px'  onclick='checkFormd();'   type='button'  name='imageField'  />");
+                                    document.reg_form.code.focus();
+                                    return false;
+                                }else{
+                                    document.forms["reg_form"].submit();
+                                }
+                            },
+                            dataType:'text',
+                            error:function (){
+
+                            }
+                        })
+
+
+                    }
+                });
+            }
+
+
+
+
+
+
+        }
+
+
+        function checkpws(){
+            var password = $("#password").val();
+            if(password != ""){
+                if(password.length>5 && password.length<17){
+                    $("#tip_password").html("&radic;").removeClass().addClass("green").show();
+                }else{
+                    $("#tip_password").html("6-16个数字或字母").removeClass().addClass("redd").show();
+                }
+            }
+
+            var password1 = $("#password1").val();
+            if(password1 != ""){
+                if(password1.length>5 && password1.length<17){
+                    $("#tip_password1").html("&radic;").removeClass().addClass("green").show();
+                }else{
+                    $("#tip_password1").html("6-16个数字或字母").removeClass().addClass("redd").show();
+                }
+            }
+
+            if( password1 != password && password1!='' && password!=''  ){
+                $("#tip_password1").html("密码和确认密码不一致").removeClass().addClass("redd").show();
+            }
+
+        }
+
+        function checkxm(){
+            var user_zsxm = $("#user_name").val();
+            if(user_zsxm.length>0 && user_zsxm.length<5){
+                $("#tip_user_name").html("&radic;").removeClass().addClass("green").show();
+            }else{
+
+                $("#tip_user_name").html("不能超过4字符").removeClass().addClass("redd").show();
+
+
+
+            }
+            var reg = /^[\u4e00-\u9fa5]+$/;
+            if(!reg.test($("#user_name").val())){
+                $("#tip_user_name").html("称呼必须中文").removeClass().addClass("redd").show();
+
+
+            }
+
+
+        }
+
+        function checksj(){
+            var user_sj = document.getElementsByName('sj')[0];
+            if(user_sj.value=='') {
+                $("#tip_sj").html("请填写联系电话").removeClass().addClass("redd").show();
+            } else if(user_sj.value.length < 11) {
+                $("#tip_sj").html("联系电话格式错误").removeClass().addClass("redd").show();
+            } else if(user_sj.value.length > 11) {
+                $("#tip_sj").html("联系电话格式错误").removeClass().addClass("redd").show();
+            }else {
+                ajax("check_r611.action.php","POST","v="+user_sj.value,function(data){
+                    if(data==2) {
+                        $("#tip_sj").html("手机号已存在").removeClass().addClass("redd").show();
+
+                    }else{
+                        $("#tip_sj").html("&radic;").removeClass().addClass("green").show();
+                    }
+                });
+            }
+
+        }
+    </script>
+
+    <!--  footer -->
+    <div style="clear:both"></div>
+    <div class="footerd">
+        <div style="height:18px"></div>
+        <div  class="content" >
+
+            <div class="contentleft">
+                <div class="wxt"></div>
+                <div class="gzwxt">关注微信</div>
+            </div>
+            <div class="line"> </div>
+            <div class="contentleft1">
+                <div class="contentleft1_f">
+                    <div class="dh">
+                        <div class="dhleft"></div>
+                        <div class="dhright">
+                            <div class="dhrx">本地客服热线</div>
+                            <div class="dhmf"> </div>
+                        </div>
+                    </div>
+                    <div class="dh400">XXX-XXX-XXXX</div>
+                    <div class="dhsj">工作时间每日9:00-18:00</div>
+                </div>
+            </div>
+            <div class="line"> </div>
+            <div class="contentleft2">
+                <div class="tj">
+                    <div class="yx">
+                        <div class="yxleft"></div>
+                        <div class="yxright">邮箱：xxxxxxx@xxxx.net</div>
+                    </div>
+
+                    <div class="kfry">
+                        <div class="kfryleft"></div>
+                        <div class="kfryright">教员交流群：xxxxxxxxx</div>
+                    </div>
+
+                    <div class="kfxl">
+                        <div class="kfxlleft"></div>
+                        <div class="kfxlright">新浪微博：XX教育</div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="line"> </div>
+            <div class="contentright">
+                <div class="cjwt">
+                    <div class="cjwttitle">常见问题</div>
+                    <div class="cjwtbody"><a href="###.com/cjwt-30071.html" target="_blank"  style="color:#CFCECE" >家长找家教流程</a></div>
+                    <div class="cjwtbody"><a href="###.com/cjwt-30070.html" target="_blank"  style="color:#CFCECE"  >教员最新使用流程</a></div>
+                    <div class="cjwtbody"><a href="###.com/cjwt-30083.html" target="_blank"  style="color:#CFCECE" >信誉值说明</a></div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div style="width:887px; margin:0px auto;  margin-top:8px"><img src="images/line5.jpg"></div>
+        <div class="link" style="width:1006px; margin:0 auto; text-align:left">友情链接：
+            <a target="_blank"  style="color:#FFFFFF"  href="http://rise.tantuw.com/" >瑞思学科英语</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://sz.java.tedu.cn/" >深圳Java培训</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://ruc.zzyjszs.com/" >中国人民大学在职研究生</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://www.y-peng.com/list-39-1.html" >统考专升本</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://jiaoyu.shang360.com/" >教育招商</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://luomahuayuan.fang.com/" >罗马花园</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://www.gotoccer.com/" >北大经济学双学位</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://www.htysx.com.cn/" >天津会计培训</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://www.17liuxue.com/unimel/" >墨尔本大学</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://sat.yinuoedu.net/" >SAT考试</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://cnzh.applicationuk.com/" >英国留学申请</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://www.zgtdxl.com" >中国在职研究生网</a> |  <a target="_blank"  style="color:#FFFFFF"  href="www.xialingying.cc/wenhua" >文化夏令营</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://news.yygzs.net" >咸阳都市新闻网</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://www.tianjinhukou.org" >天津积分落户</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://campus.chinahr.com/ldy/minshengyinhang.html" >民生银行校园招聘</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://www.51guoji.com/shmwmg" >上海美国梦沃课程中心</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://g.58.com/j-glsanfrancisco/gljiajiao" >旧金山家教</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://sat.koolearn.com/xiezuo" >SAT写作</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://www.gjgwy.net/tjgwy/" >天津公务员考试</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://tj.111jz.com" >天津兼职网</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://www.xgxedu.com" >沈阳日语</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://www.kytiaoji.com" >考研调剂网</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://tj.400jz.com/ " >天津兼职网</a> |  <a target="_blank"  style="color:#FFFFFF"  href="http://tianjin.shouji.com" >天津手机</a> |  </div>
+
+    </div>
+
+
+    <div class="footerd1"><a href="###.com/about-5.html" style="color:#FFFFFF">关于我们</a> &nbsp;|&nbsp; <a href="###.com/about-7.html"  style="color:#FFFFFF">网站地图</a>&nbsp; |&nbsp; <a href="###.com/about-6.html"  style="color:#FFFFFF">联系我们</a> &nbsp;| &nbsp;<a href="###.com/yqlj.html"  style="color:#FFFFFF">友情链接</a> &nbsp;| &nbsp;<a href="###.com/yjjy.html"  style="color:#FFFFFF">意见建议</a>&nbsp; | &nbsp;<a href="###.com/cjwt.html"  style="color:#FFFFFF">帮助中心</a>&nbsp; |&nbsp; <a href="###.com/about-8.html"  style="color:#FFFFFF">版权声明</a> &nbsp;|&nbsp; <a href="###.com/about-5.html"  style="color:#FFFFFF">免责声明</a> &nbsp;|&nbsp; <a href="###.com/about-9.html"  style="color:#FFFFFF">收藏本站</a> &nbsp;| &nbsp; XICP备XXXXXXXX号 <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?5a3e451cf2fd5d3d2d9ecd8b1c3125d4";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script> <script type="text/javascript" src="//s.union.360.cn/110420.js"></script> </div>
+    <!--  end footer -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?8668350454cbd086a3122440c28b16d8";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script><!-- 左侧漂浮代码 开始 -->
+    <ul id="side-bar" class="side-pannel side-bar">
+        <a href="javascript:;" class="gotop" style="display:none;"><s class="g-icon-top"></s></a>
+        <a href="###.com/cjwt.html" target="_blank" class="text bkuang "  style="height:39px; font-size:12px"> <div>常见问题</div></a>
+        <a href="#" target="_blank" class="text bkuang1 qr" style="margin-top:5px; height:36px; font-size:12px"> <div >微信关注</div><s ></s><i></i></a>
+        <a href="###.com/yjjy.html" target="_blank" class="text bkuang2 " style="margin-top:5px; height:36px; font-size:12px"> <div>用户反馈</div></a>
+
+    </ul>
+    <!-- 代码 结束 -->
+</div>
+</body>
+</html>

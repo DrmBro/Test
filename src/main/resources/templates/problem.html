@@ -1,0 +1,345 @@
+﻿<!DOCTYPE>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <META content="IE=10.000" http-equiv="X-UA-Compatible">
+    <META charset="utf-8">
+    <title>阳光教育网</title>
+    <LINK href="css/index.css" rel="stylesheet" type="text/css">
+    <SCRIPT src="js/jquery-1.7.2.min.js" type="text/javascript"></SCRIPT>
+    <LINK href="css/newHeader.css" rel="stylesheet" type="text/css">
+    <SCRIPT src="js/xl.js" type="text/javascript"></SCRIPT>
+    <link rel="stylesheet" type="text/css" href="css/newjiedai.css">
+    <script type="text/javascript" src="js/newjiedai.js"></script>
+
+    <script type="text/javascript" src="js/xyck.js"></script>
+    <link href="css/lrtk.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="css/drop-down.css"/>
+    <script src="js/select-widget-min.js"></script>
+    <script src="js/layer.js"></script>
+</HEAD>
+<BODY>
+<!-- 头部黑条 -->
+<DIV id="newheader">
+    <DIV class="header-container">
+        <div th:if="${session.user != null}">
+            <dl class="header-block header-left   header-lineheight">
+                <dt style="font-size:13px"> 您好！<span th:text="${username}"></span>
+                    <a th:href="@{logoutuser}" onclick="tankuang1('#','baidu')"> 注销</a> <span
+                            style="letter-spacing:0.5em">|</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a th:href="@{/order_list}" onclick="tankuang1('#','baidu')"> 我的订单</a>
+                </dt>
+            </dl>
+        </div>
+        <div th:if="${session.user == null}">
+            <dl class="header-block header-left   header-lineheight">
+                <dt style="font-size:13px"> 您好！欢迎来到阳光家教网！
+                    <a th:href="@{login}" onclick="tankuang1('#','baidu')">请登录</a>
+                    <span style="letter-spacing:0.5em">|</span>
+                    <a th:href="@{teacher_register}" title="教员注册">教员注册</a>
+                    <span style="letter-spacing:0.5em">|</span>
+                    <a th:href="@{student_register}" title="家长注册">家长注册</a>
+                </dt>
+            </dl>
+        </div>
+    </div>
+    <OL class="header-block header-menu posright">
+        <LI></LI>
+    </OL>
+
+</DIV>
+</DIV>
+<!-- 结束头部黑条 -->
+<!-- 头部 -->
+<DIV id="page_header">
+    <DIV id="page_header_cont"><A id="logo_link" href="index.html"><IMG id="logo_img"
+                                                                        style="width: 170px; height: 60px;"
+                                                                        src="images/logoN.png"> </A>
+        <DIV id="city">
+            <!--  <h1>福州</h1>
+             <h2>[<a href="#/1t1.php">切换城市</a>]</h2> -->
+        </DIV>
+        <DIV id="favorites"></DIV>
+    </DIV>
+    <DIV id="page_nav">
+        <DIV class="nav_cont">
+            <!--<DIV class="nav_item" id="category"><A class="main_link" id="btn_category"-->
+                                                   <!--style="cursor: pointer;font-size:14px" href="#/teacher/101.html">所有教员分类</A>-->
+                <!--<UL class="first_ul">-->
+                    <!--&lt;!&ndash;全部课程&ndash;&gt;-->
+                    <!--<LI class="first_li nav_btn1 all_title_link" style="display: none;">-->
+                        <!--<DIV class="first_title"></DIV>-->
+                    <!--</LI>-->
+                    <!--&lt;!&ndash;循环&ndash;&gt;-->
+                    <!--<LI class="first_li nav_btn3">-->
+                        <!--<DIV class="first_title"><A class="first_title_link" href="#/teacher/4-0-0-101-0-0-0-0.html">小学家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul">-->
+                            <!--<LI class="second_li">-->
+                            <!--<LI class="second_li"><A title="小学接送" class="second_title_link"-->
+                                                     <!--onClick="ga_track_event('course_cate_menu', '小学家教', '小学接送')"-->
+                                                     <!--href="#/teacher/4-0-172-101-0-0-0-0.html">小学接送</A></LI>-->
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<li class="first_li nav_btn2 even">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--onClick="ga_track_event('course_cate_menu', '初中家教', '(none)')"-->
+                                                    <!--href="#/teacher/5-0-0-181-0-0-0-0.html">初中家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul" style=" width:310px">-->
+                            <!--<LI class="second_li"><A title="初中数学" class="second_title_link"-->
+                                                     <!--onclick="ga_track_event('course_cate_menu', '初中家教', '初中数学')"-->
+                                                     <!--href="#/teacher/5-0-179-101-0-0-0-0.html">初中数学</A></LI>-->
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn4">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--onClick="ga_track_event('course_cate_menu', '高中家教', '(none)')"-->
+                                                    <!--href="#/teacher/6-0-0-101-0-0-0-0.html">高中家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul  multi">-->
+                            <!--<LI class="second_li">-->
+                                <!--<div><A title="高考陪读" class="second_title_link"-->
+                                        <!--onClick="ga_track_event('course_cate_menu', '高中', '高考陪读')"-->
+                                        <!--href="#/teacher/6-0-303-101-0-0-0-0.html">高考陪读</A></div>-->
+                            <!--</LI>-->
+
+
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn5 even ">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--onClick="ga_track_event('course_cate_menu', '外语家教', '(none)')"-->
+                                                    <!--href="#/teacher/7-0-0-101-0-0-0-0.html">外语家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn6  ">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--onClick="ga_track_event('course_cate_menu', '特长家教', '(none)')"-->
+                                                    <!--href="#/teacher/8-0-0-101-0-0-0-0.html">特长家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul">-->
+                            <!--<LI class="second_li"><A title="美术" class="second_title_link"-->
+                                                     <!--onClick="ga_track_event('course_cate_menu', '特长', '美术')"-->
+                                                     <!--href="#/teacher/8-0-275-101-0-0-0-0.html">美术</A></LI>-->
+                            <!--<LI class="second_li"><A title="声乐" class="second_title_link"-->
+                                                     <!--onClick="ga_track_event('course_cate_menu', '特长', '声乐')"-->
+                                                     <!--href="#/teacher/8-0-287-101-0-0-0-0.html">声乐</A></LI>-->
+
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn7 even ">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--onClick="ga_track_event('course_cate_menu', '学前家教', '(none)')"-->
+                                                    <!--href="#/teacher/3-0-0-101-0-0-0-0.html">学前家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul">-->
+                            <!--<LI class="second_li"><A title="智力开发" class="second_title_link"-->
+                                                     <!--href="#/teacher/3-0-163-101-0-0-0-0.html">智力开发</A></LI>-->
+                            <!--<LI class="second_li"><A title="学前教育 " class="second_title_link"-->
+                                                     <!--href="#/teacher/3-0-160-101-0-0-0-0.html">学前教育 </A></LI>-->
+
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn8  ">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--onClick="ga_track_event('course_cate_menu', '计算机家教', '(none)')"-->
+                                                    <!--href="#/teacher/9-0-0-101-0-0-0-0.html">计算机家教</A>-->
+                        <!--</DIV>-->
+
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn9  even">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--onClick="ga_track_event('course_cate_menu', '大学辅导', '(none)')"-->
+                                                    <!--href="#/teacher/153-0-0-101-0-0-0-0.html">大学辅导</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn10  ">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--onClick="ga_track_event('course_cate_menu', '家教身份', '(none)')"-->
+                                                    <!--href="#">家教身份</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul ">-->
+                            <!--<LI class="second_li"><A title="大学生家教" class="second_title_link"-->
+                                                     <!--onClick="ga_track_event('course_cate_menu', '家教身份', '大学生家教')"-->
+                                                     <!--href="#/teacher/0-0-0-101-0-0-0-1.html">大学生家教</A></LI>-->
+                            <!--<LI class="second_li"><A title="专职家教" class="second_title_link"-->
+                                                     <!--onClick="ga_track_event('course_cate_menu', '家教身份', '专职家教')"-->
+                                                     <!--href="#/teacher/0-0-0-101-0-0-0-3.html">专职家教</A></LI>-->
+                            <!--<LI class="second_li"><A title="在职老师" class="second_title_link"-->
+                                                     <!--onClick="ga_track_event('course_cate_menu', '家教身份', '在职老师')"-->
+                                                     <!--href="#/teacher/0-0-0-101-0-0-0-2.html">在职老师</A></LI>-->
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn11 even">-->
+                        <!--<DIV class="first_title" style="border-bottom:1px solid #DDDDDD"><A class="first_title_link"-->
+                                                                                            <!--onClick="SendEvent(27,390)"-->
+                                                                                            <!--href="#" target="_blank">家教性别</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<DIV class="second_ul">-->
+                            <!--<DIV><SPAN class="second_li"><A title="男" class="second_title_link"-->
+                                                            <!--onClick="SendEvent(27,390)"-->
+                                                            <!--href="#/teacher/0-0-0-101-0-1-0-0.html">男</A></SPAN>-->
+                                <!--<SPAN class="second_li"><A title="女" class="second_title_link"-->
+                                                           <!--onClick="SendEvent(27,390)"-->
+                                                           <!--href="#/teacher/0-0-0-101-0-2-0-0.html">女</A></SPAN></DIV>-->
+                        <!--</DIV>-->
+                    <!--</LI>-->
+                <!--</UL>-->
+            <!--</DIV>-->
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{/index}">首页</A></DIV>
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{/student_list}">学员列表</A></DIV>
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{/teacher_list}">教员列表</A></DIV>
+            <DIV class="nav_item"><A class="main_link current " style="font-size:14px" href="#">常见问题</A></DIV>
+        </DIV>
+    </DIV>
+</DIV>
+<!-- 结束头部 -->
+<div class="xydh">家教网 >> 常见问题</div>
+<!-- 结束学员列表导航 -->
+<!--  学员列表 -->
+<div class="cjwt">
+    <div class="cjwtright">
+        <div class="cjwtcontent">
+            <div class="cjwtcontenttitle">家长找家教流程</div>
+            <div class="cjwtcontentb mt20"><p>
+                <span style="font-size:10.5pt;font-family:微软雅黑;line-height:2;">1、</span><span
+                    style="font-size:10.5pt;font-family:微软雅黑;background:#ffe500;line-height:2;"><span
+                    style="line-height:2;">本站不收取家长任何中介费用，并承诺绝不将家长的任何信息在未经过本人允许下向外泄露。</span></span><span
+                    style="font-size:10.5pt;font-family:微软雅黑;line-height:2;">&nbsp;</span><span
+                    style="font-size:10.5pt;font-family:微软雅黑;"></span>
+            </p>
+                <p>
+                    <span style="font-size:10.5pt;font-family:微软雅黑;line-height:2;"><span style="line-height:2;">学员（家长）可以选择以下几种方法寻找合适的教员：</span> </span><span
+                        style="font-size:10.5pt;font-family:微软雅黑;"></span>
+                </p>
+                <p>
+                    <span style="font-size:10.5pt;font-family:微软雅黑;"><span style="line-height:2;">（</span><span
+                            style="line-height:2;">1）直接联拨打客服热线<strong>xxx-xxx-xxxx</strong>，由客服为您发布招聘信息并匹配适合的家教老师，&nbsp;或家长告知客服想要的教员编号，由客服安排试讲。 </span></span><span
+                        style="font-size:10.5pt;font-family:微软雅黑;"></span>
+                </p>
+                <p>
+                    <span style="font-size:10.5pt;font-family:微软雅黑;"><span style="line-height:2;">（</span><span
+                            style="line-height:2;">2）登录网站首页，点击“家长注册”按钮，并按要求填写联系方式，客服会在24小时内与您取得联系&nbsp;并安排教员试讲。&nbsp; </span></span><span
+                        style="font-size:10.5pt;font-family:微软雅黑;"></span>
+                </p>
+                <p>
+                    <span style="font-size:10.5pt;font-family:微软雅黑;line-height:2;"><span style="line-height:2;">（</span></span><span
+                        style="font-size:10.5pt;font-family:微软雅黑;line-height:2;">3</span><span
+                        style="font-size:10.5pt;font-family:微软雅黑;"><span
+                        style="line-height:2;">）直接查找符合的家教老师，点击教员主页的</span><span style="line-height:2;">“在线预约”按提示填写学员情况及家教要求，客服同样会在&nbsp;24小时内安排指定教员与您联系。 </span></span><span
+                        style="font-size:10.5pt;font-family:微软雅黑;"></span>
+                </p>
+                <p>
+                    <span style="font-size:10.5pt;font-family:微软雅黑;line-height:2;">&nbsp; </span><span
+                        style="font-size:10.5pt;font-family:微软雅黑;"></span>
+                </p>
+                <p style="text-align:left;">
+                    <span style="font-size:10.5pt;font-family:微软雅黑;background:#ffe500;line-height:2;">2、请家教的注意事项：</span><span
+                        style="font-size:10.5pt;font-family:微软雅黑;line-height:2;">&nbsp;</span><span
+                        style="font-size:10.5pt;font-family:微软雅黑;"></span>
+                </p>
+                <p>
+                    <span style="font-size:10.5pt;font-family:微软雅黑;"><span style="line-height:2;">（</span><span
+                            style="line-height:2;">1）学员（家长）有权利亦应该要求家庭教师出示本人学生证、身份证、教师资格证等证件。&nbsp; </span></span><span
+                        style="font-size:10.5pt;font-family:微软雅黑;"></span>
+                </p>
+                <p>
+                    <span style="font-size:10.5pt;font-family:微软雅黑;"><span style="line-height:2;">（</span><span
+                            style="line-height:2;">2）试讲后客服会联系家长沟通下试讲情况，看下家长对老师的点评，如试讲成功，则按双方约定的标准和办法支付课时费给教员，如不成功，家长不用支付任何课时费，家教网工作人员会为您更换另一位更理想的教员，直到您满意为止。&nbsp; </span></span><span
+                        style="font-size:10.5pt;font-family:微软雅黑;"></span>
+                </p>
+                <p>
+                    <span style="font-size:10.5pt;font-family:微软雅黑;"><span style="line-height:2;">（</span><span
+                            style="line-height:2;">3）授课一个月后客服会对家长进行回访，家长可对教员的教学进行评价，如不满意可更换教员。本网本着诚信、&nbsp;品质、专业的服务原则，希望每位用户愉快合作，共同构建和谐家教平台。 </span></span><span
+                        style="font-size:10.5pt;font-family:微软雅黑;"></span>
+                </p>
+                <p>
+                    <span style="font-size:10.5pt;font-family:微软雅黑;"><span style="line-height:2;">（</span><span
+                            style="line-height:2;">4）如连续多次遭到教员投诉或因家长因素拒绝家教试讲的，本站有权终止继续提供免费服务！ </span></span><span
+                        style="font-size:10.5pt;font-family:微软雅黑;"></span>
+                </p>
+                <p>
+                    <span style="font-size:10.5pt;font-family:微软雅黑;line-height:2;">3、本站为家教服务网站，教员与家长产生的任何纠纷与本网站无关。 </span><span
+                        style="font-size:10.5pt;font-family:微软雅黑;"></span>
+                </p>
+                <p>
+                    <span style="line-height:2;">&nbsp;</span>
+                </p><br>
+            </div>
+        </div>
+    </div>
+    <!-- 结束学员列表-->
+</div>
+<!--  footer -->
+<div style="clear:both"></div>
+<div class="footerd">
+    <div style="height:18px"></div>
+    <div class="content">
+
+        <div class="contentleft">
+            <div class="wxt"></div>
+            <div class="gzwxt">关注微信</div>
+        </div>
+        <div class="line"></div>
+        <div class="contentleft1">
+            <div class="contentleft1_f">
+                <div class="dh">
+                    <div class="dhleft"></div>
+                    <div class="dhright">
+                        <div class="dhrx">本地客服热线</div>
+                        <div class="dhmf"></div>
+                    </div>
+                </div>
+                <div class="dh400">xxx-xxx-xxxx</div>
+                <div class="dhsj">工作时间每日xx:xx-xx:xx</div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="contentleft2">
+            <div class="tj">
+                <div class="yx">
+                    <div class="yxleft"></div>
+                    <div class="yxright">邮箱：xxxxxxx@xxxx.xxx</div>
+                </div>
+                <div class="kfry">
+                    <div class="kfryleft"></div>
+                    <div class="kfryright">教员交流群：xxxxxxxxx</div>
+                </div>
+                <div class="kfxl">
+                    <div class="kfxlleft"></div>
+                    <div class="kfxlright">新浪微博：XX教育</div>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="contentright">
+            <div class="cjwt">
+                <div class="cjwttitle">常见问题</div>
+                <div class="cjwtbody"><a href="##########################################/cjwt-30071.html"
+                                         target="_blank" style="color:#CFCECE">家长找家教流程</a></div>
+                <div class="cjwtbody"><a href="##########################################/cjwt-30070.html"
+                                         target="_blank" style="color:#CFCECE">教员最新使用流程</a></div>
+                <div class="cjwtbody"><a href="##########################################/cjwt-30083.html"
+                                         target="_blank" style="color:#CFCECE">信誉值说明</a></div>
+            </div>
+        </div>
+    </div>
+    <div style="width:887px; margin:0px auto;  margin-top:8px"><img src="images/line5.jpg"></div>
+</div>
+<!--  end footer -->
+<script src="#/layer/layer.js"></script>
+<script type="text/javascript" src="#/xsy/ajax.js"></script>
+</BODY>
+</html>

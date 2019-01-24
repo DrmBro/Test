@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <META content="IE=10.000" http-equiv="X-UA-Compatible">
+    <META charset="utf-8">
+    <title>阳光家教网</title>
+    <meta name="keywords" content="福州家教网,福州家教,福州请家教,福州找家教,福州大学生家教"/>
+    <meta name="description"
+          content="阳光家教，对家长免费开放，不收取中介费。在职、退休、大学生家教免费上门试讲。教师经身份认证、严格审核。家长可参考其他家长对教师责任心、教学水平、整体满意度来选择适合的福州家教。"/>
+    <LINK href="/css/index.css" rel="stylesheet" type="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    <SCRIPT src="/js/jq.js" type="text/javascript"></SCRIPT>
+    <LINK href="/css/newHeader.css" rel="stylesheet" type="text/css">
+    <SCRIPT src="/js/xl.js" type="text/javascript"></SCRIPT>
+    <link rel="stylesheet" type="text/css" href="/css/newjiedai.css">
+    <script type="text/javascript" src="/js/newjiedai.js"></script>
+
+    <script type="text/javascript" src="/js/xyck.js"></script>
+    <link href="/css/lrtk.css" rel="stylesheet" type="text/css"/>
+
+
+    <script type="text/javascript" src="/js/jq1.js"></script>
+    <script type="text/javascript" src="/js/jq2.js"></script>
+
+    <link rel="stylesheet" href="/css/drop-down.css"/>
+    <script src="/js/select-widget-min.js"></script>
+
+    <script src="/js/layer.js"></script>
+</HEAD>
+<BODY>
+<input type="button" style="display:none" name="fbun" id="fbun" onClick="tankuangt1('#')">
+<!-- 头部黑条 -->
+<DIV id="newheader">
+    <DIV class="header-container">
+        <div th:if="${session.user != null}">
+            <dl class="header-block header-left   header-lineheight">
+                <dt style="font-size:13px"> 您好！<span th:text="${username}"></span>
+                    <a th:href="@{logoutuser}" onclick="tankuang1('#','baidu')"> 注销</a> <span
+                            style="letter-spacing:0.5em">|</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a th:href="@{/order_list}" onclick="tankuang1('#','baidu')"> 我的订单</a>
+                </dt>
+            </dl>
+        </div>
+        <div th:if="${session.user == null}">
+            <dl class="header-block header-left   header-lineheight">
+                <dt style="font-size:13px"> 您好！欢迎来到阳光家教网！
+                    <a th:href="@{login}" onclick="tankuang1('#','baidu')">请登录</a>
+                    <span style="letter-spacing:0.5em">|</span>
+                    <a th:href="@{teacher_register}" title="教员注册">教员注册</a>
+                    <span style="letter-spacing:0.5em">|</span>
+                    <a th:href="@{student_register}" title="家长注册">家长注册</a>
+                </dt>
+            </dl>
+        </div>
+        <OL class="header-block header-menu posright">
+            <LI></LI>
+        </OL>
+
+    </DIV>
+</DIV>
+<!-- 结束头部黑条 -->
+<!-- 头部 -->
+<DIV id="page_header1">
+    <DIV id="page_header_cont"><A id="logo_link" href="#"><IMG id="logo_img" alt="XX家教" border="0"
+                                                               style="width: 170px; height: 60px;"
+                                                               src="images/logoN.png"> </A>
+        <DIV id="search">
+        </DIV>
+        <DIV id="favorites">
+            <div style="float:left; width:19px; margin-top:1px"><img src="/images/kfdh.jpg"></div>
+            <div style="float:left; margin-left:6px; font-size:14px"><strong>xxx-xxx-xxxx</strong></div>
+            <div style="clear:both"></div>
+            <div style=" font-size:14px; margin-top:6px"><strong>(接听电话x:xx-xx:xx)</strong></div>
+        </DIV>
+    </DIV>
+    <DIV id="page_nav">
+        <DIV class="nav_cont">
+            <!--<DIV class="nav_item category_on" id="category"><A class="main_link" id="btn_category"-->
+                                                               <!--style="cursor: pointer;font-size:14px"-->
+                                                               <!--href="#">所有教员分类</A>-->
+
+            <!--</DIV>-->
+            <DIV class="nav_item"><A class="main_link current  " style="font-size:14px"
+                                     href="##########################################/">首页</A></DIV>
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{/student_list}">学员列表</A>
+            </DIV>
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{/teacher_list}">教员列表</A>
+            </DIV>
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{/problem}">常见问题</A></DIV>
+            <!-- -->
+        </DIV>
+    </DIV>
+</DIV>
+<!-- 结束头部 -->
+
+<!-- 主焦点图 -->
+<DIV id="banner">
+    <div class="wrap " style="z-index:9; position:relative;">
+        <div class="login_block" style="top: 0px;right:0px">
+            <div class="freebj" style="opacity: 0.2;"></div>
+        </div>
+    </div>
+    <iframe src="lb/aaabbb.html" width="100%" height="360" frameborder="no" border="0" marginwidth="0" marginheight="0"
+            scrolling="no" allowtransparency="yes"></iframe>
+
+
+</DIV>
+<!-- 结束主焦点图 -->
+<div class="blank0"></div>
+
+<!-- 请家教流程 -->
+<div class="w1001 cen jslc">
+    <div class="mt35">
+        <H1 style="color:#313131">免费请家教流程</H1>
+        <div class="lined"></div>
+        <div class="jslcbody">
+            <div class="jslccenter">
+                <div class="jslcsearch"></div>
+                <div class="jslctelbody">搜索适合教员<br>免费在线预约</div>
+                <div class="jslcjiantou"></div>
+
+                <div class="jslctel"></div>
+                <div class="jslctelbody" style="width:136px">或者客服免费推荐<br>电话:xxx-xxx-xxxx</div>
+                <div class="jslcjiantou"></div>
+
+                <div class="jslcsysj"></div>
+                <div class="jslctelbody" style="width:79px">双方接洽<br>安排试讲</div>
+                <div class="jslcjiantou"></div>
+
+                <div class="jslcsyjg"></div>
+                <div class="jslctelbody" style="width:71px">反馈结果<br>永久免费</div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 结束请家教流程 -->
+
+
+<!--  会员反馈与网站公告 -->
+<div class="w1001 cen fk">
+    <!--  会员反馈 -->
+    <div class="fkleft">
+        <H1 style="color:#313131">会员反馈</H1>
+        <div class="line"></div>
+        <div class="fkleftbody">
+            <div class="fkcontent">
+                <iframe src="/fk/fk1.html" width="100%" height="219" frameborder="no" border="0" marginwidth="0"
+                        marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+            </div>
+        </div>
+    </div>
+    <!--  结束会员反馈 -->
+    <!--  网站公告 -->
+    <div class="fkright">
+        <H1 style="color:#313131">联系我们</H1>
+        <div class="blank0"></div>
+        <div class="line"></div>
+        <div class="fkrightbody">
+            <div class="fkcontent">
+                <div class="wxzh"></div>
+                <div class="wxzxnr">关注XX官方微信，一键<br>登录手机版网站，实时查<br>看家教信息，接收教育教<br>学文章。</div>
+                <div style="clear:both"></div>
+                <div class="wxtel">客服热线：xxx-xxx-xxxx<br/>接听时间：xx:xx-xx:xx（周一至周日）</div>
+            </div>
+        </div>
+    </div>
+    <!--  结束网站公告 -->
+</div>
+<!--  结束会员反馈与网站公告 -->
+<div class="blank0"></div>
+<!--  优秀教员 -->
+<div class="w1001 cen yxjs">
+    <H1 style="color:#313131">优秀教员</H1>
+    <H2><a th:href="@{/teacher_list}" style="color:#878685; font-size:13px">查看更多》</a></H2>
+    <div class="blank0"></div>
+    <div class="line"></div>
+    <div class="yxjsbody">
+        <div class="yxjscontent">
+            <iframe src="yxjy/jslist.html" width="998" height="310" frameborder="no" border="0" marginwidth="0"
+                    marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+        </div>
+    </div>
+</div>
+<!--  结束优秀教员 -->
+<!--  最新订单 -->
+<div class="w1001 cen yxjs">
+    <H1 style="color:#313131">学员订单</H1>
+    <H2><a href="student/101.html" style="color:#878685; font-size:13px">查看更多》</a></H2>
+    <div class="blank0"></div>
+    <div class="line"></div>
+    <div class="yxjsbody">
+        <div class="yxjscontent" style="width:1001px">
+            <div class="wrapd" style="width:1001px; margin-left:10px">
+
+
+                <div class="oned" onclick="javascript:window.open('student/101/136511.html')" style="cursor:pointer;">
+                    <div class="xylist" style="padding-left:22px; color:#000000">
+                        <a>
+                            136511 郑女士（高中二年级） 找家教 1次/周 </a></div>
+                    <div class="xylist" style="padding-left:22px;">
+                        科目： 高中理综
+                    </div>
+                    <div class="xylist" style="padding-left:22px;">
+                        地址：仓山区 仓山区万达附近联建新苑小区
+                    </div>
+                    <div class="xylist" style="padding-left:22px;">
+                        <div style="float:left; color:#FF6C00; font-size:13px; width:215px;">价格：￥70元/小时-80元/小时</div>
+                        <div style="float:left; color:#309DE0; font-size:13px; width:74px;"><span
+                                style=" color:#309DE0">（<u>可预约</u>）</span></div>
+                    </div>
+
+                </div>
+                <div class="oned" onclick="javascript:window.open('student/101/136490.html')" style="cursor:pointer;">
+                    <div class="xylist" style="padding-left:22px; color:#000000">
+                        <a>
+                            136490 林先生（高中一年级） 找家教 1次/周 </a></div>
+                    <div class="xylist" style="padding-left:22px;">
+                        科目： 高中理综
+                    </div>
+                    <div class="xylist" style="padding-left:22px;">
+                        地址：仓山区 仓山区公安局附近12中学对面
+                    </div>
+                    <div class="xylist" style="padding-left:22px;">
+                        <div style="float:left; color:#FF6C00; font-size:13px; width:215px;">价格：￥70元/小时-80元/小时</div>
+                        <div style="float:left; color:#309DE0; font-size:13px; width:74px;"><span
+                                style=" color:#309DE0">（<u>可预约</u>）</span></div>
+                    </div>
+
+                </div>
+                <div class="oned" onclick="javascript:window.open('student/101/136460.html')" style="cursor:pointer;">
+                    <div class="xylist" style="padding-left:22px; color:#000000">
+                        <a>
+                            136460 张先生（初中三年级） 找家教 1次/周 </a></div>
+                    <div class="xylist" style="padding-left:22px;">
+                        科目： 初中理综
+                    </div>
+                    <div class="xylist" style="padding-left:22px;">
+                        地址：仓山区 仓山区兴元花园小区
+                    </div>
+                    <div class="xylist" style="padding-left:22px;">
+                        <div style="float:left; color:#FF6C00; font-size:13px; width:215px;">价格：￥60元/小时-70元/小时</div>
+                        <div style="float:left; color:#309DE0; font-size:13px; width:74px;"><span
+                                style=" color:#309DE0">（<u>可预约</u>）</span></div>
+                    </div>
+
+                </div>
+                <div class="oned" onclick="javascript:window.open('student/101/136365.html')" style="cursor:pointer;">
+                    <div class="xylist" style="padding-left:22px; color:#000000">
+                        <a>
+                            136365 陈女士（初中一年级） 找家教 2次/周 </a></div>
+                    <div class="xylist" style="padding-left:22px;">
+                        科目： 初中理综
+                    </div>
+                    <div class="xylist" style="padding-left:22px;">
+                        地址：鼓楼区 钱潭小学附近
+                    </div>
+                    <div class="xylist" style="padding-left:22px;">
+                        <div style="float:left; color:#FF6C00; font-size:13px; width:215px;">价格：￥60元/小时-70元/小时</div>
+                        <div style="float:left; color:#309DE0; font-size:13px; width:74px;"><span
+                                style=" color:#309DE0">（<u>可预约</u>）</span></div>
+                    </div>
+
+                </div>
+                <div class="oned" onclick="javascript:window.open('student/101/136635.html')" style="cursor:pointer;">
+                    <div class="xylist" style="padding-left:22px; color:#000000">
+                        <a>
+                            136635 陈女士（初中一年级） 找家教 1次/周 </a></div>
+                    <div class="xylist" style="padding-left:22px;">
+                        科目： 初中文综
+                    </div>
+                    <div class="xylist" style="padding-left:22px;">
+                        地址：晋安区 晋安区岳峰路18号 丰州园小区
+                    </div>
+                    <div class="xylist" style="padding-left:22px;">
+                        <div style="float:left; color:#FF6C00; font-size:13px; width:215px;">价格：￥60元/小时-70元/小时</div>
+                        <div style="float:left; color:#309DE0; font-size:13px; width:74px;"><span
+                                style=" color:#309DE0">（<u>可预约</u>）</span></div>
+                    </div>
+
+                </div>
+                <div class="oned">
+                    <div class="xylist" style="padding-left:22px; color:#000000">
+                        136513 杨女士（小学四年级） 找家教 6次/周
+                    </div>
+                    <div class="xylist" style="padding-left:22px;">
+                        科目： 小学语文
+                    </div>
+                    <div class="xylist" style="padding-left:22px;">
+                        地址：仓山区 仓山区奥体阳光丽兹公馆
+                    </div>
+                    <div class="xylist" style="padding-left:22px;">
+                        <div style="float:left; color:#FF6C00; font-size:13px; width:215px;">价格：￥50元/小时-50元/小时</div>
+                        <div style="float:left; color:#309DE0; font-size:13px; width:74px;"><span
+                                style=" color:#000000">（<u>已找到</u>）</span></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  结束最新订单 -->
+<!--  教师文章 -->
+<div class="w1001 cen yxjs" style="height:303px">
+    <H1>教师文章</H1>
+    <H2><a href="##########################################/101/jxffbxbx"
+           style="color:#878685; font-size:13px">查看更多》</a></H2>
+    <div class="blank0"></div>
+    <div class="line"></div>
+    <div class="yxjsbody" style="height:232px">
+        <div class="yxjscontent" style="width:1000px;">
+            <div class="wz" style="width:290px">
+                <div class="wztitle">
+                    <a target="_blank" href="101/xxff/4026.html" title=" 好的方法助你快速提分" style="color:#309DE0">
+                        潘老师： 好的方法助你快速提分 </a>
+
+                </div>
+                <div class="wzbody">摘要：高考结束后和我有同学有一起办过一个小型辅导机构，辅导过14位初中升高中的学弟学妹，在辅导的过程中我发现了大家的一个通病，...</div>
+            </div>
+            <div class="wzline"></div>
+            <div class="wz1">
+                <div class="wztitle"><a target="_blank" href="101/jiaoyu/3927.html" title="  学习的目的和意义"
+                                        style="color:#309DE0">
+                    林老师： </a>
+                </div>
+                <div class="wzbody">摘要：学习的目的和意义
+
+                    我们常常对自己的孩子或者对自己的学生说，要好好学习，将来才能够考上一个好的大学，找到一份好的工作...
+                </div>
+            </div>
+            <div class="wzline"></div>
+            <div class="wz1">
+                <div class="wztitle">
+                    <a target="_blank" href="101/jxff/3741.html" style="color:#309DE0" title="  怎样使教育孩子的工作做得更好呢？ ">
+                        张老师： 怎样使教育孩子的工… </a>
+                </div>
+                <div class="wzbody">摘要：为什么要问你准备好了吗？因为我们为人父母所做的就是一种生命的工作，我们面对的是一个活生生的人，这是最重要的，无论你面对的...
+                    <div style="text-align:left; margin-top:8px;  height:31px">
+                        <div style="float:left; width:48px; margin-left:175px; height:31px; line-height:31px"><img
+                                src="/images/fbwz.jpg"></div>
+                        <div style="float:left; width:58px; color:#309DE0;height:31px; line-height:28px; margin-left:9px">
+                            <u><A style="cursor:pointer;color:#309DE0"
+                                  onclick="tankuang3('##########################################/')">发表文章</a></u></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!--  结束教师文章 -->
+<!--  footer -->
+<div style="clear:both"></div>
+<div class="footerd">
+    <div style="height:18px"></div>
+    <div class="content">
+
+        <div class="contentleft">
+            <div class="wxt"></div>
+            <div class="gzwxt">关注微信</div>
+        </div>
+        <div class="line"></div>
+        <div class="contentleft1">
+            <div class="contentleft1_f">
+                <div class="dh">
+                    <div class="dhleft"></div>
+                    <div class="dhright">
+                        <div class="dhrx">本地客服热线</div>
+                        <div class="dhmf"></div>
+                    </div>
+                </div>
+                <div class="dh400">xxx-xxx-xxxx</div>
+                <div class="dhsj">工作时间每日xx:xx-xx:xx</div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="contentleft2">
+            <div class="tj">
+                <div class="yx">
+                    <div class="yxleft"></div>
+                    <div class="yxright">邮箱：xxxxxxx@xxxx.xxx</div>
+                </div>
+
+                <div class="kfry">
+                    <div class="kfryleft"></div>
+                    <div class="kfryright">教员交流群：xxxxxxxxx</div>
+                </div>
+
+                <div class="kfxl">
+                    <div class="kfxlleft"></div>
+                    <div class="kfxlright">新浪微博：XX教育</div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="line"></div>
+        <div class="contentright">
+            <div class="cjwt">
+                <div class="cjwttitle">常见问题</div>
+                <div class="cjwtbody"><a href="##########################################/cjwt-30071.html"
+                                         target="_blank" style="color:#CFCECE">家长找家教流程</a></div>
+                <div class="cjwtbody"><a href="##########################################/cjwt-30070.html"
+                                         target="_blank" style="color:#CFCECE">教员最新使用流程</a></div>
+                <div class="cjwtbody"><a href="##########################################/cjwt-30083.html"
+                                         target="_blank" style="color:#CFCECE">信誉值说明</a></div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div style="width:887px; margin:0px auto;  margin-top:8px"><img src="/images/line5.jpg"></div>
+
+</div>
+
+
+<div class="footerd1"><a href="#" style="color:#FFFFFF">关于我们</a>
+    &nbsp;|&nbsp; <a href="#" style="color:#FFFFFF">网站地图</a>&nbsp;
+    |&nbsp; <a href="#" style="color:#FFFFFF">联系我们</a> &nbsp;|
+    &nbsp;<a href="#" style="color:#FFFFFF">友情链接</a> &nbsp;| &nbsp;<a
+            href="#" style="color:#FFFFFF">意见建议</a>&nbsp; | &nbsp;<a
+            href="#" style="color:#FFFFFF">帮助中心</a>&nbsp; |&nbsp; <a
+            href="#" style="color:#FFFFFF">版权声明</a> &nbsp;|&nbsp;
+    <a href="#" style="color:#FFFFFF">免责声明</a> &nbsp;|&nbsp; <a
+            href="#" style="color:#FFFFFF">收藏本站</a> &nbsp;| &nbsp;
+    XICP备XXXXXXXX号
+    <script type="text/javascript" src="//s.union.360.cn/110420.js"></script>
+</div>
+<!--  end footer -->
+<ul id="side-bar" class="side-pannel side-bar">
+    <a href="javascript:;" class="gotop" style="display:none;"><s class="g-icon-top"></s></a>
+    <a href="##########################################/cjwt.html" target="_blank" class="text bkuang "
+       style="height:39px; font-size:12px">
+        <div>常见问题</div>
+    </a>
+    <a href="#" target="_blank" class="text bkuang1 qr" style="margin-top:5px; height:36px; font-size:12px">
+        <div>微信关注</div>
+        <s></s><i></i></a>
+    <a href="##########################################/yjjy.html" target="_blank" class="text bkuang2 "
+       style="margin-top:5px; height:36px; font-size:12px">
+        <div>用户反馈</div>
+    </a>
+
+</ul>
+<!-- 代码 结束 -->
+<script src="/js/layer.js"></script>
+
+<script type="text/javascript" src="##########################################/xsy/ajax.js"></script>
+</BODY>
+</HTML>

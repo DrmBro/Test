@@ -1,0 +1,321 @@
+﻿<!DOCTYPE>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <META content="IE=10.000" http-equiv="X-UA-Compatible">
+    <META charset="utf-8">
+    <meta name="applicable-device" content="pc,mobile">
+    <meta name="MobileOptimized" content="width"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <title>阳光家教网</title>
+    <meta name="keywords" content="福州大学生家教,福州小学全科,福州初中英语,福州初中数学,福州初中化学,福州初中物理,福州高中英语"/>
+    <meta name="description" content="1，有过两年的家教经验
+  教过五六年级的全科或者单科数学、英语 ，已经初一升初二的数学英语，效果较好。
+2、擅长英语，高考英语124，喜欢跟小孩子打交道。觉得自己是个有耐心，有责任感的人，认定的事情就会认真的去完成。"/>
+    <LINK href="css/index.css" rel="stylesheet" type="text/css">
+    <SCRIPT src="js/jquery-1.7.2.min.js" type="text/javascript"></SCRIPT>
+    <LINK href="css/newHeader.css" rel="stylesheet" type="text/css">
+    <SCRIPT src="js/xl.js" type="text/javascript"></SCRIPT>
+    <link rel="stylesheet" type="text/css" href="css/newjiedai.css">
+    <script type="text/javascript" src="js/newjiedai.js"></script>
+    <link href="css/lrtk.css" rel="stylesheet" type="text/css"/>
+    <script language="JavaScript" src="js/ajax.js"></script>
+    <script language="JavaScript" src="js/jsck.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="css/drop-down.css"/>
+    <script src="js/select-widget-min.js"></script>
+    <script src="js/layer.js"></script>
+
+</HEAD>
+<BODY>
+<!-- 头部黑条 -->
+<DIV id="newheader">
+    <DIV class="header-container">
+        <dl class="header-block header-left   header-lineheight">
+            <div th:if="${session.user != null}">
+                <dl class="header-block header-left   header-lineheight">
+                    <dt style="font-size:13px"> 您好！<span th:text="${username}"></span>
+                        <a th:href="@{logoutuser}" onclick="tankuang1('#','baidu')"> 注销</a> <span
+                                style="letter-spacing:0.5em">|</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a th:href="@{order_list}" onclick="tankuang1('#','baidu')"> 我的订单</a>
+                    </dt>
+                </dl>
+            </div>
+        </dl>
+        <OL class="header-block header-menu posright">
+            <LI></LI>
+        </OL>
+
+    </DIV>
+</DIV>
+<!-- 结束头部黑条 -->
+<!-- 头部 -->
+<DIV id="page_header">
+    <DIV id="page_header_cont"><A id="logo_link" href="index.html"><IMG id="logo_img"
+                                                                        style="width: 170px; height: 60px;"
+                                                                        src="images/logoN.png"> </A>
+    </DIV>
+    <DIV id="page_nav">
+        <DIV class="nav_cont">
+            <!--<DIV class="nav_item" id="category"><A class="main_link" id="btn_category"-->
+                                                   <!--style="cursor: pointer;font-size:14px" href="#/teacher/101.html">所有教员分类</A>-->
+                <!--<UL class="first_ul">-->
+                    <!--&lt;!&ndash;全部课程&ndash;&gt;-->
+                    <!--<LI class="first_li nav_btn1 all_title_link" style="display: none;">-->
+                        <!--<DIV class="first_title"></DIV>-->
+                    <!--</LI>-->
+                    <!--&lt;!&ndash;循环&ndash;&gt;-->
+                    <!--<LI class="first_li nav_btn3">-->
+                        <!--<DIV class="first_title"><A class="first_title_link" href="#/teacher/4-0-0-101-0-0-0-0.html">小学家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul">-->
+                            <!--<LI class="second_li">-->
+                            <!--<LI class="second_li"><A title="小学数学" class="second_title_link"-->
+                                                     <!--onClick="ga_track_event('course_cate_menu', '小学家教', '小学数学')"-->
+                                                     <!--href="#/teacher/4-0-167-101-0-0-0-0.html">小学数学</A></LI>-->
+                        <!--</UL>-->
+                    <!--</LI>-->
+                <!--</UL>-->
+            <!--</DIV>-->
+            <DIV class="nav_item"><A class="main_link " style="font-size:14px" th:href="@{index}">首页</A></DIV>
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{student_list}">学员列表</A></DIV>
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{teacher_list}">教员列表</A></DIV>
+            <DIV class="nav_item"><A class="main_link " style="font-size:14px" th:href="@{problem}">常见问题</A></DIV>
+
+        </DIV>
+    </DIV>
+</DIV>
+<!-- 结束头部 -->
+
+<div class="xydh"><a th:href="@{index}" style="color:#737373">家教网</a> >> <a th:href="@{teacher_list}"
+                                                                            style="color:#737373">教师列表</a>>><span
+        style="color:#737373">一对一家教曾老师</span></div>
+
+
+<!-- 结束学员列表导航 -->
+<!--  学员列表 -->
+<div class="xylb">
+    <div class="jylbleft">
+        <div class="jylbleft_1" style="height:auto">
+            <div class="jstximg" style="height:auto;  ">
+                <div class="tpxx">
+                    <div class=" con_img1 biankuang">
+                        <img th:src="@{'/show?fileName='+${teacher.picture}}" id="abc" width="146" height="170"/>
+                        <span class="ms1"> &radic; <a style="text-decoration:none"
+                                                      title="网站已认证：学生证、身份证、头像 ">认证</a></span></div>
+                    <div class="tpcs">
+                        <div class="lbj">
+                            教学经验<br>2年
+                        </div>
+                        <div class="bluebj">
+                            满意度<br>100%
+                        </div>
+                        <div class="c"></div>
+                        <div class="yesbj">
+                            成功次数<br>3次
+                        </div>
+                        <div class="fsbj">
+                            家长评价<br>3条
+                        </div>
+                    </div>
+
+                    <div style="margin-top:6px; margin-bottom:12px">
+                        <div class="jsbz1_1"><img src="images/bz5.jpg"></div>
+                        <div class="jsbz1_2">手机畅通</div>
+
+                        <div class="jsbz1_1"><img src="images/bz1.jpg"></div>
+                        <div class="jsbz1_2">身份证</div>
+                        <div style="clear:both"></div>
+                        <div class="jsbz1_1" style="margin-left:0px;margin-top:0px"><img src="images/bz7.jpg"></div>
+                        <div class="jsbz1_2">学生证</div>
+                    </div>
+                    <div style="clear:both"></div>
+                    <div style=" margin-top:8px; height:31px">
+                        <input name="gggde" class="xyckbune" onclick="isk('174172','#/','101','#/','50')"
+                               value="免费预约此老师" type="button"></div>
+                    <div style="line-height:26px; color:#048adc; text-align:center; font-size:14px; margin-top:10px">
+                        接听时间9:00-18:00<br>
+                    </div>
+
+                </div>
+            </div>
+            <div class="jsxxsd_1" style="height:auto;  ">
+                <div class="jsjtxq">
+                    <div class="jsoneh">
+                        <div class="jsoneh_d"><img src="images/dian.jpg"></div>
+                        <div class="jsoneh_d1" style="width: 169px;"><span th:text="${teacher.trueName}"></span>（<span
+                                th:text="${teacher.sex}"></span>）【大学生家教】
+                        </div>
+                        <div style="float:left"><img src="images/bzz.jpg" title="已成为网站签约教员" alt="已成为网站签约教员"></div>
+                    </div>
+                    <div class="jstwoh">
+                        <div class="jsoneh_d"><img src="images/dian1.jpg"></div>
+                        <div class="jstwoh_1"><span style="letter-spacing:0.8em">编    </span>号：</div>
+                        <div class="jstwoh_2"><span th:text="${teacher.userId}"></span></div>
+                        <div class="jsoneh_d"><img src="images/dian1.jpg"></div>
+                    </div>
+                    <div class="jstwoh">
+                        <div class="jsoneh_d"><img src="images/dian1.jpg"></div>
+                        <div class="jstwoh_1">大学城市：</div>
+                        <div class="jstwoh_2">福州</div>
+                        <div class="jsoneh_d"><img src="images/dian1.jpg"></div>
+                    </div>
+
+                    <div class="jstwoh">
+                        <div class="jsoneh_d"><img src="images/dian1.jpg"></div>
+                        <div class="jstwoh_1">所学专业：</div>
+                        <div class="jstwoh_2" style="width:350px"><span th:text="${teacher.major}"></span></div>
+                    </div>
+                    <div class="jstwoh">
+                        <div class="jsoneh_d"><img src="images/dian1.jpg"></div>
+                        <div class="jstwoh_1">所在院校：</div>
+                        <div class="jstwoh_2" style="width:350px"><span th:text="${teacher.school}"></span>
+                        </div>
+                    </div>
+                    <div class="jstwoh">
+                        <div class="jsoneh_d"><img src="images/dian1.jpg"></div>
+                        <div class="jstwoh_1">课时费用：</div>
+                        <div class="jstwoh_2" style="width:350px"><span th:text="${teacher.money}"></span>元/小时</div>
+                    </div>
+                    <div class="jstwoh">
+                        <div class="jsoneh_d"><img src="images/dian1.jpg"></div>
+                        <div class="jstwoh_1">授课方式：</div>
+                        <div class="jstwoh_2" style="width:350px">一对一家教上门 一对一学生上门 小班辅导</div>
+                    </div>
+                    <div class="jstwoh">
+                        <div class="jsoneh_d"><img src="images/dian1.jpg"></div>
+                        <div class="jstwoh_1">可授科目：</div>
+                        <div class="jstwoh_2" style="width:378px"><span th:text="${teacher.course}"></span></div>
+                    </div>
+                    <div class="jstwoh">
+                        <div class="jsoneh_d"><img src="images/dian1.jpg"></div>
+                        <div class="jstwoh_1">授课区域：</div>
+                        <div class="jstwoh_2" style="width:350px"><span th:text="${teacher.address}"></span></div>
+                    </div>
+                    <div class="jstwoh">
+                        <div class="jsoneh_d"><img src="images/dian1.jpg"></div>
+                        <div class="jstwoh_1">预约电话：</div>
+                        <div class="jstwoh_2" style="width:350px">
+                            <span th:text="${teacher.phone}"></span>
+                        </div>
+                    </div>
+                    <div class="jstwoh" style="height:auto; ">
+                        <div class="jsoneh_d" style="line-height:32px;"><img src="images/dian1.jpg"></div>
+                        <div class="jstwoh_1" style="line-height:32px;">个人介绍：</div>
+                        <div class="jstwoh_2" style="width:400px; line-height:32px; height:auto">
+                            <span th:text="${teacher.details}"></span>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="c"></div>
+                </div>
+            </div>
+        </div>
+        <div class="c"></div>
+        <div class="c"></div>
+        <div style="width:227px; margin-left:92px;">
+            <div class=xyck_s style="margin-top:25px"><a th:href="@{'/stu_appointment?userId='+${teacher.userId}}" ><input name="ggg" style="font-size:18px" class="xyckbunc" onclick="isk('174172','#/','101','#/','50')" value="免费预约此老师" type="button"></a></div>
+        </div>
+        <div class="xyss_s" style="margin-left:130px; margin-top:35px">
+            <div class="xysslist_s" style="color:#048adc">为保护教员隐私，试讲时会向您提供全名及各证件。预约中心电话：xxx-xxx-xxxx (预约时请提供此
+                <span style="color:#f78253">编号:<span th:text="${teacher.userId}"></span></span>)
+            </div>
+        </div>
+    </div>
+    <div class="xylbright" style="margin-bottom:30px">
+        <div class="cgal" style="margin-top:12px; height:232px">
+            <div class="cgaltitle">
+                <div class="cgaltitle1">福州XX家教网</div>
+            </div>
+            <div class="cgalbody" style="font-size:12px; line-height:30px;  ">
+                XX家教网全国连锁，福州XX家教网专业、权威，家长无中介费！万名优秀福州家教经身份认证严格审核，上门试讲.已成功为千余名福州学员找到适合的家教老师，颇受家长好评！
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 结束学员列表-->
+<!--  footer -->
+<div style="clear:both"></div>
+<div class="footerd">
+    <div style="height:18px"></div>
+    <div class="content">
+        <div class="contentleft">
+            <div class="wxt"></div>
+            <div class="gzwxt">关注微信</div>
+        </div>
+        <div class="line"></div>
+        <div class="contentleft1">
+            <div class="contentleft1_f">
+                <div class="dh">
+                    <div class="dhleft"></div>
+                    <div class="dhright">
+                        <div class="dhrx">本地客服热线</div>
+                        <div class="dhmf"></div>
+                    </div>
+                </div>
+                <div class="dh400">xxx-xxx-xxxx</div>
+                <div class="dhsj">工作时间每日xx:xx-xx:xx</div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="contentleft2">
+            <div class="tj">
+                <div class="yx">
+                    <div class="yxleft"></div>
+                    <div class="yxright">邮箱：xxxxxxx@xxxx.xxx</div>
+                </div>
+                <div class="kfry">
+                    <div class="kfryleft"></div>
+                    <div class="kfryright">教员交流群：xxxxxxxxx</div>
+                </div>
+                <div class="kfxl">
+                    <div class="kfxlleft"></div>
+                    <div class="kfxlright">新浪微博：XX教育</div>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="contentright">
+            <div class="cjwt">
+                <div class="cjwttitle">常见问题</div>
+                <div class="cjwtbody"><a href="##########################################/cjwt-30071.html"
+                                         target="_blank" style="color:#CFCECE">家长找家教流程</a></div>
+                <div class="cjwtbody"><a href="##########################################/cjwt-30070.html"
+                                         target="_blank" style="color:#CFCECE">教员最新使用流程</a></div>
+                <div class="cjwtbody"><a href="##########################################/cjwt-30083.html"
+                                         target="_blank" style="color:#CFCECE">信誉值说明</a></div>
+            </div>
+        </div>
+    </div>
+    <div style="width:887px; margin:0px auto;  margin-top:8px"><img src="images/line5.jpg"></div>
+    <div class="link" style="width:1006px; margin:0 auto; text-align:left">友情链接：
+        <a target="_blank" style="color:#FFFFFF" href="http://baiping.tantuw.com">广州佰平会计培训</a> |
+        <a target="_blank" style="color:#FFFFFF" href="#">中公甘肃卫生人才网</a>
+        | <a target="_blank" style="color:#FFFFFF" href="http://fz.jiaoyubao.cn/">福州培训</a> |
+        <a target="_blank" style="color:#FFFFFF" href="#">福州教育网</a>
+        | <a target="_blank" style="color:#FFFFFF" href="http://jinsejiayuanwanke.fang.com/">万科金色家园</a> |
+        <a target="_blank" style="color:#FFFFFF" href="http://www.rzjjzx.com">日照家教中心网</a> |
+        <a target="_blank" style="color:#FFFFFF" href="#">新野吧</a>
+        | <a target="_blank" style="color:#FFFFFF" href="http://www.ooobz.com">四川博钊教育</a> |
+        <a target="_blank" style="color:#FFFFFF" href="#">桂林律师</a>
+        |
+    </div>
+</div>
+<div class="footerd1"><a href="#" style="color:#FFFFFF">关于我们</a>
+    &nbsp;|&nbsp; <a href="#" style="color:#FFFFFF">网站地图</a>&nbsp;
+    |&nbsp; <a href="#" style="color:#FFFFFF">联系我们</a> &nbsp;|
+    &nbsp;<a href="#" style="color:#FFFFFF">友情链接</a> &nbsp;| &nbsp;<a
+            href="#" style="color:#FFFFFF">意见建议</a>&nbsp; | &nbsp;<a
+            href="#" style="color:#FFFFFF">帮助中心</a>&nbsp; |&nbsp; <a
+            href="#" style="color:#FFFFFF">版权声明</a> &nbsp;|&nbsp;
+    <a href="" style="color:#FFFFFF">免责声明</a> &nbsp;|&nbsp; <a
+            href="#" style="color:#FFFFFF">收藏本站</a> &nbsp;| &nbsp;
+    XICP备XXXXXXXX号
+    <script type="text/javascript" src="//s.union.360.cn/110420.js"></script>
+</div>
+<!--  end footer -->
+<script src="#/layer/layer.js"></script>
+<script type="text/javascript" src="#/xsy/ajax.js"></script>
+</BODY></html>
+

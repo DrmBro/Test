@@ -1,0 +1,1089 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="bookmark" href="favicon.ico">
+    <title>XX教育网</title>
+
+
+    <LINK href="css/index.css" rel="stylesheet" type="text/css">
+    <SCRIPT src="js/jquery-1.7.2.min.js" type="text/javascript"></SCRIPT>
+    <LINK href="css/newHeader.css" rel="stylesheet" type="text/css">
+    <SCRIPT src="js/xl.js" type="text/javascript"></SCRIPT>
+    <link rel="stylesheet" type="text/css" href="css/newjiedai.css">
+    <script type="text/javascript" src="js/newjiedai.js"></script>
+    <script type="text/javascript" src="js/pub.js"></script>
+    <script type="text/javascript" src="js/xyck.js"></script>
+    <link href="css/lrtk.css" rel="stylesheet" type="text/css"/>
+    <script>
+
+
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 100) {  //距顶部多少像素时，出现返回顶部按钮
+                    $("#side-bar .gotop").fadeIn();
+                }
+                else {
+                    $("#side-bar .gotop").hide();
+                }
+            });
+            $("#side-bar .gotop").click(function () {
+                $('html,body').animate({'scrollTop': 0}, 500); //返回顶部动画 数值越小时间越短
+            });
+        });
+    </script>
+
+
+    <script src="js/js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="css/drop-down.css"/>
+    <script src="js/select-widget-min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $(".ui-select").selectWidget({
+                change: function (changes) {
+                    return changes;
+                },
+                effect: "slide",
+                keyControl: true,
+                speed: 200,
+                scrollHeight: 250
+            });
+
+
+        });
+
+    </script>
+    <script src="#/layer/layer.js"></script>
+
+
+    <link href="css/main1.css" rel="stylesheet" type="text/css"/>
+    <link href="css/xbjy.css" rel="stylesheet" type="text/css"/>
+    <link type="text/css" rel="stylesheet" href="css/powerFloat.css"/>
+    <link type="text/css" rel="stylesheet" href="css/xmenu.css"/>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-powerFloat-min.js"></script>
+    <script language="JavaScript" src="js/ajax.js"></script>
+    <script type="text/javascript" src="js/jquery-xmenu.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#selectpos1").xMenu({
+                width: 718,
+                eventType: "click", //事件类型 支持focus click hover
+                dropmenu: "#m2",//弹出层
+                hiddenID: "selectposhidden1"//隐藏域ID
+            });
+        });
+
+        $(document).ready(function () {
+            $("#selectpos").xMenu({
+                width: 718,
+                eventType: "click", //事件类型 支持focus click hover
+                dropmenu: "#m1",//弹出层
+                hiddenID: "selectposhidden"//隐藏域ID
+            });
+
+
+            $("#ssss4").click(function () {
+                $('input[name="ssss3"]').attr("checked", this.checked);
+                $('input[name="ssss2"]').attr("checked", this.checked);
+                $('input[name="ssss1"]').attr("checked", this.checked);
+            });
+        });
+    </script>
+</head>
+<body>
+<!-- 头部黑条 -->
+<DIV id="newheader">
+    <DIV class="header-container">
+        <dl class="header-block header-left   header-lineheight">
+            <dt style="font-size:13px"> 您好！欢迎来到阳光家教网！ <a th:href="@{login}" onclick="tankuang1('#/','')">请登录</a> <span
+                    style="letter-spacing:0.5em">|</span> <a href="#" title="教员注册">教员注册</a> <span
+                    style="letter-spacing:0.5em">|</span> <a th:href="@{student_register}" title="家长注册">家长注册</a>
+            </dt>
+        </dl>
+        <div class="hidediv" style=" display:none;  position:relative;left:35px;  " id="hidev">
+            <form name=form method=post action=#/xbjss.php>
+                <input type="hidden" name="dqid" value="101">
+
+                <div class=kmm style="margin-top:4px">
+                    <select class=ui-select
+                            style="background-color: #FFFFFF;border: 1px solid #2DB2FF;box-shadow: 0 0 2px #2DB2FF;border-radius: 5px;font-size: 14px;height: 28px;position: relative;width: 120px;-webkit-user-select: none;"
+                            name=sid>
+                        <option selected=selected value="0">选择科目</option>
+                        <option value="4">小学家教</option>
+                        <option value="174">--小学全科</option>
+                        <option value="173">--小学英文版教材</option>
+                        <option value="172">--小学接送</option>
+                        <option value="171">--小学托管</option>
+                        <option value="170">--小学陪读</option>
+                        <option value="169">--小学奥数</option>
+                        <option value="168">--小学英语</option>
+                        <option value="167">--小学数学</option>
+                        <option value="166">--小学语文</option>
+                        <option value="5">初中家教</option>
+                        <option value="195">--中考陪读</option>
+
+                    </select>
+                </div>
+                <div class=xbb style="margin-top:4px">
+                    <select class=ui-select
+                            style="background-color: #FFFFFF;border: 1px solid #2DB2FF;box-shadow: 0 0 2px #2DB2FF;border-radius: 5px;font-size: 14px;height: 28px;position: relative;width: 120px;-webkit-user-select: none;"
+                            name=sex>
+                        <option selected=selected>教员性别</option>
+                        <option value="0">不限</option>
+
+                        <option value="1">男</option>
+                        <option value="2">女</option>
+                    </select>
+
+                </div>
+
+                <div class=xbb style="margin-top:4px">
+                    <select class=ui-select
+                            style="background-color: #FFFFFF;border: 1px solid #2DB2FF;box-shadow: 0 0 2px #2DB2FF;border-radius: 5px;font-size: 14px;height: 28px;position: relative;width: 120px;-webkit-user-select: none;"
+                            name=sf>
+                        <option selected=selected>教员身份</option>
+                        <option value="0">不限</option>
+                        <option value="1">大学生教员</option>
+                        <option value="3">专职家教</option>
+                        <option value="2">在职教师</option>
+                    </select>
+                </div>
+                <div class=xbb style="margin-top:1px"><input name="ccc" type="submit" style="width:80px; height:30px"
+                                                             value="查询"/></div>
+            </form>
+
+        </div>
+        <OL class="header-block header-menu posright">
+            <LI></LI>
+        </OL>
+
+    </DIV>
+</DIV>
+<!-- 结束头部黑条 -->
+<!-- 头部 -->
+<DIV id="page_header">
+    <DIV id="page_header_cont"><A id="logo_link" href="#/index.php"><IMG id="logo_img"
+                                                                         style="width: 170px; height: 60px;"
+                                                                         src="images/logoN.png"> </A>
+        <DIV id="city">
+            <h1>福州</h1>
+            <h2>[<a href="#/1t1.php">切换城市</a>]</h2>
+        </DIV>
+        <DIV id="search">
+            <form name="form1" method="post" action="#/xbjss.php">
+                <input type="hidden" name="dqid" value="101">
+                <div class="km">
+                    <select class=ui-select
+                            style="background-color: #FFFFFF;border: 1px solid #2DB2FF;box-shadow: 0 0 2px #2DB2FF;border-radius: 5px;font-size: 14px;height: 28px;position: relative;width: 120px;-webkit-user-select: none;"
+                            name=sid>
+                        <option selected=selected value="0">选择科目</option>
+                        <option value="4">小学家教</option>
+                        <option value="174">--小学全科</option>
+                        <option value="173">--小学英文版教材</option>
+                        <option value="172">--小学接送</option>
+                        <option value="171">--小学托管</option>
+                        <option value="170">--小学陪读</option>
+                        <option value="169">--小学奥数</option>
+                        <option value="9">计算机家教</option>
+                        <option value="153">大学辅导</option>
+                    </select>
+
+                </div>
+                <div class="xb">
+                    <select class="ui-select" name="sex"
+                            style="background-color: #FFFFFF;border: 1px solid #2DB2FF;box-shadow: 0 0 2px #2DB2FF;border-radius: 5px;font-size: 14px;height: 28px;position: relative;width: 120px;-webkit-user-select: none;">
+                        <option selected="selected" value="0">教员性别</option>
+                        <option value="0">不限</option>
+
+                        <option value="1">男</option>
+                        <option value="2">女</option>
+                    </select>
+                </div>
+
+                <div class="xb">
+                    <select class="ui-select" name="sf"
+                            style="background-color: #FFFFFF;border: 1px solid #2DB2FF;box-shadow: 0 0 2px #2DB2FF;border-radius: 5px;font-size: 14px;height: 28px;position: relative;width: 120px;-webkit-user-select: none;">
+                        <option selected="selected" value="0">教员身份</option>
+                        <option value="0">不限</option>
+                        <option value="1">大学生教员</option>
+                        <option value="3">专职家教</option>
+                        <option value="2">在职教师</option>
+                    </select>
+                </div>
+                <div class="searchbunn"><input name="eeeew" type="image" src="images/search.gif"></div>
+            </form>
+        </DIV>
+        <DIV id="favorites">
+            <div style="float:left; width:19px; margin-top:1px"><img src="images/kfdh.jpg"></div>
+            <div style="float:left; margin-left:6px; font-size:14px"><strong>XXX-XXX-XXXX</strong></div>
+            <div style="clear:both"></div>
+            <div style=" font-size:14px; margin-top:6px"><strong>(接听电话9:00-18:00)</strong></div>
+        </DIV>
+    </DIV>
+    <DIV id="page_nav">
+        <DIV class="nav_cont">
+            <!--<DIV class="nav_item" id="category"><A class="main_link" id="btn_category"-->
+                                                   <!--style="cursor: pointer;font-size:14px" href="#">所有教员分类</A>-->
+            <!--</DIV>-->
+            <DIV class="nav_item"><A class="main_link " style="font-size:14px" href="#/">首页</A></DIV>
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" href="#/student/101.html">学员列表</A></DIV>
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{/teacher_list}">教员列表</A>
+            </DIV>
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" href="#/cjwt.html">常见问题</A></DIV>
+        </DIV>
+    </DIV>
+</DIV>
+<!-- 结束头部 -->
+
+
+<div class="index_wrap">
+
+    <div class="content">
+        <div class="gg"></div>
+        <div class="regbody">
+            <div class="regleft">
+                <table width="225" height="439" border="0" cellpadding="0" cellspacing="0"
+                       style=" border-left: 1px solid #D6EDFF; border-right: 1px solid #D6EDFF; border-top: 1px solid #D6EDFF; ">
+                    <tr>
+                        <td width="230" height="438" align="left" valign="top" bgcolor="#F7F8F8">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td><img src="images/eet2.jpg" width="223" height="29"/></td>
+                                </tr>
+                            </table>
+                            <table width="220" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px">
+                                <tr>
+                                    <td width="61" height="51" align="center"><img src="images/eet8.jpg" width="31"
+                                                                                   height="26"/></td>
+                                    <td width="159" class="px12"
+                                        style="color:#666666; font-size:12px; line-height:20px"> 免费注册 <br/>
+                                        会员超过
+                                        112496 名
+                                    </td>
+                                </tr>
+                            </table>
+                            <table width="150" border="0" cellspacing="0" cellpadding="0" style="margin-top:11px">
+                                <tr>
+                                    <td><img src="images/eet4.jpg" width="223" height="30"/></td>
+                                </tr>
+                            </table>
+                            <table width="220" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px">
+                                <tr>
+                                    <td width="61" height="51" align="center"><img src="images/eet9.jpg" width="30"
+                                                                                   height="25"/></td>
+                                    <td width="159" class="px12"
+                                        style="color:#666666; font-size:12px; line-height:20px">
+                                        严格的教员认证体系、学币体系，充分展现您在XX教育网的能力和权威！
+                                    </td>
+                                </tr>
+                            </table>
+                            <table width="150" border="0" cellspacing="0" cellpadding="0" style="margin-top:11px">
+                                <tr>
+                                    <td><img src="images/eet5.jpg" width="223" height="30"/></td>
+                                </tr>
+                            </table>
+                            <table width="220" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px">
+                                <tr>
+                                    <td width="61" height="51" align="center"><img src="images/eet10.jpg" width="31"
+                                                                                   height="26"/></td>
+                                    <td width="159" class="px12"
+                                        style="color:#666666; font-size:12px; line-height:20px">家教服务信息化，手机号，<br/>
+                                        证件照片等绝对不会被无关<br/>
+                                        的人获取。
+                                    </td>
+                                </tr>
+                            </table>
+                            <table width="150" border="0" cellspacing="0" cellpadding="0" style="margin-top:11px">
+                                <tr>
+                                    <td><img src="images/eet6.jpg" width="223" height="30"/></td>
+                                </tr>
+                            </table>
+                            <table width="220" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px">
+                                <tr>
+                                    <td width="61" height="51" align="center"><img src="images/eet11.jpg" width="31"
+                                                                                   height="21"/></td>
+                                    <td width="159" class="px12"
+                                        style="color:#666666; font-size:12px; line-height:20px">有新的家长查看，短信第一<br/>
+                                        时间提醒，使教员的家教服<br/>
+                                        务更加便捷、快速、交互。
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table width="183" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td><img src="images/eet7.jpg" width="225" height="8"/></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="regright">
+                <form action="fileUpload" name="reg_form" method="post" enctype="multipart/form-data">
+
+
+                    <div class="zhxx"><strong>请填写账户信息</strong>：</div>
+                    <div class="szdqq m16">
+                        <div class="szdqq m16">
+                            <div class="szdqql"> 地址：</div>
+                            <div class="szdqqr">
+                                <input name="address" type="text"
+                                       style="border:1px solid #ABADB3; width:163px; height:23px" size="25"
+                                       maxlength="255"/>
+                                &nbsp;<span ><font color="#666666"></font></span></div>
+                        </div>
+                        </div>
+                        <div class="szdqq m16">
+                            <div class="szdqql"> 用户名：</div>
+                            <div class="szdqqr">
+                                <input name="username" type="text" id="user_email" onblur="checkemail()"
+                                       style="border:1px solid #ABADB3; width:163px; height:23px" maxlength="255"/>
+                            </div>
+
+
+                            <div class="szdqq m16">
+                                <div class="szdqql"> 设置密码：</div>
+                                <div class="szdqqr">
+                                    <input name="password" id="password" onblur="checkpws();" type="password"
+                                           style="border:1px solid #ABADB3; width:163px; height:23px" size="25"
+                                           maxlength="255"/>
+                                    &nbsp;<span id="tip_password"><font color="#666666">请用6-16个字符长度的字母或数字</font></span>
+                                </div>
+                            </div>
+
+
+                            <div class="szdqq m16">
+                                <div class="szdqql"> 确认密码：</div>
+                                <div class="szdqqr">
+                                    <input name="user_password1" id="password1" onblur="checkpws();" type="password"
+                                           style="border:1px solid #ABADB3; width:163px; height:23px" size="25"
+                                           maxlength="255"/>
+                                    &nbsp;<span id="tip_password1"><font color="#666666"></font></span></div>
+                            </div>
+                            <div style="clear:both"></div>
+                            <div class="szdqq m16">
+                                <div class="szdqql"> 性别：</div>
+                                <div class="szdqqr">
+                                    <input name="sex" type="text"
+                                           style="border:1px solid #ABADB3; width:163px; height:23px" size="25"
+                                           maxlength="255"/>
+                                    &nbsp;<span ><font color="#666666"></font></span></div>
+                            </div>
+                            <div class="jjxx m16">
+                                <div class="jjxxl"> 真实姓名：</div>
+                                <div class="jjxxr">
+                                    <input onblur="checkxm()" id="true_name" name="true_name"
+                                           style="border:1px solid #ABADB3;width:163px" type="text" maxlength="255">
+                                    &nbsp;<span id="tip_xm"><font color="#666666"></font></span></div>
+                            </div>
+
+                            <div class="szdqq m16">
+                                <div class="szdqql"> 学校：</div>
+                                <div class="szdqqr">
+                                    <input name="school" type="text"
+                                           style="border:1px solid #ABADB3; width:163px; height:23px" size="25"
+                                           maxlength="255"/>
+                                    &nbsp;<span ><font color="#666666"></font></span></div>
+                            </div>
+
+                            <div class="szdqq m16">
+                                <div class="szdqql"> 专业：</div>
+                                <div class="szdqqr">
+                                    <input name="major" type="text"
+                                           style="border:1px solid #ABADB3; width:163px; height:23px" size="25"
+                                           maxlength="255"/>
+                                    &nbsp;<span ><font color="#666666"></font></span></div>
+                            </div>
+
+                            <div class="szdqq m16">
+                                <div class="szdqql"> 教授科目：</div>
+                                <div class="szdqqr">
+                                    <input name="course" type="text"
+                                           style="border:1px solid #ABADB3; width:163px; height:23px" size="25"
+                                           maxlength="255"/>
+                                    &nbsp;<span ><font color="#666666"></font></span></div>
+                            </div>
+
+                            <div class="szdqq m16">
+                                <div class="szdqql"> 个人介绍：</div>
+                                <div class="szdqqr">
+                                    <textarea name="details" cols="55" style="border:1px solid #ABADB3" rows="5"
+                                              id="body"></textarea>
+                                </div>
+                            </div>
+                            <div class="szdqq" style="height:22px">
+                                <div class="szdqql"> &nbsp;</div>
+                                <div class="szdqqr"> (请填写10到300个字母或汉字)</div>
+                            </div>
+                            <div class="szdqq m16">
+                                <div class="szdqql"> 联系电话：</div>
+                                <div class="szdqqr">
+                                    <input name="phone" type="text" value=""
+                                           onkeyup="this.value=this.value.replace(/\D/g,'')"
+                                           onafterpaste="this.value=this.value.replace(/\D/g,'')" id="sj"
+                                           style="border:1px solid #ABADB3;height:23px" size="25" maxlength="255"/>
+                                    &nbsp;<span id="user_sj_message"><font
+                                        color="#666666">填写有效的手机号码，能够方便家长与您联系</font></span></div>
+                            </div>
+
+                            <div class="szdqq m16">
+                                <div>
+                                    选择图片：<input type="file" name="filename"/><br/>
+                                </div>
+                            </div>
+
+                            <div style="clear:both"></div>
+                            <div style="  margin-left:260px; margin-top:15px; margin-bottom:15px" id="xxg">
+                                <input  type="submit" id="regist" value="注册"/>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
+    </div>
+</div>
+<div id="m1" class="xmenu" style="display: none;">
+    <div class="select-info" style="display:none;">
+        <label class="top-label">已选学科：</label>
+        <ul>
+        </ul>
+        <a name="menu-confirm" href="javascript:void(0);" class="a-btn"> <span class="a-btn-text">确定</span> </a></div>
+
+
+</div>
+<script type="text/javascript">
+
+
+    function check_dazz() {
+        var user_dazz = $("#user_dazz").val();
+        if (user_dazz.length > 0 && user_dazz.length <= 15) {
+            $("#tip_dazz").html("&radic;").removeClass().addClass("green").show();
+        } else {
+            $("#tip_dazz").html("请使用15个字符长度的字母或数字").removeClass().addClass("red").show();
+        }
+    }
+
+    function checkemail() {
+
+        var user_email = $("#user_email").val();
+        var emailtype = $("#emailtype").val();
+        if (user_email == "") {
+            $("#tip_email").html("请填写Email帐号！").addClass("red").show();
+        } else {
+
+            var uv = user_email + emailtype;
+
+            var preg = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+            if (!preg.test(uv)) {
+                $("#tip_email").html("Email格式不对").removeClass().addClass("red").show();
+            } else {
+
+                $.post('check_useremail.action', {'v': uv}, function (data) {
+
+                    if (data == '1') {
+                        $("#tip_email").html("&radic;").removeClass().addClass("green").show();
+                    } else {
+                        $("#tip_email").html("该邮箱已经存在").removeClass().addClass("red").show();
+                    }
+                });
+            }
+        }
+    }
+
+    function checkpws() {
+        var password = $("#password").val();
+        if (password != "") {
+            if (password.length > 5 && password.length < 17) {
+                $("#tip_password").html("&radic;").removeClass().addClass("green").show();
+            } else {
+                $("#tip_password").html("请使用6-16个字符长度的字母或数字").removeClass().addClass("red").show();
+            }
+        }
+
+        var password1 = $("#password1").val();
+        if (password1 != "") {
+            if (password1.length > 5 && password1.length < 17) {
+                $("#tip_password1").html("&radic;").removeClass().addClass("green").show();
+            } else {
+                $("#tip_password1").html("确认密码请使用6-16个字符长度的字母或数字").removeClass().addClass("red").show();
+            }
+        }
+
+        if (password1 != password) {
+            $("#tip_password1").html("密码和确认密码不一致").removeClass().addClass("red").show();
+        }
+
+    }
+
+    function checkxm() {
+        var user_zsxm = $("#user_zsxm").val();
+        if (user_zsxm.length > 0 && user_zsxm.length < 5) {
+            $("#tip_xm").html("&radic;").removeClass().addClass("green").show();
+        } else {
+
+            $("#tip_xm").html("不能超过4字符").removeClass().addClass("redd").show();
+
+
+        }
+        var reg = /^[\u4e00-\u9fa5]+$/;
+        if (!reg.test($("#user_zsxm").val())) {
+            alert("称呼必须中文");
+            $("#tip_xm").html("称呼必须中文").removeClass().addClass("redd").show();
+
+
+        }
+
+
+    }
+
+
+    function checksex() {
+        var user_sex = $("#user_sex").val();
+        if (0 == user_sex.selectedIndex) {
+            $("#tip_sex").html("&times;").removeClass().addClass("redd").show();
+        } else {
+            $("#tip_sex").html("&radic;").removeClass().addClass("green").show();
+        }
+    }
+
+    function checkskjy() {
+        var user_skjy = $("#user_skjy").val();
+        if (0 == user_skjy.selectedIndex) {
+            $("#tip_skjy").html("&times;").removeClass().addClass("redd").show();
+        } else {
+            $("#tip_skjy").html("&radic;").removeClass().addClass("green").show();
+        }
+    }
+
+    function checkmfsj() {
+        var user_mfsj = $("#user_mfsj").val();
+        if (0 == user_mfsj.selectedIndex) {
+            $("#tip_mfsj").html("&times;").removeClass().addClass("redd").show();
+        } else {
+            $("#tip_mfsj").html("&radic;").removeClass().addClass("green").show();
+        }
+    }
+
+    function checkstartfei() {
+        var startfei = $("#startfei").val();
+        if (0 == startfei.selectedIndex) {
+            $("#tip_dazz").html("&times;").removeClass().addClass("redd").show();
+            return "0";
+        } else {
+            $("#tip_dazz").html("&radic;").removeClass().addClass("green").show();
+            return "1";
+        }
+    }
+
+
+    function checksf() {
+
+
+        var name = document.reg_form.selectposhidden.value;
+        var sf = document.reg_form.user_sf.value;
+        $.post('check_km.action', {'v': name, 'sf': sf}, function (data) {
+            if (data != "") {
+                $("#ksfb").html(data);
+            }
+        });
+        var user_sf = $("#user_sf").val();
+        if ($("#user_sf").val() == '请选择') {
+            $("#zkm").hide();
+        }
+
+        if (0 == user_sf.selectedIndex) {
+            $("#tip_sf").html("&times;").removeClass().addClass("redd").show();
+        } else {
+            $("#tip_sf").html("&radic;").removeClass().addClass("green").show();
+
+            if (user_sf == 1) {
+                $("#iDBody55").show();
+                $("#iDBody56").hide();
+                $("#iDBody57").hide();
+                $("#sta").attr("value", '1');
+                $("#zkm").show();
+            }
+            if (user_sf == 3) {
+                $("#iDBody55").hide();
+                $("#iDBody56").show();
+                $("#iDBody57").hide();
+                $("#sta").attr("value", '2');
+                $("#zkm").show();
+            }
+            if (user_sf == 2) {
+                $("#iDBody55").hide();
+                $("#iDBody56").hide();
+                $("#iDBody57").show();
+                $("#sta").attr("value", '3');
+                $("#zkm").show();
+            }
+        }
+    }
+
+
+    function changeselect23(locationid) {
+        if (locationid == "") {
+            return false;
+        }
+
+        $.post('check_schselect1.action', {'v': locationid}, function (data) {
+            if (data != "") {
+                $("#spanyx").html(data);
+            }
+        });
+        $("#tip_yxcs").html("&radic;").removeClass().addClass("green").show();
+
+    }
+
+    function changeselect23d(locationid) {
+        if (locationid == "") {
+            return false;
+        }
+
+        $.post('check_schselect1d.action', {'v': locationid}, function (data) {
+            if (data != "") {
+                $("#spanyxd").html(data);
+            }
+        });
+        $("#tip_yxcsd").html("&radic;").removeClass().addClass("green").show();
+
+    }
+
+
+    function changeselect41(locationid) {
+        if (locationid == "") {
+            return false;
+        }
+
+        $.post('check_schselect2.action', {'v': locationid}, function (data) {
+            if (data != "") {
+                $("#jykm").html(data);
+            }
+        });
+
+
+    }
+
+
+    function changeselect2d(locationid, zd, ts, name) // 选中的值， 下一层id   下一层改变id  ，下一层 select 的名称
+    {
+        if (locationid == "") {
+            return false;
+        }
+
+        document.reg_form.selectposhidden1.value = "";
+
+        var user_selectpos = document.getElementById('ccg');
+        user_selectpos.innerHTML = '=====选择区域=====';
+
+
+        $.post('check_jyselect.actiond', {'v': locationid}, function (datad) {
+
+            if (datad != "") {
+                $("#aabbcctt").html(datad);
+            }
+        });
+        $.post('check_jyselect.action', {'v': locationid, 'ts': ts, 'name': name}, function (data) {
+            if (data != "") {
+                $("#" + zd).html(data);
+            }
+        });
+
+
+    }
+
+    function changeselect2(locationid, zd, ts, name) // 选中的值， 下一层id   下一层改变id  ，下一层 select 的名称
+    {
+
+        if (locationid == "") {
+            return false;
+        }
+        document.reg_form.selectposhidden1.value = "";
+
+
+        $.post('check_jyselect1.action', {'v': locationid, 'ts': ts, 'name': name}, function (data) {
+            if (data != "") {
+                $("#" + zd).html(data);
+            }
+        });
+
+
+    }
+
+
+    function changeselect22(locationid, zd, ts, name) // 选中的值， 下一层id   下一层改变id  ，下一层 select 的名称
+    {
+        if (locationid == "") {
+            return false;
+        }
+        //alert(locationid);
+        $.post('check_schselect.action', {'v': locationid, 'ts': ts, 'name': name}, function (data) {
+            if (data != "") {
+                $("#" + zd).html(data);
+            }
+        });
+    }
+
+    function changeselect22d(locationid, zd, ts, name) // 选中的值， 下一层id   下一层改变id  ，下一层 select 的名称
+    {
+        if (locationid == "") {
+            return false;
+        }
+        //alert(locationid);
+        $.post('check_schselectd.action', {'v': locationid, 'ts': ts, 'name': name}, function (data) {
+            if (data != "") {
+                $("#" + zd).html(data);
+            }
+        });
+    }
+
+
+    function qt(aa) {
+        var yx = $("#yx").val();
+        if (0 == yx.selectedIndex) {
+            $("#tip_yx").html("&times;").removeClass().addClass("redd").show();
+        } else {
+            $("#tip_yx").html("&radic;").removeClass().addClass("green").show();
+        }
+    }
+
+    function checkstatus() {
+        var now_status = $("#now_status").val();
+        if (0 == now_status.selectedIndex) {
+            $("#tip_mqsf").html("&times;").removeClass().addClass("redd").show();
+        } else {
+            $("#tip_mqsf").html("&radic;").removeClass().addClass("green").show();
+        }
+    }
+
+    function checksszy() {
+        var user_sszy = $("#user_sszy").val();
+        if (user_sszy.length > 0 && user_sszy.length < 11) {
+            $("#tip_sxzy").html("&radic;").removeClass().addClass("green").show();
+        } else {
+
+            $("#tip_sxzy").html("不能超过10字符").removeClass().addClass("redd").show();
+        }
+    }
+
+    function checkyjxx() {
+        var user_yjxx = $("#user_yjxx").val();
+        if (user_yjxx.length > 0 && user_yjxx.length < 11) {
+            $("#tip_yjxx").html("&radic;").removeClass().addClass("green").show();
+        } else {
+
+            $("#tip_yjxx").html("不能超过10字符").removeClass().addClass("redd").show();
+        }
+    }
+
+    function checksszyd() {
+        var user_sszyd = $("#user_sszyd").val();
+        if (user_sszyd.length > 0 && user_sszyd.length < 11) {
+            $("#tip_sszyd").html("&radic;").removeClass().addClass("green").show();
+        } else {
+
+            $("#tip_sszyd").html("不能超过10字符").removeClass().addClass("redd").show();
+        }
+    }
+
+
+    function checkssss() {
+        var str = document.getElementsByName("ssss3");
+        var objarray = str.length;
+        var chestr = "";
+        for (i = 0; i < objarray; i++) {
+            if (str[i].checked == true) {
+                chestr += str[i].value + ",";
+            }
+        }
+
+        var str1 = document.getElementsByName("ssss2");
+        var objarray1 = str1.length;
+        var chestr1 = "";
+        for (i = 0; i < objarray1; i++) {
+            if (str1[i].checked == true) {
+                chestr1 += str1[i].value + ",";
+            }
+        }
+
+        var str2 = document.getElementsByName("ssss1");
+        var objarray2 = str2.length;
+        var chestr2 = "";
+        for (i = 0; i < objarray2; i++) {
+            if (str2[i].checked == true) {
+                chestr2 += str2[i].value + ",";
+            }
+        }
+
+        var str3 = document.getElementsByName("ssss4");
+        var objarray3 = str3.length;
+        var chestr3 = "";
+        for (i = 0; i < objarray3; i++) {
+            if (str3[i].checked == true) {
+                chestr3 += str3[i].value + ",";
+            }
+        }
+
+
+        if (chestr == "" && chestr1 == "" && chestr2 == "" && chestr3 == "") {
+            document.reg_form.ssss1.focus();
+            $("#tip_ssss").html("请选择").removeClass().addClass("redd").show();
+        }
+        else {
+            $("#tip_ssss").html("&radic;").removeClass().addClass("green").show();
+
+        }
+    }
+
+
+    function sub_time() {
+        var a1 = document.getElementById("a1");
+        var a2 = document.getElementById("a2");
+        var a3 = document.getElementById("a3");
+        var b1 = document.getElementById("b1");
+        var b2 = document.getElementById("b2");
+        var b3 = document.getElementById("b3");
+        var c1 = document.getElementById("c1");
+        var c2 = document.getElementById("c2");
+        var c3 = document.getElementById("c3");
+        var d1 = document.getElementById("d1");
+        var d2 = document.getElementById("d2");
+        var d3 = document.getElementById("d3");
+        var e1 = document.getElementById("e1");
+        var e2 = document.getElementById("e2");
+        var e3 = document.getElementById("e3");
+        var f1 = document.getElementById("f1");
+        var f2 = document.getElementById("f2");
+        var f3 = document.getElementById("f3");
+        var g1 = document.getElementById("g1");
+        var g2 = document.getElementById("g2");
+        var g3 = document.getElementById("g3");
+        if (a1.checked == true || a2.checked == true || a3.checked == true || b1.checked == true || b2.checked == true || b3.checked == true || c1.checked == true || c2.checked == true || c3.checked == true || d1.checked == true || d2.checked == true || d3.checked == true || e1.checked == true || e2.checked == true || e3.checked == true || f1.checked == true || f2.checked == true || f3.checked == true || g1.checked == true || g2.checked == true || g3.checked == true) {
+            $("#tip_a").html("&radic;").removeClass().addClass("green").show();
+        } else {
+            $("#tip_a").html("请选择").removeClass().addClass("redd").show();
+        }
+    }
+
+
+    function sub_s3() {
+
+        var str = document.getElementsByName("s3");
+        var objarray = str.length;
+        var chestr = "";
+        for (i = 0; i < objarray; i++) {
+            if (str[i].checked == true) {
+                document.getElementById('ss3').style.display = "";
+                document.reg_form.is_jg.value = 1;
+            } else {
+                document.getElementById('ss3').style.display = "none";
+                document.reg_form.is_jg.value = 0;
+            }
+        }
+
+    }
+
+    function checkForm() {
+
+        document.getElementById("xxg").innerHTML = "<img src='#/xbjsimg/jyzczcz.jpg'   width=71 height=25 />";
+
+        var servitems = document.getElementById('servitems');
+        if (document.reg_form.servitems.checked == false) {
+            alert("您还没有同意协议");
+            document.getElementById("xxg").innerHTML = " <input name='sdfsdfsdf'  type='button'  onclick='checkForm();'   style='background:url(xbjsimg/jyzc.jpg);height:25px; width:71px; border:0px'   />";
+            document.reg_form.servitems.focus();
+            return false;
+        }
+
+
+        if ($("#EventB_YyrXtx").val() == '') {
+            alert("请选择地区");
+            document.getElementById("xxg").innerHTML = " <input name='sdfsdfsdf'  type='button'  onclick='checkForm();'   style='background:url(xbjsimg/jyzc.jpg);height:25px; width:71px; border:0px'   />";
+            return false;
+        }
+        //------------
+
+        //密码检测
+        var password = $("#password").val();
+        if (password != "") {
+            if (password.length > 5 && password.length < 17) {
+                $("#tip_password").html("&radic;").removeClass().addClass("green").show();
+            } else {
+                $("#tip_password").html("请使用6-16个字符长度的字母或数字").removeClass().addClass("red").show();
+                alert("请使用6-16个字符长度的字母或数字！");
+                document.getElementById("xxg").innerHTML = " <input name='sdfsdfsdf'  type='button'  onclick='checkForm();'   style='background:url(xbjsimg/jyzc.jpg);height:25px; width:71px; border:0px'   />";
+                document.reg_form.password.focus();
+                return false;
+            }
+        } else {
+            $("#tip_password").html("请使用6-16个字符长度的字母或数字").removeClass().addClass("red").show();
+            alert("请使用6-16个字符长度的字母或数字！");
+            document.getElementById("xxg").innerHTML = " <input name='sdfsdfsdf'  type='button'  onclick='checkForm();'   style='background:url(xbjsimg/jyzc.jpg);height:25px; width:71px; border:0px'   />";
+            document.reg_form.password.focus();
+            return false;
+        }
+        var password1 = $("#password1").val();
+        if (password1 != "") {
+            if (password1.length > 5 && password1.length < 17) {
+                $("#tip_password1").html("&radic;").removeClass().addClass("green").show();
+            } else {
+                $("#tip_password1").html("确认密码请使用6-16个字符长度的字母或数字").removeClass().addClass("red").show();
+                alert("确认密码请使用6-16个字符长度的字母或数字");
+                document.getElementById("xxg").innerHTML = " <input name='sdfsdfsdf'  type='button'  onclick='checkForm();'   style='background:url(xbjsimg/jyzc.jpg);height:25px; width:71px; border:0px'   />";
+                document.reg_form.password1.focus();
+                return false;
+            }
+        } else {
+            $("#tip_password1").html("确认密码请使用6-16个字符长度的字母或数字").removeClass().addClass("red").show();
+            alert("确认密码请使用6-16个字符长度的字母或数字");
+            document.getElementById("xxg").innerHTML = " <input name='sdfsdfsdf'  type='button'  onclick='checkForm();'   style='background:url(xbjsimg/jyzc.jpg);height:25px; width:71px; border:0px'   />";
+            document.reg_form.password1.focus();
+            return false;
+        }
+        if (password1 != password) {
+            $("#tip_password1").html("密码和确认密码不一致").removeClass().addClass("red").show();
+            alert("密码和确认密码不一致");
+            document.getElementById("xxg").innerHTML = " <input name='sdfsdfsdf'  type='button'  onclick='checkForm();'   style='background:url(xbjsimg/jyzc.jpg);height:25px; width:71px; border:0px'   />";
+            document.reg_form.password1.focus();
+            return false;
+        }
+        //------------
+
+
+</script>
+<!--  footer -->
+<div style="clear:both"></div>
+<div class="footerd">
+    <div style="height:18px"></div>
+    <div class="content">
+
+        <div class="contentleft">
+            <div class="wxt"></div>
+            <div class="gzwxt">关注微信</div>
+        </div>
+        <div class="line"></div>
+        <div class="contentleft1">
+            <div class="contentleft1_f">
+                <div class="dh">
+                    <div class="dhleft"></div>
+                    <div class="dhright">
+                        <div class="dhrx">本地客服热线</div>
+                        <div class="dhmf"></div>
+                    </div>
+                </div>
+                <div class="dh400">XXX-XXX-XXXX</div>
+                <div class="dhsj">工作时间每日9:00-18:00</div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="contentleft2">
+            <div class="tj">
+                <div class="yx">
+                    <div class="yxleft"></div>
+                    <div class="yxright">邮箱：xxxxxxx@xxxx.net</div>
+                </div>
+
+                <div class="kfry">
+                    <div class="kfryleft"></div>
+                    <div class="kfryright">教员交流群：xxxxxxxxx</div>
+                </div>
+
+                <div class="kfxl">
+                    <div class="kfxlleft"></div>
+                    <div class="kfxlright">新浪微博：XX教育</div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="line"></div>
+        <div class="contentright">
+            <div class="cjwt">
+                <div class="cjwttitle">常见问题</div>
+                <div class="cjwtbody"><a href="#/cjwt-30071.html" target="_blank" style="color:#CFCECE">家长找家教流程</a>
+                </div>
+                <div class="cjwtbody"><a href="#/cjwt-30070.html" target="_blank" style="color:#CFCECE">教员最新使用流程</a>
+                </div>
+                <div class="cjwtbody"><a href="#/cjwt-30083.html" target="_blank" style="color:#CFCECE">信誉值说明</a></div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div style="width:887px; margin:0px auto;  margin-top:8px"><img src="images/line5.jpg"></div>
+    <div class="link" style="width:1006px; margin:0 auto; text-align:left">友情链接：
+        <a target="_blank" style="color:#FFFFFF" href="http://baiping.tantuw.com">广州佰平会计培训</a> | <a target="_blank"
+                                                                                                    style="color:#FFFFFF"
+                                                                                                    href="http://gs.yixue99.com/">中公甘肃卫生人才网</a>
+        | <a target="_blank" style="color:#FFFFFF" href="http://fz.jiaoyubao.cn/">福州培训</a> | <a target="_blank"
+                                                                                                style="color:#FFFFFF"
+                                                                                                href="http://fuzhou.kuyiso.com/jiaoyu/">福州教育网</a>
+        | <a target="_blank" style="color:#FFFFFF" href="http://jinsejiayuanwanke.fang.com/">万科金色家园</a> | <a
+                target="_blank" style="color:#FFFFFF" href="http://www.rzjjzx.com">日照家教中心网</a> | <a target="_blank"
+                                                                                                    style="color:#FFFFFF"
+                                                                                                    href="http://nyxy.ohqly.com">新野吧</a>
+        | <a target="_blank" style="color:#FFFFFF" href="http://www.ooobz.com">四川博钊教育</a> | <a target="_blank"
+                                                                                               style="color:#FFFFFF"
+                                                                                               href="http://china.findlaw.cn/guilin">桂林律师</a>
+        |
+    </div>
+
+</div>
+
+
+<div class="footerd1"><a href="#/about-5.html" style="color:#FFFFFF">关于我们</a> &nbsp;|&nbsp; <a href="#/about-7.html"
+                                                                                               style="color:#FFFFFF">网站地图</a>&nbsp;
+    |&nbsp; <a href="#/about-6.html" style="color:#FFFFFF">联系我们</a> &nbsp;| &nbsp;<a href="#/yqlj.html"
+                                                                                     style="color:#FFFFFF">友情链接</a>
+    &nbsp;| &nbsp;<a href="#/yjjy.html" style="color:#FFFFFF">意见建议</a>&nbsp; | &nbsp;<a href="#/cjwt.html"
+                                                                                        style="color:#FFFFFF">帮助中心</a>&nbsp;
+    |&nbsp; <a href="#/about-8.html" style="color:#FFFFFF">版权声明</a> &nbsp;|&nbsp; <a href="#/about-5.html"
+                                                                                     style="color:#FFFFFF">免责声明</a>
+    &nbsp;|&nbsp; <a href="#/about-9.html" style="color:#FFFFFF">收藏本站</a> &nbsp;| &nbsp; XXICP备xxxxxxxx号
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?5a3e451cf2fd5d3d2d9ecd8b1c3125d4";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script type="text/javascript" src="//s.union.360.cn/110420.js"></script>
+</div>
+<!--  end footer -->
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?8668350454cbd086a3122440c28b16d8";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script><!-- 左侧漂浮代码 开始 -->
+<ul id="side-bar" class="side-pannel side-bar">
+    <a href="javascript:;" class="gotop" style="display:none;"><s class="g-icon-top"></s></a>
+    <a href="#/cjwt.html" target="_blank" class="text bkuang " style="height:39px; font-size:12px">
+        <div>常见问题</div>
+    </a>
+    <a href="#" target="_blank" class="text bkuang1 qr" style="margin-top:5px; height:36px; font-size:12px">
+        <div>微信关注</div>
+        <s></s><i></i></a>
+    <a href="#/yjjy.html" target="_blank" class="text bkuang2 " style="margin-top:5px; height:36px; font-size:12px">
+        <div>用户反馈</div>
+    </a>
+
+</ul>
+<!-- 代码 结束 -->

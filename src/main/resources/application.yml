@@ -1,0 +1,53 @@
+server:
+  port: 8080
+  session:
+    timeout: 3000
+  context-path: /
+  tomcat:
+    uri-encoding: utf-8
+spring:
+  mvc:
+    static-path-pattern: /**
+  freemarker:
+    allow-request-override: false
+    cache: false
+    check-template-location: true
+    charset: utf-8
+    content-type: text/html
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: false
+    suffix: .ftl
+  http:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 50MB
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/family_education?useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&rewriteBatchedStatements=true&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  thymeleaf:
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    content-type: text/html
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+web.upload-path: C:/img/
+management.security.enabled: false
+security.user.name: admin
+security.user.password: secret
+management.security.roles: SUPERUSER

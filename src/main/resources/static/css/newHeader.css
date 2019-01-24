@@ -1,0 +1,483 @@
+#newheader {
+	background: rgb(71, 71, 71); transition:background-color 200ms, color 200ms; left: 0px; top: 0px; width: 100%; height: 40px; right: 0px; bottom: 0px; color: rgb(255, 255, 255); letter-spacing: 0.1em; font-family: "Microsoft YaHei", sans-serif; font-size: 12px; font-style: normal; font-weight: 400; position: fixed; z-index: 999999; -moz-transition: 200ms background-color, 200ms color; -webkit-transition: 200ms background-color, 200ms color; _position: absolute; -o-transition: 200ms background-color, 200ms color;
+}
+
+.jsfb {
+	width:959px;
+	height:49px;
+	background-color:#ebe9e9;
+	color:#716f6f;
+	margin:0px auto;
+	padding-left:48px;
+	padding-top:23px;
+	font-size:16px;
+	position:relative;
+	margin-top:8px;
+	margin-bottom:20px;
+}
+
+.jsfbtext {
+position:absolute;
+top:5px;
+left:5px;
+width:15px;
+height:16px;
+
+}
+
+
+#newheader .header-container {
+	margin: 0px auto; width: 1000px; height: 100%; position: relative;
+}
+#newheader .header-sprite {
+	background: url("icons_all.png") no-repeat;
+}
+#newheader .header-icon-sprite {
+	background: url("header-sprite.png") no-repeat;
+}
+#newheader .header-search {
+	background: rgb(71, 71, 71); height: 40px; margin-left: 10px; float: left; display: block; position: relative;
+}
+#newheader .header-search .header-input-search {
+	background: rgb(246, 246, 246); margin: 6px 0px; padding: 0px 10px; border-radius: 2px; border: 0px currentColor; transition:0.25s ease-out; width: 195px; height: 28px; line-height: 28px; -moz-transition: all .25s ease-out; -webkit-transition: all .25s ease-out; -o-transition: all .25s ease-out;
+}
+#newheader .header-search .header-input-search:focus {
+	background: rgb(255, 255, 255);
+}
+#newheader .header-search .header-img-seatch {
+	background-position: 0px -181px; top: 10px; width: 22px; height: 20px; right: 7px; display: block; position: absolute;
+}
+#newheader .header-search .header-search-close {
+	display: none;
+}
+#newheader .active.header-search {
+	margin: 0px; width: 100%; position: absolute; z-index: 30;
+}
+#newheader .active.header-search .header-input-search {
+	background: rgb(71, 71, 71); padding: 0px 30px; width: 92%; color: rgb(241, 241, 241); font-size: 13px; display: block;
+}
+#newheader .active.header-search .header-img-seatch {
+	left: 0px; position: absolute;
+}
+#newheader .active.header-search .header-search-close {
+	background: url("header-search-close.png") no-repeat; top: 4px; width: 30px; height: 30px; right: 0px; text-decoration: none; display: block; position: absolute;
+}
+#newheader .active.header-search .header-search-close:hover {
+	background: url("header-search-close-hover.png") no-repeat;
+}
+#newheader .header-block {
+	position: relative; z-index: 20;
+}
+
+#newheader .header-logo .cor {
+	border-width: 4px; border-style: solid dashed dashed; border-color: rgb(255, 255, 255) transparent transparent; top: 20px; width: 0px; height: 0px; right: 9px; overflow: hidden; margin-bottom: -2px; display: block; position: absolute;
+}
+#newheader .header-menu {
+	height: 40px;
+}
+#newheader .header-menu > ol::after {
+	clear: both; display: table; content: "";
+}
+#newheader .header-menu > ol {
+	display: inline;
+}
+#newheader .header-menu > li {
+	list-style: none; float: left; display: inline;
+}
+#newheader .header-menu > li > a {
+	padding: 0px 15px; height: 40px; color: rgb(250, 250, 250); line-height: 39px; letter-spacing: 1px; font-family: "Microsoft YaHei", sans-serif;  display: block; position: relative;
+}
+#newheader .header-menu a:hover {
+ }
+#newheader .header-menu .header-menu-hover {
+	background-color: rgb(53, 53, 53);
+}
+#newheader .header-class-list {
+	border-width: 0px 1px; border-style: solid; border-color: transparent;
+}
+#newheader .header-myclass {
+	border-width: 0px 1px; border-style: solid; border-color: transparent;
+}
+#newheader .header-tools {
+	border-width: 0px 1px; border-style: solid; border-color: transparent;
+}
+#newheader .header-d {
+	border-width: 0px 1px; border-style: solid; border-color: transparent;
+}
+#newheader .header-my {
+	border-width: 0px 1px; border-style: solid; border-color: transparent;
+}
+#newheader .header-msg {
+	border-width: 0px 1px; border-style: solid; border-color: transparent;
+}
+#newheader .header-logo-list {
+	border-width: 0px 1px; border-style: solid; border-color: transparent;
+}
+#newheader .header-class-list a:hover {
+	background-color: rgb(255, 255, 255);
+}
+#newheader .header-myclass a:hover {
+	background-color: rgb(255, 255, 255);
+}
+#newheader .header-tools a:hover {
+	background-color: rgb(255, 255, 255);
+}
+#newheader .header-d a:hover {
+	background-color: rgb(255, 255, 255);
+}
+#newheader .header-my a:hover {
+	background-color: rgb(255, 255, 255);
+}
+#newheader .header-msg a:hover {
+	background-color: rgb(255, 255, 255);
+}
+#newheader .header-logo-list a:hover {
+	background-color: rgb(255, 255, 255);
+}
+#newheader .header-class-list a {
+	font-family: "Microsoft YaHei", sans-serif; text-decoration: none;
+}
+#newheader .header-myclass-list a {
+	font-family: "Microsoft YaHei", sans-serif; text-decoration: none;
+}
+#newheader .header-tools-list a {
+	font-family: "Microsoft YaHei", sans-serif; text-decoration: none;
+}
+#newheader .header-d-list a {
+	font-family: "Microsoft YaHei", sans-serif; text-decoration: none;
+}
+#newheader .header-my-list a {
+	font-family: "Microsoft YaHei", sans-serif; text-decoration: none;
+}
+#newheader .header-msg-list a {
+	font-family: "Microsoft YaHei", sans-serif; text-decoration: none;
+}
+#newheader .header-class-list a:hover {
+	color: rgb(91, 91, 91); background-color: rgb(241, 241, 241);
+}
+#newheader .header-myclass-list a:hover {
+	color: rgb(91, 91, 91); background-color: rgb(241, 241, 241);
+}
+#newheader .header-tools-list a:hover {
+	color: rgb(91, 91, 91); background-color: rgb(241, 241, 241);
+}
+#newheader .header-d-list a:hover {
+	color: rgb(91, 91, 91); background-color: rgb(241, 241, 241);
+}
+#newheader .header-my-list a:hover {
+	color: rgb(91, 91, 91); background-color: rgb(241, 241, 241);
+}
+#newheader .header-msg-list a:hover {
+	color: rgb(91, 91, 91); background-color: rgb(241, 241, 241);
+}
+#newheader .header-menu .cor {
+	border-width: 4px; border-style: solid dashed dashed; border-color: rgb(255, 255, 255) transparent transparent; top: 18px; width: 0px; height: 0px; right: 5px; overflow: hidden; margin-bottom: -2px; display: block; position: absolute;
+}
+#newheader .header-left {
+	float: left;
+}
+#newheader .header-left a {
+color:#FFFFFF;
+}
+
+#newheader .posright {
+	top: 0px; right: 0px; position: absolute;
+}
+#newheader .header-logo-list {
+	width: 390px;
+}
+
+#newheader .header-lineheight {
+	line-height: 39px;
+}
+
+#newheader .header-logo-list dd {
+	width: 100%; line-height: 30px; display: none;
+}
+#newheader .header-logo-list dd > a {
+	padding: 0px 0px 0px 52px; font-family: "microsoft yahei"; display: block;
+}
+#newheader .header-logo-list:hover {
+	background: rgb(255, 255, 255); border-width: 0px 1px 1px; border-style: solid; border-color: rgb(229, 229, 229); color: rgb(91, 91, 91); box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+#newheader .header-logo-list dd a:hover {
+	text-decoration: none; background-color: rgb(241, 241, 241);
+}
+#newheader .header-logo-list:hover dd > a {
+	color: rgb(91, 91, 91);
+}
+#newheader .header-logo-list:hover dd {
+	display: block;
+}
+#newheader .header-logo-list:hover .header-logo .cor {
+	border-color: rgb(121, 121, 121) transparent transparent;
+}
+#newheader .header-tools {
+	position: relative;
+}
+#newheader .header-tools:hover {
+	background: rgb(255, 255, 255); border: 1px solid rgb(229, 229, 229); color: rgb(91, 91, 91);
+}
+#newheader .header-tools:hover a {
+	color: rgb(91, 91, 91);
+}
+#newheader .header-tools:hover .cor {
+	border-color: rgb(121, 121, 121) transparent transparent;
+}
+#newheader .header-tools:hover .header-tools-list {
+	display: block; box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+#newheader .header-tools-list {
+	background: rgb(255, 255, 255); border-width: 0px 1px 1px; border-style: solid; border-color: rgb(229, 229, 229); padding: 6px 0px; left: -1px; top: 40px; width: 122px; display: none; position: absolute;
+}
+#newheader .header-tools-list > li > a {
+	padding: 0px 0px 0px 45px; text-transform: uppercase; line-height: 32px; letter-spacing: 1px; display: block;
+}
+#newheader .header-d {
+	position: relative;
+}
+#newheader .header-d:hover {
+	background: rgb(255, 255, 255); border: 1px solid rgb(229, 229, 229); color: rgb(91, 91, 91);
+}
+#newheader .header-d:hover a {
+	color: rgb(91, 91, 91);
+}
+#newheader .header-d:hover .cor {
+	border-color: rgb(121, 121, 121) transparent transparent;
+}
+#newheader .header-d:hover .header-d-list {
+	display: block; box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+#newheader .header-d-list {
+	background: rgb(255, 255, 255); border-width: 0px 1px 1px; border-style: solid; border-color: rgb(229, 229, 229); padding: 7px 0px; left: -1px; top: 40px; width: 115px; display: none; position: absolute;
+}
+#newheader .header-d-list > li > a {
+	width: 100%; text-align: center; text-transform: uppercase; line-height: 30px; letter-spacing: 1px; display: block; 
+}
+#newheader .header-d .header-d-link {
+	background-position: 30px -200px; width: 85px; height: 40px; line-height: 40px; text-align:center; font-size:14px;
+}
+#newheader .header-msg {
+	position: relative;
+}
+#newheader .header-msg:hover {
+	background: rgb(255, 255, 255); border: 1px solid rgb(229, 229, 229); color: rgb(91, 91, 91);
+}
+#newheader .header-msg:hover a {
+	color: rgb(91, 91, 91);
+}
+#newheader .header-msg:hover .cor {
+	border-color: rgb(121, 121, 121) transparent transparent;
+}
+#newheader .header-msg:hover .header-msg-list {
+	display: block; box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+#newheader .header-msg-list {
+	background: rgb(255, 255, 255); border-width: 0px 1px 1px; border-style: solid; border-color: rgb(229, 229, 229); padding: 6px 0px; left: -1px; width: 136px; display: none; position: absolute;
+}
+#newheader .header-msg-list > li > a {
+	padding: 0px 17px; text-align: left; text-transform: uppercase; line-height: 30px; letter-spacing: 1px; display: block;
+}
+#newheader .header-msg .header-menu-msg {
+	background-position: 10px -51px; width: 25px; height: 40px; line-height: 0;
+}
+#newheader .header-msg:hover .header-menu-msg {
+	background-position: 10px -82px;
+}
+#newheader .header-msg .notice.header-menu-msg {
+	background-position: 10px 10px;
+}
+#newheader .header-msg:hover .notice.header-menu-msg {
+	background-position: 10px -22px;
+}
+#newheader .header-my {
+	position: relative;
+}
+#newheader .header-my:hover {
+	background: rgb(255, 255, 255); border: 1px solid rgb(229, 229, 229); color: rgb(91, 91, 91);
+}
+#newheader .header-my:hover a {
+	color: rgb(91, 91, 91);
+}
+#newheader .header-my:hover .cor {
+	border-color: rgb(121, 121, 121) transparent transparent;
+}
+#newheader .header-my:hover .header-my-list {
+	display: block; box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+#newheader .header-my-list {
+	background: rgb(255, 255, 255); border-width: 0px 1px 1px; border-style: solid; border-color: rgb(229, 229, 229); padding: 6px 0px; left: -1px; top: 40px; width: 115px; display: none; position: absolute;
+}
+#newheader .header-my-list > li > a {
+	text-align: center; text-transform: uppercase; line-height: 30px; letter-spacing: 1px; display: block;
+}
+#newheader .header-d {
+	position: relative;
+}
+#newheader .header-d:hover {
+	background: rgb(255, 255, 255); border: 1px solid rgb(229, 229, 229); color: rgb(91, 91, 91);
+}
+#newheader .header-d:hover .header-tools-list {
+	display: block;
+}
+#newheader .header-d:hover a {
+	color: rgb(91, 91, 91);
+}
+#newheader .header-d:hover .header-d-link {
+	background-position: 10px -230px;
+}
+#newheader .header-d:hover .cor {
+	border-color: rgb(121, 121, 121) transparent transparent;
+}
+#newheader .header-logo-www {
+	background-position: 20px -1083px;
+}
+#newheader .header-logo-league {
+	background-position: 20px -777px;
+}
+#newheader .header-logo-cc {
+	background-position: 20px -1058px;
+}
+#newheader .header-logo-group {
+	background-position: 20px -946px;
+}
+#newheader .header-tools-word {
+	background-position: 15px -20px;
+}
+#newheader .header-tools-listen {
+	background-position: 15px -440px;
+}
+#newheader .header-tools-d {
+	background-position: 15px -580px;
+}
+#newheader .header-tools-tiger {
+	background-position: 15px -1029px;
+}
+#newheader .header-tools-cctalk {
+	background-position: 15px -1056px;
+}
+#newheader .header-d-drawword {
+	background-position: 13px -263px;
+}
+#newheader .bottom-line {
+	margin: 6px auto; width: 100px; line-height: 0; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: dashed; display: block;
+}
+#newheader .top-line {
+	margin: 4px auto; width: 70px; line-height: 0; border-top-color: rgb(204, 204, 204); border-top-width: 1px; border-top-style: dashed; display: block;
+}
+#newheader .point {
+	background: rgb(255, 79, 79); padding: 0px 4px; border-radius: 3px; color: rgb(255, 255, 255); margin-left: 3px;
+}
+#newheader .user-name {
+	text-align: center; overflow: hidden; display: block; white-space: nowrap; cursor: pointer; -ms-text-overflow: ellipsis; max-width: 85px;
+}
+#newheader .user-name .cor {
+	margin-left: -44px;
+}
+#newheader .hide {
+	display: none;
+}
+#newheader .header-myclass {
+	position: relative;
+}
+#newheader .header-myclass:hover {
+	background: rgb(255, 255, 255); border: 1px solid rgb(229, 229, 229); color: rgb(91, 91, 91);
+}
+#newheader .header-myclass:hover a {
+	color: rgb(91, 91, 91);
+}
+#newheader .header-myclass:hover .cor {
+	border-color: rgb(121, 121, 121) transparent transparent;
+}
+#newheader .header-myclass:hover .header-class-list {
+	display: block; box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+#newheader .header-class-list {
+	background: rgb(255, 255, 255); border-width: 0px 1px 1px; border-style: solid; border-color: rgb(229, 229, 229); padding: 6px 0px; left: -1px; top: 40px; width: 270px; display: none; position: absolute;
+}
+#newheader .header-class-list > li > a {
+	padding: 0px 18px; line-height: 30px; letter-spacing: 1px; overflow: hidden; display: block; white-space: nowrap; -ms-text-overflow: ellipsis;
+}
+#newheader .new-order {
+	background-position: -12px -542px; top: 7px; width: 10px; height: 10px; right: 7px; display: block; position: absolute;
+}
+#newheader .btnSetSkin {
+	top: 40px; width: 102px; height: 79px; right: 0px; display: none; position: absolute; z-index: 999; -ms-behavior: url(/pie/PIE.htc);
+}
+#newheader .btnSetSkin:hover {
+	width: 171px; height: 131px;
+}
+#newheader .username {
+	padding-left: 0px;
+}
+#newheader #hjdict_slide {
+	background: url("icons_xdhc.gif") no-repeat 18px 10px; width: auto; padding-left: 17px;
+}
+#newheader #hjdict_slide:hover {
+	background: url("icons_xdhc.gif") no-repeat 18px 10px; width: auto; padding-left: 17px;
+}
+#newheader .on#hjdict_slide {
+	background-position: 18px -19px;
+}
+#newheader .on#hjdict_slide:hover {
+	background-position: 18px -19px;
+}
+#newheader .mgb-8 {
+	margin-bottom: 8px;
+}
+#newheader .update_info_tooltip {
+	top: 34px; width: 95px; height: 30px; text-align: center; right: 142px; color: rgb(255, 255, 255) !important; line-height: 36px; position: absolute; z-index: 2; cursor: pointer; background-image: url("update_info_tip_bg.png");
+}
+#newheader .pass_register_tooltip {
+	display: none;
+}
+
+.header-bubble-close {
+	top: 56px; width: 30px; height: 30px; right: 4px; display: block; position: absolute;
+}
+.header-mask {
+	background: rgb(0, 0, 0); top: 0px; width: 100%; height: 100%; display: none; position: fixed; z-index: 999999; opacity: 0.5;
+}
+
+.header-email {
+background:url(header-email.png) no-repeat 5px 10px;
+width:87px;
+color:#FFFFFF;
+font-size:13px;
+padding-left:12px;
+ 
+}
+
+
+.header-xy {
+color:#FFFFFF; 
+width:150px;
+font-size:14px;
+line-height:14px;
+line-height:40px;
+}
+
+@media screen and (max-width:1200px) and (min-width:1024px)
+{
+#newheader .header-container {
+	width: 1000px;
+}
+}
+@media screen and (max-width:980px)
+{
+#newheader .header-container {
+	width: 100%;
+}
+#newheader .header-menu .header-d {
+	display: none;
+}
+#newheader .header-input-search {
+	display: none;
+}
+#newheader .header-img-seatch {
+	left: 0px;
+}
+}
+body .hp-overlay {
+	z-index: 999999;
+}

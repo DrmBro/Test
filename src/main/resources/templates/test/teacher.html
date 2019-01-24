@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+    <tr th:each="tea:${teacher}">
+        <td th:text="${tea.user_id}"></td>
+        <td th:text="${tea.password}"></td>
+        <td th:text="${tea.true_name}"></td>
+        <td th:text="${tea.sex}"></td>
+        <td th:text="${tea.id_card}"></td>
+        <td th:text="${tea.college}"></td>
+        <td th:text="${tea.major}"></td>
+        <td th:text="${tea.phone}"></td>
+        <td th:text="${tea.money}"></td>
+        <img th:src="@{'/show?fileName='+${tea.picture}}" style="width: 200px"/>
+    </tr>
+</table>
+</body>
+</html>

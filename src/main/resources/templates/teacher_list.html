@@ -1,0 +1,737 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <META content="IE=10.000" http-equiv="X-UA-Compatible">
+    <META charset="utf-8">
+    <meta name="applicable-device" content="pc,mobile">
+    <meta name="MobileOptimized" content="width"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <title>阳光家教网</title>
+    <meta http-equiv="Cache-control" content="no-siteapp" />
+    <meta name="keywords" content="XX教育网,福州家教网,福州家教" />
+    <meta name="description" content="XX家教网是全国连锁的家教信息平台，对家长免费开放，不收取中介费。在职、退休、大学生家教免费上门试讲。教师经身份认证、严格审核。家长可参考其他家长对教师责任心、教学水平、整体满意度来选择适合的家教。" />
+    <LINK href="css/index.css" rel="stylesheet" type="text/css">
+    <SCRIPT src="js/jquery-1.7.2.min.js" type="text/javascript"></SCRIPT>
+    <LINK href="css/newHeader.css" rel="stylesheet" type="text/css">
+    <SCRIPT src="js/xl.js" type="text/javascript"></SCRIPT>
+    <link rel="stylesheet" type="text/css" href="css/newjiedai.css">
+    <script type="text/javascript" src="js/newjiedai.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+    <script src="js/layer.js"></script>
+    <script type="text/javascript" src="js/xyck.js"></script>
+    <link href="css/lrtk.css" rel="stylesheet" type="text/css" />
+    <script>
+        $(function(){
+            $(window).scroll(function(){
+                if($(window).scrollTop()>100){  //距顶部多少像素时，出现返回顶部按钮
+                    $("#side-bar .gotop").fadeIn();
+                }
+                else{
+                    $("#side-bar .gotop").hide();
+                }
+            });
+            $("#side-bar .gotop").click(function(){
+                $('html,body').animate({'scrollTop':0},500); //返回顶部动画 数值越小时间越短
+            });
+        });
+    </script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="css/drop-down.css" />
+    <script src="js/select-widget-min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".ui-select").selectWidget({
+                change       : function (changes) {
+                    return changes;
+                },
+                effect       : "slide",
+                keyControl   : true,
+                speed        : 200,
+                scrollHeight : 250
+            });
+        });
+        function jsyc() {
+            $("#jsfb").hide();
+        }
+    </script>
+</HEAD>
+<BODY>
+<!-- 头部黑条 -->
+<DIV id="newheader">
+    <DIV class="header-container">
+        <div th:if="${session.user != null}">
+            <dl class="header-block header-left   header-lineheight">
+                <dt style="font-size:13px" > 您好！<span th:text="${username}"></span>
+                    <a th:href="@{logoutuser}"   onclick="tankuang1('#','baidu')" >  注销</a>
+                    <span style="letter-spacing:0.5em">|</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a th:href="@{order_list}"   onclick="tankuang1('#','baidu')" >  我的订单</a>
+                </dt>
+            </dl>
+        </div>
+    </DIV>
+</DIV>
+<!-- 结束头部黑条 -->
+<!-- 头部 -->
+<DIV id="page_header">
+    <DIV id="page_header_cont"><A id="logo_link" href="index.html"><IMG id="logo_img" style="width: 170px; height: 60px;" src="images/logoN.png"> </A>
+        <DIV id="city">
+        </DIV>
+        <DIV id="search"  >
+            <form method="get" action="search">
+                <input type="hidden" name="dqid" value="101">
+                <div class="km">
+                    <select class=ui-select  style="background-color: #FFFFFF;border: 1px solid #2DB2FF;box-shadow: 0 0 2px #2DB2FF;border-radius: 5px;font-size: 14px;height: 28px;position: relative;width: 120px;-webkit-user-select: none;"  name="course">
+                        <option  selected=selected value="0" >选择科目 </option>
+                        <option value="语文">语文</option>
+                        <option value="数学">数学</option>
+                        <option value="英语">英语</option>
+                        <option value="化学">化学</option>
+                        <option value="物理">物理</option>
+                        <option value="生物">生物</option>
+                        <option value="政治">政治</option>
+                        <option value="地理">地理</option>
+                        <option value="历史">历史</option>
+                    </select>
+                </div>
+                <div class="xb">
+                    <select class="ui-select" name="sex">
+                        <option  selected="selected"  value="0">教员性别 </option>
+                        <option value="0">不限</option>
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select>
+                </div>
+                <div class="xb">
+                    <select  class="ui-select" name="address">
+                        <option  selected="selected"  value="0">地点 </option>
+                        <option  value="仓山">仓山</option>
+                        <option  value="闽侯">闽侯</option>
+                        <option  value="台江">台江</option>
+                        <option  value="鼓楼">鼓楼</option>
+                        <option  value="晋安">晋安</option>
+                        <option  value="长乐">长乐</option>
+                        <option  value="平潭">平潭</option>
+                        <option  value="福清">福清</option>
+                        <option  value="罗源">罗源</option>
+                        <option  value="闽清">闽清</option>
+                        <option  value="永泰">永泰</option>
+                    </select>
+                </div>
+                <div class="searchbunn"> <input name="eeeew" type="image" src="images/search.gif"></div>
+            </form>
+        </DIV>
+        <DIV id="favorites">
+        </DIV>
+    </DIV>
+    <DIV id="page_nav">
+        <DIV class="nav_cont">
+            <!--<DIV class="nav_item" id="category"><A class="main_link" id="btn_category"-->
+                                                   <!--style="cursor: pointer;font-size:14px" href="#"  >所有教员分类</A>-->
+            <!--</DIV>-->
+            <DIV class="nav_item"><A class="main_link " style="font-size:14px"  th:href="@{/index}">首页</A></DIV>
+            <DIV class="nav_item"><A class="main_link   " style="font-size:14px" th:href="@{student_list}">学员列表</A> </DIV>
+            <DIV class="nav_item"><A class="main_link  current " style="font-size:14px" href="#">教员列表</A> </DIV>
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{problem}">常见问题</A> </DIV>
+        </DIV>
+    </DIV>
+</DIV>
+<!-- 结束头部 -->
+
+<!--  教员导航列表 -->
+
+<div class="tjjsdh">家教网 >>
+    <a href="#/" style="color:#494949">福州家教网 </a>
+    >> 福州家教列表
+</div>
+<!-- 结束教员导航列表 -->
+
+
+<!--  教员列表 -->
+<div class="jslistc">
+    <div class="xylbwk" style=" width:740px; float:left; height:auto; margin-bottom:15px ">
+        <div class="jsleft">
+
+            <div th:each="tea:${teachers}">
+                <div class="jslbxx">
+
+                    <div class="jstt" style="cursor:pointer;">
+                        <div class="jslbxx_tx">
+                            <div class="jslbxx_tx_1">
+                                <img th:src="@{'/show?fileName='+${tea.picture}}" height="120%" style="width: 130px"/>
+                            </div>
+                        </div>
+                        <div class="jslbxx_txxx">
+                            <div class="jslbxx_txxx1">
+                                <div class="jslbdd">
+                                    <div style="width:412px; float:left">
+                                        <div style="width:55px; float:left; color:#048BDD; font-size:14px"><span th:text="${tea.userId}"></span>
+                                        </div>
+                                        <div class="jslbxx_txxx2"><span th:text="${tea.trueName}"></span>【大学生家教】</div>
+                                        <div class="jslbxx_txxx3">信誉153分</div>
+                                        <div class="jslbxx_txxx4">经验2年</div>
+                                        <div class="jslbxx_txxx12">认证</div>
+                                        <div class="jslbxx_txxx5">签</div>
+                                    </div>
+                                    <div class="jslbdd1" style="  width:132px">
+                                        <div class="jslbxx_txxx7"> 小学 <span th:text="${tea.money}"></span>元/小时</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jslbxx_txxx8"><span style="color:#464646">辅导科目：</span><span
+                                    style="color:#717171"><span th:text="${tea.course}"></span></span></div>
+                            <div class="jslbxx_txxx9"><span style="color:#464646">辅导地区：</span><span
+                                    style="color:#717171"><span th:text="${tea.address}"></span></span></div>
+                            <div class="jslbxx_txxx10" style="line-height:22px; height:40px"><span
+                                    style="color:#464646">个人简介：</span><span th:text="${tea.details}" style="color:#717171 "></span></div>
+                            <div class="jslbxx_txxx11" style="margin-top:6px;"><a th:href="@{'/teacher_details?userId='+${tea.userId}}"><font color="white">查看详细</font></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="jsline"></div>
+                </div>
+            </div>
+
+            <div class="jscgal" style="margin-top:12px; height:232px" >
+                <div class="jscgaltitle">
+                    <div class="jscgaltitle1">福州XX家教网</div>
+                </div>
+                <div class="jscgalbody"  style="font-size:12px; line-height:30px;  ">
+                    XX家教网全国连锁，福州XX家教网专业、权威，家长无中介费！万名优秀福州家教经身份认证严格审核，上门试讲.已成功为千余名福州学员找到适合的家教老师，颇受家长好评！				</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 结束教员列表-->
+    <!--  footer -->
+    <div style="clear:both"></div>
+    <div class="footerd">
+        <div style="height:18px"></div>
+        <div  class="content" >
+
+            <div class="contentleft">
+                <div class="wxt"></div>
+                <div class="gzwxt">关注微信</div>
+            </div>
+            <div class="line"> </div>
+            <div class="contentleft1">
+                <div class="contentleft1_f">
+                    <div class="dh">
+                        <div class="dhleft"></div>
+                        <div class="dhright">
+                            <div class="dhrx">本地客服热线</div>
+                            <div class="dhmf"> </div>
+                        </div>
+                    </div>
+                    <div class="dh400">xxx-xxx-xxxx</div>
+                    <div class="dhsj">工作时间每日9:00-18:00</div>
+                </div>
+            </div>
+            <div class="line"> </div>
+            <div class="contentleft2">
+                <div class="tj">
+                    <div class="yx">
+                        <div class="yxleft"></div>
+                        <div class="yxright">邮箱：xxxxxxx@xxxx.xxx</div>
+                    </div>
+
+                    <div class="kfry">
+                        <div class="kfryleft"></div>
+                        <div class="kfryright">教员交流群：xxxxxxxxx</div>
+                    </div>
+
+                    <div class="kfxl">
+                        <div class="kfxlleft"></div>
+                        <div class="kfxlright">新浪微博：XX教育</div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="line"> </div>
+            <div class="contentright">
+                <div class="cjwt">
+                    <div class="cjwttitle">常见问题</div>
+                    <div class="cjwtbody"><a href="#/cjwt-30071.html" target="_blank"  style="color:#CFCECE" >家长找家教流程</a></div>
+                    <div class="cjwtbody"><a href="#/cjwt-30070.html" target="_blank"  style="color:#CFCECE"  >教员最新使用流程</a></div>
+                    <div class="cjwtbody"><a href="#/cjwt-30083.html" target="_blank"  style="color:#CFCECE" >信誉值说明</a></div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div style="width:887px; margin:0px auto;  margin-top:8px"><img src="images/line5.jpg"></div>
+    </div>
+
+
+
+    <!--  end footer -->
+    <script src="#/layer/layer.js"></script>
+    <script type="text/javascript" src="images/ajax.js"></script>
+    <div  style="width:455px;  overflow:hidden; display:none;">
+        <table width="445" height="305" border="0" cellpadding="0" cellspacing="0">
+            <form  name="form1d"     onSubmit="return formCheck1();" method="post" action="#//1t1regact2js.php">
+
+                <tr>
+                    <td width="445" height="48"><a href="javascript:EV_closeAlert()"><img src="#//imgs/topde5.gif"   width="445" height="50" border="0"></a></td>
+                </tr>
+                <tr>
+                    <td height="236" align="center" background="#//imgs/topde6.gif"><table width="369" height="56" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="109" align="right" style="font-size:14px">用户名/手机号：</td>
+                            <td width="234" align="left"><input name="username" style="border:1px solid #69a9cf; width:210px; height:32px; background-color:#f3f3f3; line-height:32px" type="text"  ></td>
+                        </tr>
+                    </table>
+                        <table width="369" height="56" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="117" align="right"  style="font-size:14px">密 码：</td>
+                                <td width="252" align="left"><input name="password" style="border:1px solid #69a9cf; width:210px; height:32px; background-color:#f3f3f3; line-height:32px" type="password"  ></td>
+                            </tr>
+                        </table>
+                        <table width="369" height="48" border="0" style="margin-top:8px" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="116" height="48" align="left">&nbsp;</td>
+                                <td width="114" align="left"><input type="image" name="imageField" src="images/topde8.gif"></td>
+                                <td width="139" align="left"><a href="http://jj.bcjy123.com//1t1wjmm.php" style="color:#3064ec">忘记密码？</a></td>
+                            </tr>
+                        </table>
+                        <table width="369" height="56" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="118" align="left" style="font-size:14px; color:#848482">&nbsp;</td>
+                                <td width="251" align="left" style="font-size:14px; color:#848482">您还没有账号吗？</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="left" style="font-size:14px; color:#848482"><table height="22"  border="0" align="center" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td width="88" height="22" align="center" background="images/topde9.gif" style="font-size:14px; "><a href="#//1t1xsreg.php" style="color:#FFFFFF">老师注册</a></td>
+                                        <td width="17" style="font-size:14px; color:#848482">&nbsp;</td>
+                                        <td width="88" align="center" background="images/topde9.gif" style="font-size:14px; "><a href="#//xyreg.php" style="color:#FFFFFF">学生注册</a></td>
+                                        <td width="17" align="center"  >&nbsp;</td>
+                                    </tr>
+                                </table></td>
+                            </tr>
+                        </table></td>
+                </tr>
+                <tr>
+                    <td height="19"><img src="#//imgs/topde7.gif" width="445" height="19"></td>
+                </tr>
+            </form>
+        </table>
+    </div>
+</div>
+<script >
+    function jsch() {
+        var jsid=document.getElementById("jsid").value;
+
+        if (jsid=='') {
+            alert("请输入教师编号");
+            return;
+        }
+
+        ajax("#/xzcssearch.php","POST","v="+jsid,function(tdata){
+
+
+            if(tdata=='1') {
+                window.location.href="#/teacher/101/" + jsid +  ".html";
+                return;
+            }else{
+                if(tdata=='2') {
+                    alert("您搜索的教员不存在");
+                    return;
+                }else{
+                    layer.open({
+                        type: 1,
+                        title: false,
+                        closeBtn: true,
+                        area: ['550px', '195px'],
+                        shadeClose: true,
+                        content: tdata
+                    });
+                }
+            }
+
+        });
+    }
+</script>
+
+
+<!-- 结束教员列表-->
+<!--  footer -->
+<div style="clear:both"></div>
+
+
+
+<div class="footerd1"><a href="#/about-5.html" style="color:#FFFFFF">关于我们</a> &nbsp;|&nbsp; <a href="#/about-7.html"  style="color:#FFFFFF">网站地图</a>&nbsp; |&nbsp; <a href="#/about-6.html"  style="color:#FFFFFF">联系我们</a> &nbsp;| &nbsp;<a href="#/yqlj.html"  style="color:#FFFFFF">友情链接</a> &nbsp;| &nbsp;<a href="#/yjjy.html"  style="color:#FFFFFF">意见建议</a>&nbsp; | &nbsp;<a href="#/cjwt.html"  style="color:#FFFFFF">帮助中心</a>&nbsp; |&nbsp; <a href="#/about-8.html"  style="color:#FFFFFF">版权声明</a> &nbsp;|&nbsp; <a href="#/about-5.html"  style="color:#FFFFFF">免责声明</a> &nbsp;|&nbsp; <a href="#/about-9.html"  style="color:#FFFFFF">收藏本站</a> &nbsp;| &nbsp;XICP备xxxxxxxxx号 <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?5a3e451cf2fd5d3d2d9ecd8b1c3125d4";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script> <script type="text/javascript" src="//s.union.360.cn/110420.js"></script> </div>
+<!--  end footer -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?8668350454cbd086a3122440c28b16d8";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script><!-- 左侧漂浮代码 开始 -->
+<!-- <ul id="side-bar" class="side-pannel side-bar">
+  <a href="javascript:;" class="gotop" style="display:none;"><s class="g-icon-top"></s></a>
+  <a href="#/cjwt.html" target="_blank" class="text bkuang "  style="height:39px; font-size:12px"> <div>常见问题</div></a>
+  <a href="#" target="_blank" class="text bkuang1 qr" style="margin-top:5px; height:36px; font-size:12px"> <div >微信关注</div><s ></s><i></i></a>
+    <a href="#/yjjy.html" target="_blank" class="text bkuang2 " style="margin-top:5px; height:36px; font-size:12px"> <div>用户反馈</div></a>
+
+ </ul> -->
+<!-- 代码 结束 -->
+<script src="#/layer/layer.js"></script>
+
+<!-- 左侧漂浮代码 开始 -->
+<!-- <ul id="side-barr" class="side-pannelr side-barr">
+   <form name="formg">
+   <div style="height:9px;"></div>
+   	<div class="jj1" style="letter-spacing:0.1em"  >15分钟快速<span style="color:#FF0000">找家教</span></div>
+
+ 	<input type="text" name="sjj" id="sjj"   style="color:#CCCCCC"   onBlur="myblur(this,1)"   onfocus="myFocus(this,'#CCCCCC')"    value="请填写手机号">
+	<input type="text" name="chh" id="chh"   style="color:#CCCCCC"  onBlur="myblur(this,2)"  onfocus="myFocus(this,'#CCCCCC')"   value="填写家长称呼">
+	<div style="margin-left:14px">
+		<div style="float:left; width:53px;  color:#CCCCCC"><input type="text" name="yzm"  style="width:53px;color:#CCCCCC; height:27px"  id="yzm"  onBlur="myblur(this,3)"  onfocus="myFocus(this,'#CCCCCC')"       value="验证码"> </div>
+
+		 <div style="width:70px; float:left; margin-left:11px; margin-top:6px; margin-bottom:0px"> <img src="#/authCode.php" style="width:70px; height:28px; "  id="yyyy" onClick="this.src='#/authcode.php?id='+Math.random();" /> </div>
+	</div>
+	 <div style="clear:both"></div>
+
+	<div class="tjjg" id="kstj" style="padding-top:1px"><img onclick="ks()" src="images/kstj1d.jpg" border="0"></div>
+	</form>
+ </ul> -->
+<!-- 代码 结束 -->
+<script type="text/javascript" src="images/ajax.js"></script>
+<script type="text/javascript" >
+
+    function myblur(obj,bl){
+
+        if (bl==1) {
+            if(obj.value==""){
+                obj.value="请填写手机号";
+                obj.style.color="#CCCCCC";
+            }else {
+
+                obj.style.color="#CCCCCC";
+            }
+        }
+
+        if (bl==2) {
+            if(obj.value==""){
+                obj.value="填写家长称呼";
+                obj.style.color="#CCCCCC";
+            }else {
+
+                obj.style.color="#CCCCCC";
+            }
+        }
+
+        if (bl==3) {
+            if(obj.value==""){
+                obj.value="验证码";
+                obj.style.color="#CCCCCC";
+            }else {
+
+                obj.style.color="#CCCCCC";
+            }
+        }
+
+    }
+
+
+    function myFocus(obj,color){
+
+        if(obj.value=="请填写手机号"){
+            obj.value="";
+        }
+        if(obj.value=="填写家长称呼"){
+            obj.value="";
+        }
+        if(obj.value=="验证码"){
+            obj.value="";
+        }
+    }
+
+
+    function ks() {
+
+        document.getElementById("kstj").innerHTML="<img src='images/kstj1d.jpg' border='0'>";
+
+        var chh = document.getElementById("chh");
+        var user_name_reg = /^[0-9a-z_]{4,16}$/i
+        var chhvalue=chh.value;
+        var dd=chhvalue.replace(/[ ]/g,"");
+        if(dd=='') {
+            document.formg.chh.focus();
+            document.getElementById("kstj").innerHTML="<img src='images/kstj1d.jpg' onclick='ks()' border='0'>";
+            alert("您的称呼不能为空，不能少于 2 个字或不能大于 4 个字");
+            return false;
+        } else if(chhvalue.length < 2 || chhvalue.length > 4) {
+            document.formg.chh.focus();
+            document.getElementById("kstj").innerHTML="<img src='images/kstj1d.jpg' onclick='ks()' border='0'>";
+            alert("您的称呼不能为空，不能少于 2 个字或不能大于 4 个字");
+            return false;
+        }
+        var reg = /^[\u4e00-\u9fa5]+$/;
+        if(!reg.test(chhvalue)){
+            alert("您的称呼必须中文");
+            document.getElementById("kstj").innerHTML="<img src='images/kstj1d.jpg' onclick='ks()' border='0'>";
+            document.formg.chh.focus();
+            return 	false;
+        }
+
+        var user_sj = document.getElementById('sjj');
+        if(user_sj.value=='') {
+            alert("请填写手机");
+            document.getElementById("kstj").innerHTML="<img src='images/kstj1d.jpg' onclick='ks()' border='0'>";
+            document.formg.sjj.focus();
+            return false;
+        } else if(user_sj.value.length < 11) {
+            alert("请输入正确手机号码");
+            document.getElementById("kstj").innerHTML="<img src='images/kstj1d.jpg' onclick='ks()' border='0'>";
+            document.formg.sjj.focus();
+            return false;
+        } else if(user_sj.value.length > 11) {
+            alert("请输入正确手机号码");
+            document.getElementById("kstj").innerHTML="<img src='images/kstj1d.jpg' onclick='ks()' border='0'>";
+            document.formg.sjj.focus();
+        }else{
+
+            var yzm = document.getElementById('yzm');
+            if(yzm.value=='') {
+                alert("请填写验证码");
+                document.getElementById("kstj").innerHTML="<img src='images/kstj1d.jpg' onclick='ks()' border='0'>";
+                document.formg.yzm.focus();
+                return false;
+            }
+
+            var chm= document.getElementById("chh").value;
+            var sjh= document.getElementById("sjj").value;
+            var yzm= document.getElementById("yzm").value;
+
+            var locationid=chm+","+sjh+","+yzm;
+            var newcss=sjh + "," + yzm;
+            ajax("#/check_jsggd.action.php","POST","v="+newcss,function(data){
+                if (data!=1 && data!=2 && data!=3) {
+                    window.location.href=data;
+                }
+
+                if (data==3) {
+                    alert("验证码不正确");
+                    var yyyy = document.getElementById("yyyy");
+                    yyyy.src='#/authcode.php?id='+Math.random();
+                    document.getElementById("kstj").innerHTML="<img src='images/kstj1d.jpg' onclick='ks()' border='0'>";
+                    return false;
+                }
+
+
+                if (data==1) {
+                    document.getElementById("kstj").innerHTML="<img src='images/kstj1d.jpg' onclick='ks()' border='0'>";
+                    ajax("#/denglujs2.php","POST","sj="+sjh,function(data){
+                        layer.open({
+                            type: 1,
+                            title: false,
+                            closeBtn: true,
+                            area: ['445px', '400px'],
+                            shadeClose: true,
+                            offset: '140px',
+                            content: data //注意，如果str是object，那么需要字符拼接。
+                        });
+                    });
+                }
+
+                if (data==2) {
+                    ajax("#/check_yh.action.php","POST","v="+locationid,function(data){
+                        if (data=="") {
+                            alert("验证码不正确");
+                            var yyyy = document.getElementById("yyyy");
+                            yyyy.src='#/authcode.php?id='+Math.random();
+                            document.getElementById("kstj").innerHTML="<img src='images/kstj1d.jpg' onclick='ks()' border='0'>";
+                            return false;
+                        }else{
+                            document.getElementById("kstj").innerHTML="<img src='images/kstj1d.jpg' onclick='ks()' border='0'>";
+                            layer.open({
+                                type: 1,
+                                title: false,
+                                closeBtn: true,
+                                area: ['550px', '230px'],
+                                shadeClose: true,
+                                offset: '240px',
+                                content: data
+                            });
+
+                        }
+                    });
+                }
+            });
+        }
+    }
+
+    function formCheck1(){
+
+        var sjh=document.getElementById("username");
+        var sjhdvalue=sjh.value;
+        var bykg=sjhdvalue.replace(/[ ]/g,"");
+        if (bykg=='') {
+            alert("手机号不能为空");
+            document.form1d.username.focus();
+            return false;
+        }
+
+        if(bykg.length < 11) {
+            alert("手机号输入不正确");
+            document.form1d.username.focus();
+            return false;
+        }
+
+        if(bykg.length > 11) {
+            alert("手机号输入不正确");
+            document.form1d.username.focus();
+            return false;
+        }
+        var password=$("input[name='passwordd']").val();
+        if (password=='') {
+            alert("密码不能为空");
+            document.form1d.passwordd.focus();
+            return false;
+        }
+
+
+
+
+        var yhxx=sjhdvalue + "," + password;
+
+        ajax("#/check_jsggdenglu1.action.php","POST","v="+yhxx,function(data){
+
+            if (data==1) {
+                layer.closeAll();
+                ajax("#/dlym.php","POST","",function(data){
+                    layer.open({
+                        type: 1,
+                        title: false,
+                        closeBtn: true,
+                        area: ['445px', '207px'],
+                        shadeClose: true,
+                        offset: '140px',
+                        content: data
+                    });
+                });
+                return false;
+            }
+            if (data==2) {
+                layer.closeAll();
+                ajax("#/nodd.php","POST","sj="+sjh,function(data){
+                    layer.open({
+                        type: 1,
+                        title: false,
+                        closeBtn: true,
+                        area: ['445px', '207px'],
+                        shadeClose: true,
+                        offset: '140px',
+                        content: data //注意，如果str是object，那么需要字符拼接。
+                    });
+
+                });
+                return false;
+            }
+            if (data==3) {
+                alert("用户名或密码不正确");
+                return false;
+            }
+
+            if (data!=1 && data!=2 && data!=3) {
+                window.location.href=data;
+                return false;
+            }
+        });
+
+    }
+
+
+
+    function zpjj() {
+
+        layer.closeAll();
+
+        ajax("ddfz.php","POST","",function(data){
+
+            layer.open({
+                type: 1,
+                title: false,
+                closeBtn: true,
+                area: ['445px', '207px'],
+                shadeClose: true,
+                offset: '140px',
+                content: data //注意，如果str是object，那么需要字符拼接。
+            });
+
+
+        });
+
+
+    }
+
+
+</script>
+
+<div id="envon30" style="width:455px;  overflow:hidden; display:none;">
+    <table width="445" height="305" border="0" cellpadding="0" cellspacing="0">
+        <form id="form1d" name="form1d"     onSubmit="return formCheck1();" method="post" action="#//1t1regact2js.php">
+
+            <tr>
+                <td width="445" height="48"><a href="javascript:EV_closeAlert()"><img src="#//imgs/topde5.gif"   width="445" height="50" border="0"></a></td>
+            </tr>
+            <tr>
+                <td height="236" align="center" background="#//imgs/topde6.gif"><table width="369" height="56" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td width="109" align="right" style="font-size:14px">用户名/手机号：</td>
+                        <td width="234" align="left"><input name="username" style="border:1px solid #69a9cf; width:210px; height:32px; background-color:#f3f3f3; line-height:32px" type="text" id="username"></td>
+                    </tr>
+                </table>
+                    <table width="369" height="56" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="117" align="right"  style="font-size:14px">密 码：</td>
+                            <td width="252" align="left"><input name="password" style="border:1px solid #69a9cf; width:210px; height:32px; background-color:#f3f3f3; line-height:32px" type="password" id="password"></td>
+                        </tr>
+                    </table>
+                    <table width="369" height="48" border="0" style="margin-top:8px" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="116" height="48" align="left">&nbsp;</td>
+                            <td width="114" align="left"><input type="image" name="imageField" src="images/topde8.gif"></td>
+                            <td width="139" align="left"><a href="http://jj.bcjy123.com//1t1wjmm.php" style="color:#3064ec">忘记密码？</a></td>
+                        </tr>
+                    </table>
+                    <table width="369" height="56" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="118" align="left" style="font-size:14px; color:#848482">&nbsp;</td>
+                            <td width="251" align="left" style="font-size:14px; color:#848482">您还没有账号吗？</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="font-size:14px; color:#848482"><table height="22"  border="0" align="center" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="88" height="22" align="center" background="images/topde9.gif" style="font-size:14px; "><a href="#//1t1xsreg.php" style="color:#FFFFFF">老师注册</a></td>
+                                    <td width="17" style="font-size:14px; color:#848482">&nbsp;</td>
+                                    <td width="88" align="center" background="images/topde9.gif" style="font-size:14px; "><a href="#//xyreg.php" style="color:#FFFFFF">学生注册</a></td>
+                                    <td width="17" align="center"  >&nbsp;</td>
+                                </tr>
+                            </table></td>
+                        </tr>
+                    </table></td>
+            </tr>
+            <tr>
+                <td height="19"><img src="#//imgs/topde7.gif" width="445" height="19"></td>
+            </tr>
+        </form>
+    </table>
+</div></BODY>
+</HTML>

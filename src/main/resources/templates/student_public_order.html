@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布订单页</title>
+</head>
+<!--<link rel="stylesheet" ; type="text/css" ; href="3.css"/>-->
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<body>
+<table class="table" align="center"  border="0"  bordercolor="#00000"  cellpadding="0"  cellspacing="0"
+       width="800"
+       height="500"  id="tz">
+    <tr valign="top">
+        <td>  <!-- 表格中的表格置;顶 -->
+            <table class="" align="center" border="0" cellpadding="0" cellspacing="0" width="750" height="70">
+                <tr height="50" valign="bottom">
+                    <td width="120" align="center"><font size="2"><strong>订单资料:</strong></font></td>
+                    <td><font size="2"><a style="color: #F33636">*</a> 为必填项</font></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <hr/>
+                    </td>
+                </tr>
+            </table>
+
+            <form action="add_stu_order" method="post" onsubmit="return checkInfo();">
+                <table class="table" align="center" border="0" cellspacing="0" cellpadding="0" width="650" height="80">
+
+
+                    <tr>
+                        <td width="120" align="right" height="30">
+                            <a style="color:#F33636">*</a> <span id="phone">家长手机号</span>：
+                        </td>
+                        <td width="160">
+                            <input type="text" name="stu_phone" id="stu_phone">
+                        </td>
+                        <td width="115" colspan="2">
+                            <font size="1" color="#958888">最多11个字符，例如：13809570656</font>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td width="120" align="right" height="30">
+                            <a style="color:#F33636">*</a> 要求教师性别：
+                        </td>
+                        <td colspan="3" style="font-size:12px ">
+                            <input type="radio" name="tea_sex" checked="checked" value="男">男
+                            <input type="radio" name="tea_sex" value="女">女
+                        </td>
+
+
+
+                    <tr>
+                        <td width="120" align="right" height="30">
+                            <a style="color:#F33636">*</a> 价格：
+                        </td>
+                        <td colspan="3" style="font-size:12px" width="60%">
+                            <input type="text" name="money" checked="checked">元/小时
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="120" align="right" height="30">
+                            <a style="color:#F33636">*</a>补习区域：
+                        </td>
+                        <td colspan="3">
+                            <select style="width: 150px" name="address">
+                                <option>请选择（区域）</option>
+                                <option>鼓楼区</option>
+                                <option>仓山区</option>
+                                <option>台江区</option>
+                                <option>马尾区</option>
+                                <option>闽侯区</option>
+                            </select>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="120" align="right" height="30">
+                            <a style="color:#F33636">*</a>学生年级：
+                        </td>
+                        <td colspan="3">
+                            <select style="width: 150px" name="grade">
+                                <option>请选择（年级）</option>
+                                <option>初中</option>
+                                <option>初中</option>
+                                <option>初中</option>
+                                <option>初中</option>
+                                <option>初中</option>
+                                <option>初中</option>
+                                <option>初中</option>
+                                <option>初中</option>
+                                <option>初中</option>
+                                <option>初中</option>
+                            </select>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="120" align="right" height="30">
+                            <a style="color:#F33636">*</a>补习科目：
+                        </td>
+                        <td colspan="3">
+                            <select style="width: 150px" name="course">
+                                <option>请选择（科目）</option>
+                                <option>语文</option>
+                                <option>数学</option>
+                                <option>英语</option>
+                                <option>物理</option>
+                                <option>化学</option>
+                                <option>政治</option>
+                                <option>历史</option>
+                                <option>生物</option>
+                                <option>地理</option>
+                                <option>全科</option>
+                            </select>
+
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td width="120" align="right" height="30">
+                            <a style="color:#F33636"></a> 学生状况：
+                        </td>
+                        <td colspan="3" style="font-size:12px ">
+                            <textarea name="details" cols="60" rows="8"></textarea>
+
+
+                    </tr>
+
+
+                    <tr>
+                        <td width="120" align="right" height="30">
+
+                        </td>
+                        <td colspan="3" style="font-size:12px ">
+                            <font size="1" color="#F30909">提醒：你是否确定以上信息？是.请点击下面</font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="120" align="center" height="30" colspan="4">
+                            <input class="button" type="submit" value="发布我的订单">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>

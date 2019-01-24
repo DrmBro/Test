@@ -1,0 +1,397 @@
+﻿<!DOCTYPE>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <META content="IE=10.000" http-equiv="X-UA-Compatible">
+    <META charset="utf-8">
+    <title>福州家教网-高女士找小学数学 小学陪读 小学全科家教-柏成家教网</title>
+    <meta name="keywords" content="柏成教育网,福州家教网,福州家教"/>
+    <meta name="description" content="柏成家教网-六年级 男孩 补习数学 成绩57分 一周补习两次 周六日白天方便 一节课两个小时"/>
+    <meta http-equiv="Cache-control" content="no-siteapp"/>
+    <LINK href="css/index.css" rel="stylesheet" type="text/css">
+    <SCRIPT src="js/jquery-1.7.2.min.js" type="text/javascript"></SCRIPT>
+    <LINK href="css/newHeader.css" rel="stylesheet" type="text/css">
+    <SCRIPT src="js/xl.js" type="text/javascript"></SCRIPT>
+    <link rel="stylesheet" type="text/css" href="css/newjiedai.css">
+    <script type="text/javascript" src="js/newjiedai.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript" src="js/xyck.js"></script>
+    <link href="css/lrtk.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="css/drop-down.css"/>
+    <script src="js/select-widget-min.js"></script>
+    <script src="#layer/layer.js"></script>
+
+
+</HEAD>
+<BODY>
+<!-- 头部黑条 -->
+<DIV id="newheader">
+    <DIV class="header-container">
+        <div th:if="${session.user != null}">
+            <dl class="header-block header-left   header-lineheight">
+                <dt style="font-size:13px" > 您好！<span th:text="${username}"></span>
+                    <a th:href="@{logoutuser}"   onclick="tankuang1('#','baidu')" >  注销</a> <span style="letter-spacing:0.5em">|</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a th:href="@{order_list}"   onclick="tankuang1('#','baidu')" >  我的订单</a>
+                </dt>
+            </dl>
+        </div>
+        <div class="hidediv" style=" display:none;  position:relative;left:35px;  " id="hidev">
+            <form name=form method=post action=#xbjss.php>
+            </form>
+
+        </div>
+        <OL class="header-block header-menu posright">
+            <LI></LI>
+        </OL>
+
+    </DIV>
+</DIV>
+<!-- 结束头部黑条 -->
+<!-- 头部 -->
+<DIV id="page_header">
+    <DIV id="page_header_cont">
+        <A id="logo_link" href="index.html">
+            <IMG id="logo_img" style="width: 170px; height: 60px;" src="images/logoN.png">
+        </A>
+        <DIV id="city">
+        </DIV>
+        <DIV id="favorites">
+        </DIV>
+    </DIV>
+    <DIV id="page_nav">
+        <DIV class="nav_cont">
+            <!--<DIV class="nav_item" id="category"><A class="main_link" id="btn_category"-->
+                                                   <!--style="cursor: pointer;font-size:14px" href="#teacher/101.html">所有教员分类</A>-->
+                <!--<UL class="first_ul">-->
+                    <!--&lt;!&ndash;全部课程&ndash;&gt;-->
+                    <!--<LI class="first_li nav_btn1 all_title_link" style="display: none;">-->
+                        <!--<DIV class="first_title"></DIV>-->
+                    <!--</LI>-->
+                    <!--&lt;!&ndash;循环&ndash;&gt;-->
+                    <!--<LI class="first_li nav_btn3">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--href="#teacher/4-0-0-101-0-0-0-0.html">小学家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul">-->
+                            <!--<LI class="second_li">-->
+                            <!--<LI class="second_li"><A title="小学数学" class="second_title_link"-->
+                                                     <!--onClick="ga_track_event('course_cate_menu', '小学家教', '小学数学')"-->
+                                                     <!--href="#teacher/4-0-167-101-0-0-0-0.html">小学数学</A></LI>-->
+                            <!--<LI class="second_li"><A title="小学语文" class="second_title_link"-->
+                                                     <!--onClick="ga_track_event('course_cate_menu', '小学家教', '小学语文')"-->
+                                                     <!--href="#teacher/4-0-166-101-0-0-0-0.html">小学语文</A></LI>-->
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<li class="first_li nav_btn2 even">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--onClick="ga_track_event('course_cate_menu', '初中家教', '(none)')"-->
+                                                    <!--href="#teacher/5-0-0-181-0-0-0-0.html">初中家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul" style=" width:310px">-->
+                            <!--<LI class="second_li"><A title="初中数学" class="second_title_link"-->
+                                                     <!--onclick="ga_track_event('course_cate_menu', '初中家教', '初中数学')"-->
+                                                     <!--href="#teacher/5-0-179-101-0-0-0-0.html">初中数学</A></LI>-->
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn4">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--onClick="ga_track_event('course_cate_menu', '高中家教', '(none)')"-->
+                                                    <!--href="#teacher/6-0-0-101-0-0-0-0.html">高中家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul  multi">-->
+                            <!--<LI class="second_li">-->
+                                <!--<div><A title="高考语文" class="second_title_link"-->
+                                        <!--onClick="ga_track_event('course_cate_menu', '高中', '高考语文')"-->
+                                        <!--href="#teacher/6-0-207-101-0-0-0-0.html">高考语文</A></div>-->
+                            <!--</LI>-->
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn5 even ">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--onClick="ga_track_event('course_cate_menu', '外语家教', '(none)')"-->
+                                                    <!--href="#teacher/7-0-0-101-0-0-0-0.html">外语家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul">-->
+                            <!--<LI class="second_li"><A title="外国人中文" class="second_title_link"-->
+                                                     <!--onClick="ga_track_event('course_cate_menu', '外语', '外国人中文')"-->
+                                                     <!--href="#teacher/7-0-220-101-0-0-0-0.html">外国人中文</A></LI>-->
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn6  ">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--onClick="ga_track_event('course_cate_menu', '特长家教', '(none)')"-->
+                                                    <!--href="#teacher/8-0-0-101-0-0-0-0.html">特长家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul">-->
+                            <!--<LI class="second_li"><A title="钢琴" class="second_title_link"-->
+                                                     <!--onClick="ga_track_event('course_cate_menu', '特长', '钢琴')"-->
+                                                     <!--href="#teacher/8-0-254-101-0-0-0-0.html">钢琴</A></LI>-->
+
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn7 even ">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--onClick="ga_track_event('course_cate_menu', '学前家教', '(none)')"-->
+                                                    <!--href="#teacher/3-0-0-101-0-0-0-0.html">学前家教</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul">-->
+                            <!--<LI class="second_li"><A title="幼儿陪玩" class="second_title_link"-->
+                                                     <!--href="#teacher/3-0-161-101-0-0-0-0.html">幼儿陪玩</A></LI>-->
+
+                        <!--</UL>-->
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn8  ">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--onClick="ga_track_event('course_cate_menu', '计算机家教', '(none)')"-->
+                                                    <!--href="#teacher/9-0-0-101-0-0-0-0.html">计算机家教</A>-->
+                        <!--</DIV>-->
+
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn9  even">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--onClick="ga_track_event('course_cate_menu', '大学辅导', '(none)')"-->
+                                                    <!--href="#teacher/153-0-0-101-0-0-0-0.html">大学辅导</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn10  ">-->
+                        <!--<DIV class="first_title"><A class="first_title_link"-->
+                                                    <!--onClick="ga_track_event('course_cate_menu', '家教身份', '(none)')"-->
+                                                    <!--href="#">家教身份</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<UL class="second_ul ">-->
+                            <!--<LI class="second_li"><A title="大学生家教" class="second_title_link"-->
+                                                     <!--onClick="ga_track_event('course_cate_menu', '家教身份', '大学生家教')"-->
+                                                     <!--href="#teacher/0-0-0-101-0-0-0-1.html">大学生家教</A></LI>-->
+
+                        <!--</UL>-->
+
+
+                    <!--</LI>-->
+                    <!--<LI class="first_li nav_btn11 even">-->
+                        <!--<DIV class="first_title" style="border-bottom:1px solid #DDDDDD"><A class="first_title_link"-->
+                                                                                            <!--onClick="SendEvent(27,390)"-->
+                                                                                            <!--href="#" target="_blank">家教性别</A>-->
+                            <!--<DIV class="cover"></DIV>-->
+                        <!--</DIV>-->
+                        <!--<DIV class="second_ul">-->
+                            <!--<DIV><SPAN class="second_li"><A title="男" class="second_title_link"-->
+                                                            <!--onClick="SendEvent(27,390)"-->
+                                                            <!--href="#teacher/0-0-0-101-0-1-0-0.html">男</A></SPAN>-->
+                                <!--<SPAN class="second_li"><A title="女" class="second_title_link"-->
+                                                           <!--onClick="SendEvent(27,390)"-->
+                                                           <!--href="#teacher/0-0-0-101-0-2-0-0.html">女</A></SPAN></DIV>-->
+                        <!--</DIV>-->
+                    <!--</LI>-->
+                <!--</UL>-->
+            <!--</DIV>-->
+            <DIV class="nav_item"><A class="main_link " style="font-size:14px" th:href="@{index}">首页</A></DIV>
+            <DIV class="nav_item"><A class="main_link  current " style="font-size:14px"
+                                     href="#student/101.html">学员列表</A></DIV>
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{teacher_list}">教员列表</A></DIV>
+            <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{problem}">常见问题</A></DIV>
+        </DIV>
+    </DIV>
+</DIV>
+<!-- 结束头部 -->
+<!--  学员列表导航 -->
+
+<div class="xydh"><a href="#index.html" style="color:#737373">家教网</a> >> <a th:href="@{student_list}"
+                                                                            style="color:#737373">学员列表</a> >> 学员订单
+</div>
+
+
+<!-- 结束学员列表导航 -->
+<!--  学员列表 -->
+<div class="xylb">
+    <div class="xylbleftd">
+        <div class="xyjbxxdd">
+            <div class="xyxx">
+                <div class="xyxx1">
+                    <div class="xyxx_1">
+                        <div class="xyxx_1t">闽侯区</div>
+                        <div class="xyxx_1t1"></div>
+                        <div class="xyxx_1t1">订单号： <span th:text="${stu_order.orderId}"></span></div>
+                    </div>
+                    <div class="xyxx_2">
+                        发布时间 <span th:text="${stu_order.time}"></span>
+                    </div>
+
+                    <div class="xyxx_3">
+                        <span style=" color:#02B628">（可预约）</span></div>
+                </div>
+
+                <div class="xyxx2">
+                    <u>学生情况：</u>
+                </div>
+                <div class="xyxx3">
+                    <div class="xyxx3_1">学生年级：<span th:text="${stu_order.grade}"></span></div>
+                    <div class="xyxx3_2">学员性别：男</div>
+                </div>
+                <div class="xyxx3">
+                    辅导科目：<span th:text="${stu_order.course}"></span>
+                </div>
+                <div class="xyxx3">
+                    学生情况：<span th:text="${stu_order.details}"></span>
+                </div>
+                <div class="xyxx3">
+                    地　　址：<span th:text="${stu_order.address}"></span>
+                </div>
+                <div class="xyxx2" style="margin-top:28px">
+                    <u>家教要求：</u>
+                </div>
+                <div class="xyxx3">
+                    <div class="xyxx3_1">家教性别：<span th:text="${stu_order.teaSex}"></span></div>
+                    <!--<div class="xyxx3_2">授课次数： 2次/周</div>-->
+                </div>
+                <div class="xyxx3">
+                    <div class="xyxx3_1">课时标准：<span th:text="${stu_order.money}"></span>元/小时</div>
+                </div>
+                <div class="xyxx3">
+                    家教要求：老师有经验
+                </div>
+                <div class="xyss">
+                    <div class="xysslist">预约后客服会与您取得联系，您也可以直接拨打预约中心电话：xxx-xxx-xxxx (预约时请提供此<span style="color:#048ADC">订单编号:136828</span>)
+                    </div>
+                </div>
+                <div class="xyck">
+                    <div class="xyckbun">
+                        <a th:href="@{'/appointment?orderId='+${stu_order.orderId}}" style="color:#FFFFFF;text-decoration:none" onclick="isk('136828','#','101','#','50')">免费预约此订单</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="xylbright" style="margin-bottom:30px">
+        <div class="cgal">
+            <div class="cgaltitle">
+                <div class="cgaltitle1">最新成功记录</div>
+            </div>
+            <div class="cgalbody">
+                <iframe src="fk/fk.html" width="100%" height="309" frameborder="no" border="0" marginwidth="0"
+                        marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+            </div>
+        </div>
+
+        <div class="cgal" style=" height:275px; margin-top:8px">
+            <div class="cgaltitle">
+                <div class="cgaltitle1">常见问题</div>
+            </div>
+            <div class="cgalbody">
+                <ol>
+                    <li><a href="#cjwt.php?id=30071" target="_blank" title="家长找家教流程" style="color:#494949">家长找家教流程</a>
+                    </li>
+                    <li><a href="#cjwt.php?id=30070" target="_blank" title="教员最新使用流程" style="color:#494949">教员最新使用流程</a>
+                    </li>
+                    <li><a href="#cjwt.php?id=30095" target="_blank" title="如何成为签约教员" style="color:#494949">如何成为签约教员</a>
+                    </li>
+                    <li><a href="#cjwt.php?id=30072" target="_blank" title="家长如何快速找家教"
+                           style="color:#494949">家长如何快速找家教</a></li>
+                    <li><a href="#cjwt.php?id=30073" target="_blank" title="教员如何增加家教机会"
+                           style="color:#494949">教员如何增加家教机会</a></li>
+                    <li><a href="#cjwt.php?id=30093" target="_blank" title="赚取学币的方法" style="color:#494949">赚取学币的方法</a>
+                    </li>
+                    <li><a href="#cjwt.php?id=30094" target="_blank" title="认证的方法和好处" style="color:#494949">认证的方法和好处</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 结束学员列表-->
+<!--  footer -->
+<
+<div style="clear:both"></div>
+<div class="footerd">
+    <div style="height:18px"></div>
+    <div class="content">
+
+        <div class="contentleft">
+            <div class="wxt"></div>
+            <div class="gzwxt">关注微信</div>
+        </div>
+        <div class="line"></div>
+        <div class="contentleft1">
+            <div class="contentleft1_f">
+                <div class="dh">
+                    <div class="dhleft"></div>
+                    <div class="dhright">
+                        <div class="dhrx">本地客服热线</div>
+                        <div class="dhmf"></div>
+                    </div>
+                </div>
+                <div class="dh400">xxx-xxx-xxxx</div>
+                <div class="dhsj">工作时间每日xx:xx-xx:xx</div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="contentleft2">
+            <div class="tj">
+                <div class="yx">
+                    <div class="yxleft"></div>
+                    <div class="yxright">邮箱：xxxxxxx@xxxx.xxx</div>
+                </div>
+
+                <div class="kfry">
+                    <div class="kfryleft"></div>
+                    <div class="kfryright">教员交流群：xxxxxxxxx</div>
+                </div>
+
+                <div class="kfxl">
+                    <div class="kfxlleft"></div>
+                    <div class="kfxlright">新浪微博：XX教育</div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="line"></div>
+        <div class="contentright">
+            <div class="cjwt">
+                <div class="cjwttitle">常见问题</div>
+                <div class="cjwtbody"><a href="##########################################/cjwt-30071.html"
+                                         target="_blank" style="color:#CFCECE">家长找家教流程</a></div>
+                <div class="cjwtbody"><a href="##########################################/cjwt-30070.html"
+                                         target="_blank" style="color:#CFCECE">教员最新使用流程</a></div>
+                <div class="cjwtbody"><a href="##########################################/cjwt-30083.html"
+                                         target="_blank" style="color:#CFCECE">信誉值说明</a></div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div style="width:887px; margin:0px auto;  margin-top:8px"><img src="images/line5.jpg"></div>
+
+</div>
+
+
+<div class="footerd1"><a href="##########################################/about-5.html" style="color:#FFFFFF">关于我们</a>
+    &nbsp;|&nbsp; <a href="##########################################/about-7.html" style="color:#FFFFFF">网站地图</a>&nbsp;
+    |&nbsp; <a href="##########################################/about-6.html" style="color:#FFFFFF">联系我们</a> &nbsp;|
+    &nbsp;
+    <a href="##########################################/yqlj.html" style="color:#FFFFFF">友情链接</a> &nbsp;| &nbsp;
+    <a href="##########################################/yjjy.html" style="color:#FFFFFF">意见建议</a>&nbsp; | &nbsp;
+    <a href="##########################################/cjwt.html" style="color:#FFFFFF">帮助中心</a>&nbsp; |&nbsp;
+    <a href="##########################################/about-8.html" style="color:#FFFFFF">版权声明</a> &nbsp;|&nbsp;
+    <a href="##########################################/about-5.html" style="color:#FFFFFF">免责声明</a> &nbsp;|&nbsp;
+    <a href="##########################################/about-9.html" style="color:#FFFFFF">收藏本站</a> &nbsp;| &nbsp;
+    XICP备XXXXXXXX号
+    <script type="text/javascript" src="//s.union.360.cn/110420.js"></script>
+</div>
+<script src="#layer/layer.js"></script>
+
+<script type="text/javascript" src="#xsy/ajax.js"></script>
+
+</BODY>
+</HTML>

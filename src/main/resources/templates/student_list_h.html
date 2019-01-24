@@ -1,0 +1,301 @@
+﻿<!DOCTYPE>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<META content="IE=10.000" http-equiv="X-UA-Compatible">
+<META charset="utf-8">
+<title>福州家教网-学员订单-阳光家教网</title>
+<meta name="keywords" content="XX教育网,福州家教网,福州家教" />
+<meta name="description" content="XX家教网是全国连锁的家教信息平台，对家长免费开放，不收取中介费。在职、退休、大学生家教免费上门试讲。教师经身份认证、严格审核。家长可参考其他家长对教师责任心、教学水平、整体满意度来选择适合的家教。" />
+ <LINK href="css/index.css" rel="stylesheet" type="text/css">
+<SCRIPT src="js/jquery-1.7.2.min.js" type="text/javascript"></SCRIPT>
+<LINK href="css/newHeader.css" rel="stylesheet" type="text/css">
+<SCRIPT src="js/xl.js" type="text/javascript"></SCRIPT>
+<link rel="stylesheet" type="text/css" href="css/newjiedai.css">
+<script type="text/javascript" src="js/newjiedai.js"></script>
+
+<script type="text/javascript" src="js/xyck.js"></script>
+<link href="css/lrtk.css" rel="stylesheet" type="text/css" />
+ <script>
+ 
+ 
+	$(function(){
+		$(window).scroll(function(){
+			if($(window).scrollTop()>100){  //距顶部多少像素时，出现返回顶部按钮
+				$("#side-bar .gotop").fadeIn();	
+			}
+			else{
+				$("#side-bar .gotop").hide();
+			}
+		});
+		$("#side-bar .gotop").click(function(){
+			$('html,body').animate({'scrollTop':0},500); //返回顶部动画 数值越小时间越短
+		});
+	});
+</script>
+
+
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+ 
+<link rel="stylesheet" href="css/drop-down.css" />
+<script src="js/select-widget-min.js"></script>
+<script>
+	
+	$(document).ready(function(){		
+		$(".ui-select").selectWidget({
+			change       : function (changes) {
+				return changes;
+			},
+			effect       : "slide",
+			keyControl   : true,
+			speed        : 200,
+			scrollHeight : 250
+		});
+		
+			 
+		
+	});		
+	
+</script>
+<script src="js/layer.js"></script>
+
+
+</HEAD>
+<BODY> 
+<!-- 头部黑条 -->
+<DIV id="newheader">
+  <DIV class="header-container">
+      <div th:if="${session.user != null}">
+          <dl class="header-block header-left   header-lineheight">
+              <dt style="font-size:13px" > 您好！<span th:text="${username}"></span>
+                  <a th:href="@{logoutuser}"   onclick="tankuang1('#','baidu')" >  注销</a> <span style="letter-spacing:0.5em">|</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a th:href="@{order_list}"   onclick="tankuang1('#','baidu')" >  我的订单</a>
+              </dt>
+          </dl>
+      </div>
+			</div>
+    	<OL class="header-block header-menu posright"  >
+      <LI></LI>
+    </OL>
+		
+  </DIV>
+</DIV>
+<!-- 结束头部黑条 -->
+<!-- 头部 -->
+<DIV id="page_header">
+  <DIV id="page_header_cont"><a id="logo_link" href="index.html"><IMG id="logo_img" style="width: 170px; height: 60px;" src="images/logoN.png"> </a>
+    <DIV id="city">
+      <!-- <h1>福州</h1>
+      <h2>[<a href="#/1t1.php">切换城市</a>]</h2> -->
+    </DIV>
+      <DIV id="search"  >
+          <form method="get" action="searchstudent">
+              <input type="hidden" name="dqid" value="101">
+              <div class="km">
+                  <select class=ui-select  style="background-color: #FFFFFF;border: 1px solid #2DB2FF;box-shadow: 0 0 2px #2DB2FF;border-radius: 5px;font-size: 14px;height: 28px;position: relative;width: 120px;-webkit-user-select: none;"  name="course">
+                      <option  selected=selected value="0" >选择科目 </option>
+                      <option value="语文">语文</option>
+                      <option value="数学">数学</option>
+                      <option value="英语">英语</option>
+                      <option value="化学">化学</option>
+                      <option value="物理">物理</option>
+                      <option value="生物">生物</option>
+                      <option value="政治">政治</option>
+                      <option value="地理">地理</option>
+                      <option value="历史">历史</option>
+                  </select>
+              </div>
+              <div class="xb">
+                  <select class="ui-select" name="grade">
+                      <option  selected="selected"  value="0">学生年级 </option>
+                      <option value="0">不限</option>
+                      <option value="小学">小学</option>
+                      <option value="初中">初中</option>
+                      <option value="高中">高中</option>
+                  </select>
+              </div>
+              <div class="xb">
+                  <select  class="ui-select" name="address">
+                      <option  selected="selected"  value="0">地点 </option>
+                      <option  value="仓山">仓山</option>
+                      <option  value="闽侯">闽侯</option>
+                      <option  value="台江">台江</option>
+                      <option  value="鼓楼">鼓楼</option>
+                      <option  value="晋安">晋安</option>
+                      <option  value="长乐">长乐</option>
+                      <option  value="平潭">平潭</option>
+                      <option  value="福清">福清</option>
+                      <option  value="罗源">罗源</option>
+                      <option  value="闽清">闽清</option>
+                      <option  value="永泰">永泰</option>
+                  </select>
+              </div>
+              <div class="searchbunn"> <input name="eeeew" type="image" src="images/searchstudent.gif"></div>
+          </form>
+      </DIV>
+    <DIV id="favorites">
+	</DIV>
+  </DIV>
+  <DIV id="page_nav">
+    <DIV class="nav_cont">
+      <!--<DIV class="nav_item" id="category"><A class="main_link" id="btn_category" -->
+<!--style="cursor: pointer;font-size:14px" href="#"  >所有教员分类</A>-->
+          <!--辅导科目</DIV>-->
+      <DIV class="nav_item"><A class="main_link " style="font-size:14px"  th:href="@{index}">首页</A></DIV>
+      <DIV class="nav_item"><A class="main_link  current " style="font-size:14px" href="#">学员列表</A> </DIV>
+      <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{teacher_list}">教员列表</A> </DIV>
+           <DIV class="nav_item"><A class="main_link  " style="font-size:14px" th:href="@{problem}">常见问题</A> </DIV>
+    </DIV>
+  </DIV>
+</DIV>
+<!-- 结束头部 -->
+ <!--  学员列表导航 -->
+
+<div class="xydh"><a  href="#/index.html" style="color:#737373" >家教网</a> >> 订单列表</div>
+
+
+<!-- 结束学员列表导航 -->
+ <!--  学员列表 -->
+ 	<div class="xylb">
+		<div class="xylbwk" style=" width:740px; float:left; height:auto; margin-bottom:15px ">
+				<div class="xylbleft" style="margin-bottom:3px">
+						 <div th:each="stu:${students}">
+                             <div class="xyjbxx">
+                                 <div class="xyjb1">
+                                     <div class="xyjb1_l">
+                                         <div class="xyjb1_z11">
+                                             <div class="xyjb1_z1" style="width:52px"><span th:text="${stu.orderId}"></span></div>
+
+                                             <div class="xyjb1_z1"><span th:text="${stu.address}"></span></div><div class="xyjb1_z2"></div></div><div class="xyjb1_z3">￥<span th:text="${stu.money}"></span>元/小时</div>
+                                     </div>
+                                     <div class="xyjb1_zt">
+                                         <span style=" color:#02B628">（<span th:text="${stu.orderState}"></span>）</span></div>
+                                 </div>
+                                 <div class="xyjb2">
+                                     <div class="xyjb2_1">学生年级：<span th:text="${stu.grade}"></span>
+                                 </div>
+                                 <div class="xyjb3">
+                                     辅导科目：<span th:text="${stu.course}"></span>					</div>
+                                 <div class="xyjb2">
+                                     <div class="xyjb2_1">家教性别：<span th:text="${stu.teaSex}"></span> </div>
+                                 </div>
+                                     <div class="xyjb2">
+                                         <div class="xyjb2_1">学生电话：<span th:text="${stu.stuPhone}"></span> </div>
+                                     </div>
+                                 <div class="xyjb3" style="width:96%">
+                                     学生状况：<span th:text="${stu.details}"></span>					</div>
+                                 <div th:if="${stu.orderState}  ne '已预约'">
+                                     <div class="xyjb5">
+                                         <div class="xyjb5_1"><a th:href="@{'/student_order?orderId='+${stu.orderId}}" style="color:#FFFFFF" target="_blank">查看详情</a></div>
+                                     </div>
+                                 </div>
+                                     <div class="c"></div>
+
+                             </div>
+                         </div>
+				 			 <div class="line"></div>
+		 </div>
+		  <div style="clear:both"></div>
+	 	</div>
+	</div>
+        <div class="xylbright">
+            <div class="cgal"  >
+                <div class="cgaltitle">
+                    <div class="cgaltitle1">最新成功记录</div>
+                </div>
+                <div class="cgalbody">
+                    <iframe   src="fk/fk.html" width="100%" height="309" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+                </div>
+            </div>
+
+            <div class="ad" style="margin-top:6px;"><A  style="cursor:pointer"   onclick="tankuangd('#/')"><!-- <img src="css/gg.jpg" style="padding-left:8px; padding-top:8px"> --></A></div>
+            <div class="cgal" style= " height:275px; margin-top:8px" >
+                <div class="cgaltitle">
+                    <div class="cgaltitle1">常见问题</div>
+                </div>
+                <div class="cgalbody"  >
+                    <ol>
+                        <li><a href="#" target="_blank" title="家长找家教流程" style="color:#494949">家长找家教流程</a></li>
+                        <li><a href="#" target="_blank" title="教员最新使用流程" style="color:#494949">教员最新使用流程</a></li>
+                        <li><a href="#" target="_blank" title="如何成为签约教员" style="color:#494949">如何成为签约教员</a></li>
+                        <li><a href="#" target="_blank" title="家长如何快速找家教" style="color:#494949">家长如何快速找家教</a></li>
+                        <li><a href="#" target="_blank" title="教员如何增加家教机会" style="color:#494949">教员如何增加家教机会</a></li>
+                        <li><a href="#" target="_blank" title="赚取学币的方法" style="color:#494949">赚取学币的方法</a></li>
+                        <li><a href="#" target="_blank" title="认证的方法和好处" style="color:#494949">认证的方法和好处</a></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="cgal" style="margin-top:12px; height:232px" >
+                <div class="cgaltitle">
+                    <div class="cgaltitle1">福州XX家教网</div>
+                </div>
+                <div class="cgalbody"  style="font-size:12px; line-height:30px;  ">
+                    XX家教网全国连锁，福州XX家教网专业、权威，家长无中介费！万名优秀福州家教经身份认证严格审核，上门试讲.已成功为千余名福州学员找到适合的家教老师，颇受家长好评！
+                </div>
+            </div>
+        </div>
+ <!-- 结束学员列表-->
+<!--  footer -->
+<div style="clear:both"></div>
+<div class="footerd"> 
+  <div style="height:18px"></div>
+  <div  class="content" >
+    
+    <div class="contentleft">
+      <div class="wxt"></div>
+      <div class="gzwxt">关注微信</div>
+     </div>
+    <div class="line"> </div>
+    <div class="contentleft1">
+      <div class="contentleft1_f">
+        <div class="dh">
+          <div class="dhleft"></div>
+          <div class="dhright">
+            <div class="dhrx">本地客服热线</div>
+            <div class="dhmf"> </div>
+          </div>
+        </div>
+        <div class="dh400">xxx-xxx-xxxx</div>
+        <div class="dhsj">工作时间每日xx:xx-xx:xx</div>
+      </div>
+     </div>
+    <div class="line"> </div>
+    <div class="contentleft2">
+      <div class="tj">
+        <div class="yx">
+          <div class="yxleft"></div>
+          <div class="yxright">邮箱：xxxxxxx@xxxx.xxx</div>
+        </div>
+        
+         <div class="kfry">
+          <div class="kfryleft"></div>
+          <div class="kfryright">教员交流群：xxxxxxxxx</div>
+        </div>
+        
+        <div class="kfxl">
+          <div class="kfxlleft"></div>
+          <div class="kfxlright">新浪微博：XX教育</div>
+        </div>
+        
+       </div>
+    
+     </div>
+      <div class="line"> </div>
+    <div class="contentright"> 
+      <div class="cjwt">
+        <div class="cjwttitle">常见问题</div>
+        <div class="cjwtbody"><a href="##########################################/cjwt-30071.html" target="_blank"  style="color:#CFCECE" >家长找家教流程</a></div> 
+        <div class="cjwtbody"><a href="##########################################/cjwt-30070.html" target="_blank"  style="color:#CFCECE"  >教员最新使用流程</a></div> 
+        <div class="cjwtbody"><a href="##########################################/cjwt-30083.html" target="_blank"  style="color:#CFCECE" >信誉值说明</a></div> 
+      </div>
+      
+    
+    </div>
+  </div>
+  
+  <div style="width:887px; margin:0px auto;  margin-top:8px"><img src="images/line5.jpg"></div>
+
+</div>
+    </div>
+</BODY>
+</HTML>

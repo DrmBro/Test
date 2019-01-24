@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+
+
+<table>
+    <tr th:each="l:${teacher}">
+        <td th:text="${l.userId}">222</td>
+    </tr>
+</table>
+<form method="post" action="add">
+        <p>First name: <input type="text" name="username" /></p>
+        <p>Last name: <input type="text" name="password" /></p>
+        <input type="submit" value="Submit" />
+</form>
+<form action="UploadTestServlet" enctype="multipart/form-data" id="loginform" name="loginform" method="post">
+    选择图片：<input type="file" name="filename"/>
+    <input id="subid" name="subid" type="submit" value="提交">
+</form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--teacher operation-->
+<form action="addTeacher" enctype="multipart/form-data" method="post">
+    <p>userId: <input type="text" name="userId" /></p>
+    <p>password: <input type="text" name="password" /></p>
+    <p>tureName: <input type="text" name="tureName" /></p>
+    <p>sex: <input type="text" name="sex" /></p>
+    <p>idcard: <input type="text" name="idcard" /></p>
+    <p>college: <input type="text" name="college" /></p>
+    <p>major: <input type="text" name="major" /></p>
+    <p>phone: <input type="text" name="phone" /></p>
+    <p>money: <input type="text" name="money" /></p>
+    选择图片：<input type="file" name="filename"/><br/>
+    <input type="submit" value="提交">
+</form>
+<br/><br/><br/><br/><br/>
+<!--student operation-->
+
+<form action="addStudent" method="post">
+    <p>user_id: <input type="text" name="user_id" /></p>
+    <p>password: <input type="text" name="password" /></p>
+    <p>address: <input type="text" name="address" /></p>
+    <p>sex: <input type="text" name="sex" /></p>
+    <p>phone: <input type="text" name="phone" /></p>
+    <p>grade: <input type="text" name="grade" /></p>
+    <p>course: <input type="text" name="course" /></p>
+    <p>time: <input type="date" name="time" /></p>
+    <p>money: <input type="text" name="money" /></p>
+    <input type="submit" value="提交">
+</form>
+<br/><br/><br/><br/><br/>
+<!--deleteTeacherById-->
+<form action="deleteTeacher" method="get">
+    deleteTeacherById:<input type="text" name="userId">
+    <input type="submit" value="删除">
+</form>
+<br/><br/><br/><br/><br/>
+<form action="deleteStudent" method="get">
+    deleteStudentById:<input type="text" name="user_id">
+    <input type="submit" value="删除">
+</form>
+
+<!--update-->
+
+
+</body>
+</html>

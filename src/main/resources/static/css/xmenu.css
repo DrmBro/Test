@@ -1,0 +1,228 @@
+@CHARSET "UTF-8";
+
+
+.topnav {
+	
+	font-size:14px;
+	line-height:20px;
+
+}
+
+
+
+.topnav  a.as{
+	padding:4px 6px 6px;
+	+padding:0px 2px 0px;
+	_padding:0px 2px 0px;
+	border:1px solid #ABADB3;
+	text-decoration:none;
+	color:#333;
+	width:500px;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+}
+.topnav a.menu-open {	
+    border-top: 1px solid #7F9DB9;
+    border-left: 1px solid #7F9DB9;
+    border-right: 1px solid #7F9DB9;
+    border-bottom:none;
+    border-radius: 4px 4px 0 0 ;
+    box-shadow: 0 0 4px #8B99A8, 0 0 1px #8B99A8;
+}
+a.as.menu-open span {
+	background-image:url("../images/toggle_up_dark.png");
+	color: #333;
+}
+
+a.as {
+	position:relative;
+	margin-left:3px;
+}
+a.as span {
+	background-image:url("../images/toggle_down_light.png");
+	background-repeat:no-repeat;
+	background-position:100% 50%;
+	padding:4px 16px 6px 0;
+	color:#333333;
+	font-size:12px;
+	
+}
+
+
+
+/**æŒ‰é’®èƒŒæ™¯å›¾.disk-info,*/
+.btn, .button,  .space-status, .space-status i, .file-list dt, .file-list dt a, .title-float, .title-float a, .file-more a, .file-more span, .file-pages, .pages, .page-index-list .box-con, .popup-space h3 {
+    background-image: url("../images/spr_x.png");
+    background-repeat: repeat-x;
+}
+
+
+
+
+.select-info {
+	-moz-user-select:none;
+    border: 1px solid #CECECE;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 0 1px 1px #FFFFFF inset, 0 1px 5px rgba(0, 0, 0, 0.1);    
+    margin: 8px;
+	width:200px;
+    overflow: hidden;
+    padding: 14px 10px 14px 60px;
+    position: relative;
+}
+.select-info  .top-label {
+    height: 20px;
+    left: 5px;
+    position: absolute;
+    font-size: 12px;
+	color: #23C1DA;
+}
+.select-info ul{
+	margin-left:10px;
+	
+}
+
+.select-info ul li {
+    float: left;
+    height: 20px;
+	width:120px;
+    line-height: 20px;
+    margin-right: 10px;
+    padding: 0px 15px;
+    text-align: center;
+	cursor: pointer;
+	font-size:12px;
+	list-style-type: none;
+}
+
+
+.select-info li:hover {
+	background-color: #DFECFF;
+}
+.select-info  li.current {
+    color: #000000;
+	font-size:12px;
+}
+
+
+/**xmenuæ ·å¼*/
+.xmenu {
+	-moz-user-select:none;
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #BBBBBB;
+    box-shadow: 0 0 4px #8B99A8, 0 0 1px #8B99A8;
+    border-radius: 0px 0px 4px 4px;
+    outline: medium none;
+	width: 718px;
+
+}
+
+
+.xmenu dl dd {
+	font-size: 12px;
+	color: #000000;
+	cursor: pointer;
+	margin: 0;
+}
+.xmenu dl dd:hover {
+	background-color: #ffffff;
+
+}
+
+
+.xmenu dl dt.open {
+	background:url('../images/bg_toggle_down2.gif') no-repeat scroll 8px 8px transparent;
+}
+.xmenu dl dt.open:hover {
+	background-color: #F4FFF4;
+}
+
+.xmenu dl dd {
+	padding-left: 3px;
+	line-height: 24px;
+}
+
+.xmenu dl dd h2 {
+	font-size: 15px;
+}
+
+.xmenu dl dd ul {
+   overflow: hidden;
+}
+
+.xmenu dl dd ul li {
+	background-position: 6px 6px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    float: left;
+    height: 25px;
+    overflow: hidden;
+    text-indent: 20px;
+    width: 100px;
+	color:#666666;
+
+}
+.xmenu dl dd ul  li:hover {
+    background-color: #DFECFF;
+}
+
+
+.xmenu dl dd ul  li.current {
+    color: #F57900;
+	font-weight: bold;
+}
+.xmenu dl dd ul  li.current1 {
+display:none;
+}
+
+
+/** cssåŠ¨ç”»æŒ‰é’®*/
+.a-btn {
+    -moz-transition: box-shadow 0.3s ease-in-out 0s;
+    background: -moz-linear-gradient(center top , #FFFFFF 0%, #F6F6F6 74%, #EDEDED 100%) repeat scroll 0 0 transparent;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(188, 188, 188, 0.1);
+    display: block;
+    float: right;
+    overflow: hidden;
+    position: relative;
+	width:57px;
+	height:23px;
+	background:url(../imgs/bunnn.gif);
+	background-repeat:no-repeat;
+}
+.a-btn-text {
+    color: #ffffff;
+    display: block;
+    font-size: 12px;   
+    text-align:center;
+    line-height: 16px;
+    padding:5px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.a-btn:hover {
+	background:url(../imgs/bunnn.gif);
+	background-repeat:no-repeat;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(188, 188, 188, 0.1);
+}
+.a-btn:hover .a-btn-symbol {
+    opacity: 0;
+}
+
+/**å…³é—­æŒ‰é’®æ ·å¼*/
+.m-close{
+	background: url("../images/controls.png") no-repeat scroll -25px 0 transparent;
+	bottom: 0;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    text-indent: -9999px;
+    width: 25px;
+	cursor: pointer;
+	margin: 5px;
+}
+.m-close:hover {
+    background-position: -25px -25px;
+}
